@@ -24,7 +24,7 @@ UserSchema.pre('save', function(next) {
     if (!user.isModified('password')) return next();
 
     // salt generation
-    bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
+    bcrypt.genSalt(SWF, function(err, salt) {
         if (err) return next(err);
 
         // hashing with our new salt
