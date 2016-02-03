@@ -4,6 +4,13 @@ var mongoose = require('mongoose'),
 	SWF = 10;
 
 var UserSchema = new Schema({
+	uuid: {
+		type: String,
+		required: true,
+		index: {
+			unique: true
+		}
+	},
 	username: {
 		type: String,
 		required: true,
