@@ -1,10 +1,10 @@
 doctype html
-html
+html(ng-app='clientportal')
 	head
 		title= title
 		link(rel='stylesheet', href='/stylesheets/bootstrap.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
-	body
+	body(ng-controller='main')
 		nav.navbar.navbar-default
 			.container-fluid
 				.navbar-header
@@ -19,9 +19,14 @@ html
 						li
 							a(href='/login') Login
 						li
+							a(href='/dashboard') User Dash
+						li
 							a(href='/register') Register
+						li
+							a.btn(href='/logout') Logout
 		block content
 
 		script(src='javascripts/jquery.js')
 		script(src='javascripts/bootstrap.js')
 		script(src='javascripts/angular.js')
+		script(src='javascripts/clientportal.js')

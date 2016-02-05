@@ -11,7 +11,15 @@ var UserSchema = new Schema({
 			unique: true
 		}
 	},
-	username: {
+	firstname: {
+		type: String,
+		required: true
+	},
+	lastname: {
+		type: String,
+		required: true
+	},
+	email: {
 		type: String,
 		required: true,
 		index: {
@@ -47,6 +55,13 @@ UserSchema.pre('save', function(next) {
 
 UserSchema.methods.comparePassword = function(candidatePassword, cb) {
     bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
+        if (err) return cb(err);
+        cb(null, isMatch);
+    });
+};
+
+UserSchema.methods.compareUUID = function(candidateUUID, cb) {
+    bcrypt.compare(candidateUUID, this.uuid, function(err, isMatch) {
         if (err) return cb(err);
         cb(null, isMatch);
     });

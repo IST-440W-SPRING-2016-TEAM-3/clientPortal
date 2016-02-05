@@ -4,14 +4,23 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var clientSessions = require("client-sessions");
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
 var register = require('./routes/register');
+var logout = require('./routes/logout');
+var dashboard = require('./routes/dashboard');
 
 var app = express();
 
+app.use(clientSessions({
+  cookieName: 'session',
+  secret: 'kFjaa4mRU9m8B3wuv3hFCQudJuHfAc',
+  duration: 24 * 60 * 60 * 1000,
+  activeDuration: 1000 * 60 * 5
+}));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -28,6 +37,8 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/login', login);
 app.use('/register', register);
+app.use('/logout', logout);
+app.use('/dashboard', dashboard);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
