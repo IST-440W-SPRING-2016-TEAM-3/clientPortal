@@ -1,5 +1,5 @@
 var express = require('express');
-var encryption = require('../public/javascripts/testUser');
+var registration = require('../public/javascripts/userRegistration');
 var router = express.Router();
 
 /* GET home page. */
@@ -17,13 +17,13 @@ router.post('/', function(req, res, next) {
     userData.password = data.pass;
 
     if(userData.firstName !== undefined){
-        encryption.checkUserName(userData.email, function(err, exists) {
+        registration.checkUserName(userData.email, function(err, exists) {
             if (err) {
                 throw err;
             } else if(exists) {
                 res.send("Username already exists");
             } else {
-                encryption.createUser(userData);
+                registration.createUser(userData);
                 res.redirect("/");
             }
         });

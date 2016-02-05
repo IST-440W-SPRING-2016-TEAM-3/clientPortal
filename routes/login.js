@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var login = require('../public/javascripts/userLogin');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -7,6 +8,26 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  res.send("Working");
+    var data = req.body,
+        userData = {};
+
+    userData.email = data.email;
+    userData.password = data.pass;
+
+    if(userData.email !== undefined){
+        login.checkUser(userData.email, userData.password, function(err, user) {
+            if (err) {
+                throw err;
+            }
+            if(user){
+                console.log(user);
+                req.session.email = user.username;
+                req.session.uuid = user.uuid;
+                res.redirect("/");
+            } else {
+                res.send("Username or Password is incorrect. Please try again.");
+            }
+        });
+    }
 });
 module.exports = router;

@@ -12,10 +12,10 @@ block content
 								.form-group
 									label User Name
 										.input-group
-									input.form-control(type='text', placeholder='User Name', required)
+									input.form-control(type='text', placeholder='User Name', ng-model='userData.email', name='email', required)
 								.form-group
 									label Password
 									.input-group
-									input.form-control(type='password', placeholder='Password', required)
+									input.form-control(type='password', placeholder='Password', ng-model='userData.pass', name='pass', required)
 								.row.center-text
 									button.btn.btn-success.btn-block(type='submit') Sign In

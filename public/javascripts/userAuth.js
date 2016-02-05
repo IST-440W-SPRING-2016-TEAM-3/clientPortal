@@ -52,4 +52,11 @@ UserSchema.methods.comparePassword = function(candidatePassword, cb) {
     });
 };
 
+UserSchema.methods.compareUUID = function(candidateUUID, cb) {
+    bcrypt.compare(candidateUUID, this.uuid, function(err, isMatch) {
+        if (err) return cb(err);
+        cb(null, isMatch);
+    });
+};
+
 module.exports = mongoose.model('User', UserSchema);
