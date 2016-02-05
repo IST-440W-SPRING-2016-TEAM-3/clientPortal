@@ -20,8 +20,7 @@ router.post('/', function(req, res, next) {
                 throw err;
             }
             if(user){
-                console.log(user);
-                req.session.email = user.username;
+                req.session.email = user.email;
                 req.session.uuid = user.uuid;
                 res.redirect("/");
             } else {

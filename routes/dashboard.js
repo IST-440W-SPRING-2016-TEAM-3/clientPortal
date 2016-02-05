@@ -7,6 +7,9 @@ router.get('/', function(req, res, next) {
         dashboard.checkUser(req.session.email, req.session.uuid, function(err, user) {
             if (err) {throw err;}
             if(user){
+				res.locals.user = {};
+				res.locals.user.firstName = user.firstname;
+				res.locals.user.lastName = user.lastname;
 				res.render('dashboard');
             } else {
 				res.clearCookie('session', { path: '/' });

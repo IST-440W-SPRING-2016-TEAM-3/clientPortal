@@ -12,7 +12,7 @@ this.checkUser = function(userName, userPass, cb){
 
     //We Use Our findOne Prototype That Queries The Database To See If It Can Find
     //A User With The Set Of Credentials
-    var exists = User.findOne({ username: userName });
+    var exists = User.findOne({ email: userName });
 
     exists.exec(function(err, user){
         if(err){
