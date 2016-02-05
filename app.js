@@ -12,6 +12,7 @@ var login = require('./routes/login');
 var register = require('./routes/register');
 var logout = require('./routes/logout');
 var dashboard = require('./routes/dashboard');
+var dashuserprofile = require('./routes/dashuserprofile');
 
 var app = express();
 
@@ -39,6 +40,7 @@ app.use('/login', login);
 app.use('/register', register);
 app.use('/logout', logout);
 app.use('/dashboard', dashboard);
+app.use('/dashuserprofile', dashuserprofile);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

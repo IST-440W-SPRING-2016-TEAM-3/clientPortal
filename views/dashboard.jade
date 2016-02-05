@@ -1,4 +1,27 @@
+
 extends layout
 
 block content
-	h1= "Welcome, " + user.firstName + " " + user.lastName + "!"
+	center 
+		h1= "Welcome, " + user.firstName + " " + user.lastName + "!"
+	.container-fluid
+		.row
+			ul.nav.nav-tabs
+				li.active(role='presentation')
+					a(data-toggle="tab", href='#profilepage') User Profile
+				li(role='presentation')
+					a(data-toggle="tab", href='#appointments') Appointments
+				li(role='presentation')
+					a(data-toggle="tab", href='#reports') Reports
+				//- li(role='presentation')
+				//- 	a(data-toggle="tab", href='#') Messages
+			.tab-content
+				#profilepage.tab-pane.fade.in.active
+					h3 User Profile
+					p Profile content
+				#appointments.tab-pane.fade
+					h3 Appointments
+					p Appointment content
+				#reports.tab-pane.fade
+					h3 Reports
+					p Reports content

@@ -22,6 +22,7 @@ router.post('/', function(req, res, next) {
             if(user){
                 req.session.email = user.email;
                 req.session.uuid = user.uuid;
+                res.cookie('authorized', true, { maxAge: 900000});
                 res.redirect("/");
             } else {
                 res.send("Username or Password is incorrect. Please try again.");

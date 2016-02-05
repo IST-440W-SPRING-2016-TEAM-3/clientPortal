@@ -16,13 +16,13 @@ html(ng-app='clientportal')
 					a.navbar-brand(href='/') IST 440W Group 3
 				#bs-example-navbar-collapse-1.collapse.navbar-collapse
 					ul.nav.navbar-nav.pull-right
-						li
+						li(ng-hide="getLocation() == 'authorized=true'")
 							a(href='/login') Login
 						li
 							a(href='/dashboard') User Dash
-						li
+						li(ng-hide="getLocation() == 'authorized=true'")
 							a(href='/register') Register
-						li
+						li(ng-show="getLocation() == 'authorized=true'")
 							a.btn(href='/logout') Logout
 		block content
 

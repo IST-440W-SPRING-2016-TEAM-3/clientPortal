@@ -3,9 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	res.clearCookie('session', { path: '/' });
-	res.clearCookie('authorized', { path: '/' });
-    res.redirect('/');
+  res.render('dashuserprofile', { title: 'Express' });
 });
 
 module.exports = router;
