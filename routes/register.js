@@ -15,18 +15,23 @@ router.post('/', function(req, res, next) {
     userData.lastName = data.lname;
     userData.email = data.email;
     userData.password = data.pass;
+    userData.passconf = data.passconf;
 
-    if(userData.firstName !== undefined){
-        registration.checkUserName(userData.email, function(err, exists) {
-            if (err) {
-                throw err;
-            } else if(exists) {
-                res.send("Username already exists");
-            } else {
-                registration.createUser(userData);
-                res.redirect("/");
-            }
-        });
+    if(userData.password !== userData.passconf){
+        res.send("Passwords do not match");
+    } else {
+        if(userData.firstName !== undefined){
+            registration.checkUserName(userData.email, function(err, exists) {
+                if (err) {
+                    throw err;
+                } else if(exists) {
+                    res.send("Username already exists");
+                } else {
+                    registration.createUser(userData);
+                    res.redirect("/");
+                }
+            });
+        }
     }
 });
 module.exports = router;
