@@ -1,10 +1,10 @@
 (function(angular, undefined){
 	angular.module("clientportal", [])
 
-	.controller("main", [function(){
-		// var cookies = document.cookie;
-		//
-		// console.log(cookies);
+	.controller("main", ['$scope', '$location', function($scope, $location){
+		$scope.getLocation = function(){
+			return document.cookie;
+		};
 	}])
 
 	;
