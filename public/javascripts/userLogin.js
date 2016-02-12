@@ -23,7 +23,11 @@ this.checkUser = function(userName, userPass, cb){
                 if(mongoose.connection.close()){
                     console.log('LOGIN::checkUser::closed connection to MongoDB');
                 }
-                cb(null,user);
+                if (isMatch){
+                    cb(null,user);
+                } else {
+                    cb(null);
+                }
             });
         } else {
             if(mongoose.connection.close()){
