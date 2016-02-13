@@ -3,7 +3,7 @@ var router = express.Router();
 var dashboard = require('../public/javascripts/userDash');
 
 router.get('/', function(req, res, next) {
-	if(req.session && req.session.email && req.session.uuid ){
+	if(req.session && req.session.uuid ){
         dashboard.checkUser(req.session.email, req.session.uuid, function(err, user) {
             if (err) {throw err;}
             if(user){
