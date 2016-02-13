@@ -4,7 +4,7 @@ var login = require('../public/javascripts/userLogin');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('login', { title: 'Express' });
+    res.render('login', { title: 'Login' });
 });
 
 router.post('/', function(req, res, next) {
@@ -22,8 +22,7 @@ router.post('/', function(req, res, next) {
             if(user){
                 req.session.email = user.email;
                 req.session.uuid = user.uuid;
-                res.cookie('authorized', true, { maxAge: 900000});
-                res.redirect("/");
+                res.redirect("/dashboard");
             } else {
                 res.send("Username or Password is incorrect. Please try again.");
             }

@@ -1,5 +1,5 @@
 
-extends layout
+extends loggedinlayout
 
 block content
 	center 
@@ -13,8 +13,6 @@ block content
 					a(data-toggle="tab", href='#appointments') Appointments
 				li(role='presentation')
 					a(data-toggle="tab", href='#reports') Reports
-				//- li(role='presentation')
-				//- 	a(data-toggle="tab", href='#') Messages
 			.tab-content
 				#profilepage.tab-pane.fade.in.active
 					h3 User Profile
