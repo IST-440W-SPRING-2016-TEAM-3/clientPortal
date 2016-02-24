@@ -3,21 +3,13 @@ var mongoose = require('mongoose'),
 	bcrypt = require('bcrypt'),
 	SWF = 10;
 
-var UserSchema = new Schema({
+var UserLoginSchema = new Schema({
 	uuid: {
 		type: String,
 		required: true,
 		index: {
 			unique: true
 		}
-	},
-	firstname: {
-		type: String,
-		required: true
-	},
-	lastname: {
-		type: String,
-		required: true
 	},
 	email: {
 		type: String,
@@ -32,7 +24,7 @@ var UserSchema = new Schema({
 	}
 });
 
-UserSchema.pre('save', function(next) {
+UserLoginSchema.pre('save', function(next) {
     var user = this;
 
     // make sure to only rehash the password if updating or creating a new one
@@ -53,18 +45,18 @@ UserSchema.pre('save', function(next) {
     });
 });
 
-UserSchema.methods.comparePassword = function(candidatePassword, cb) {
+UserLoginSchema.methods.comparePassword = function(candidatePassword, cb) {
     bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
         if (err) return cb(err);
         cb(null, isMatch);
     });
 };
 
-UserSchema.methods.compareUUID = function(candidateUUID, cb) {
+UserLoginSchema.methods.compareUUID = function(candidateUUID, cb) {
     bcrypt.compare(candidateUUID, this.uuid, function(err, isMatch) {
         if (err) return cb(err);
         cb(null, isMatch);
     });
 };
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('UserLogin', UserLoginSchema);
