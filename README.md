@@ -8,6 +8,8 @@
 	- a) `https://nodejs.org/en/download/`
 - 3) Install mongoDB
 	- a) `https://www.mongodb.org/`
+- 4) Install Python
+- 	- a) `https://www.python.org/downloads/release/python-2711/`
 
 ## Setup MongoDB
 - 1) Install mongoDB from above link
@@ -20,9 +22,11 @@
 		- You will then be redirected to your personal repo
 - 1) Pull Down Project
 	- a) ` git pull "your repo URL here"`
-- 2) Navigate into the project's root directory and run the following command
+- 2) Navigate into the project's root directory and run the following commands
 	- a) `npm install`
 		- I) This is installing all dependencies for the project, so everything is set up and can run correctly.
+	- a) `npm install -g node-gyp`
+	- 	- I) This is a dependency for `bcrypt`
 - 3) Run the following command in the project's root directory
 	- a) `node bin/www`
 		- I) This command starts the nodejs server using our project.
