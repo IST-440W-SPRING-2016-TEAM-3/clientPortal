@@ -30,7 +30,7 @@
 		padding: 0px;
 	}
 	.myNav {
-		background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, .2));
+		background: black;
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: space-between;
@@ -124,6 +124,10 @@
 		width: 100%;
 		height: auto;
 		margin-bottom: 50px;
+		margin-top: 50px;
+	}
+	.mainInfo img{
+		width: 30%
 	}
 	.mainContent {
 		flex-flow: row wrap;
@@ -151,6 +155,7 @@
 		justify-content: space-around;
 		align-items: center;
 		text-align: center;
+		width: 90%;
 	}
 	.secondContent figure img {
 		max-width: 400px;
@@ -165,8 +170,9 @@
 		font-size: 1.2em;
 	}
 	.contactUS {
+		background: #333333;
 		width: 100%;
-		height: 70vh;
+		height: 84vh;
 	}
 	.footer {
 		width: 100%;
@@ -177,6 +183,7 @@
 	}
 	@media (max-width:600px) {
 		.mainInfo, .secondContent .myWrapper {
+			margin-top: 100px;
 			flex-flow: column;
 			-webkit-flex-flow: column;
 			justify-content: center;

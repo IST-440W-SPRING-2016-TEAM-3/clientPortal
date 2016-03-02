@@ -4,7 +4,7 @@ extends loggedinlayout
 block content
 	.p-t
 	center 
-		h1= "Welcome, " + userdata.firstname + " " + userdata.lastname + "!"
+		h1= "Welcome Back, " + userdata.firstname + " " + userdata.lastname + "!"
 	.container
 		.row
 			.col-sm-2
@@ -23,24 +23,49 @@ block content
 				.tab-content
 					#profilepage.tab-pane.fade.in.active
 						.col-sm-12
-							.form-group
-								.input-group
-									span.input-group-addon Email:
-									input.form-control(type='text', value='#{userdata.email}', readonly)
-							.form-group
-								.input-group
-									span.input-group-addon Address:
-									input.form-control(type='text', value='#{userdata.address[0].streetaddress + " " + userdata.address[0].city + ", " + userdata.address[0].state+ " " + userdata.address[0].zip}', readonly)
-							.form-group
-								.input-group
-									span.input-group-addon Phone Number:
-									input.form-control(type='text', value='#{userdata.phone}', readonly)
+							.col-sm-4
+								.panel.panel-default.cards
+									.panel-heading
+										h3.panel-title Email
+											span.glyphicon.glyphicon-envelope(aria-hidden='true')
+									.panel-body
+										center
+											p= userdata.email
+							.col-sm-4
+								.panel.panel-default.cards
+									.panel-heading
+										h3.panel-title Address
+											span.glyphicon.glyphicon-home(aria-hidden='true')
+									.panel-body
+										center
+											p= userdata.address[0].streetaddress 
+											p= userdata.address[0].city + ", " + userdata.address[0].state+ " " + userdata.address[0].zip
+							.col-sm-4
+								.panel.panel-default.cards
+									.panel-heading
+										h3.panel-title Email
+											span.glyphicon.glyphicon-earphone(aria-hidden='true')
+									.panel-body
+										center
+											p= userdata.phone
+							//- .form-group
+							//- 	.input-group
+							//- 		span.input-group-addon Email:
+							//- 		input.form-control(type='text', value='#{userdata.email}', readonly)
+							//- .form-group
+							//- 	.input-group
+							//- 		span.input-group-addon Address:
+							//- 		input.form-control(type='text', value='#{userdata.address[0].streetaddress + " " + userdata.address[0].city + ", " + userdata.address[0].state+ " " + userdata.address[0].zip}', readonly)
+							//- .form-group
+							//- 	.input-group
+							//- 		span.input-group-addon Phone Number:
+							//- 		input.form-control(type='text', value='#{userdata.phone}', readonly)
 					#appointments.tab-pane.fade
 						.col-sm-12
 							.col-sm-9
 								h2 Appointments
 							.col-sm-3(class="p-t-b-h")
-								a(class="btn btn-440w") Request New Appointment
+								a(class="btn btn-440w", ng-click="modalOpen()") Request New Appointment
 						.col-sm-12
 						table(class="table table-striped")
 							thead
