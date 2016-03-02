@@ -1,6 +1,6 @@
 (function(angular, undefined) {
-	
-	function sortArrOfObjectsByParam(arrToSort , strObjParamToSortBy, sortAscending) {
+
+	function sortArrOfObjectsByParam(arrToSort, strObjParamToSortBy, sortAscending) {
 		if (sortAscending === undefined) sortAscending = true;
 
 		if (sortAscending) {
@@ -14,11 +14,24 @@
 		}
 	}
 
-	angular.module("clientportal", [])
+	angular.module("clientportal", [
+		'ui.bootstrap'
+	])
 
-	.controller("main", ['$scope', '$http', function($scope, $http) {
+	.controller("main", ['$scope', '$http', '$uibModal', function($scope, $http, $uibModal) {
 		$scope.getLocation = function() {
 			return document.cookie;
+		};
+
+		$scope.modalOpen = function() {
+
+			var modalInstance = $uibModal.open({
+				animation: true,
+				backdrop: 'static',
+				templateUrl: "javascripts/template/appointment.modal.tpl.html",
+				controller: 'ModalController',
+				size: "lg"
+			});
 		};
 
 		$http({
@@ -55,5 +68,12 @@
 					}
 				}
 			}, function errorCallback(response) {});
-	}]);
+	}])
+
+	.controller('ModalController',['$scope', '$uibModalInstance', function($scope, $uibModalInstance) {
+		$scope.modalCancel = function() {
+			$uibModalInstance.close();
+		};
+	}])
+	;
 })(angular);
