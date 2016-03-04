@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var login = require('../public/javascripts/userLogin');
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('login', { title: 'Login' });
 });
@@ -14,7 +13,7 @@ router.post('/', function(req, res, next) {
     userData.email = data.email;
     userData.password = data.pass;
 
-    if(userData.email !== undefined){
+    if(userData.email && userData.password){
         login.checkUser(userData.email, userData.password, function(err, user) {
             if (err) {
                 throw err;

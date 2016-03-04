@@ -19,8 +19,10 @@ var app = express();
 app.use(clientSessions({
   cookieName: 'session',
   secret: 'kFjaa4mRU9m8B3wuv3hFCQudJuHfAc',
-  duration: 24 * 60 * 60 * 1000,
-  activeDuration: 1000 * 60 * 5
+  duration: 1800000,
+  cookie:{
+      ephemeral: true
+  }
 }));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

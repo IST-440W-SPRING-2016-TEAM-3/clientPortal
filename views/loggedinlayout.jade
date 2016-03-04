@@ -1,28 +1,25 @@
 doctype html
-html(ng-app='clientportal')
+html(ng-app="clientportal")
 	head
-		title= title
+		title
 		link(rel='stylesheet', href='/stylesheets/bootstrap.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
-	body(ng-controller='main')
-		nav.navbar.navbar-default.navbar-fixed-top
-			.container-fluid
-				.navbar-header
-					button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
-						span.sr-only Toggle navigation
-						span.icon-bar
-						span.icon-bar
-						span.icon-bar
-					a.navbar-brand(href='/') IST 440W Group 3
-				#bs-example-navbar-collapse-1.collapse.navbar-collapse
-					ul.nav.navbar-nav.pull-right
-						li
-							a(href='/dashboard') User Dash
-						li
-							a.btn(href='/logout') Logout
+		link(rel='stylesheet', href='/stylesheets/index.css')
+	body(ng-controller="main").swag
+		nav
+			ul.myNav
+				li
+					a(href='/') IST 440W Group 3
+				li
+					a(href='/Dashboard') User Dashboard
+				li
+					a(href='/logout') Logout
+
 		block content
 
 		script(src='javascripts/jquery.js')
 		script(src='javascripts/bootstrap.js')
 		script(src='javascripts/angular.js')
+		script(src='javascripts/ui-bootstrap.js')
+		script(src='javascripts/ui-bootstrap-tpls.js')
 		script(src='javascripts/clientportal.js')
