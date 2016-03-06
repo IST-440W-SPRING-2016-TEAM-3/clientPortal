@@ -1,10 +1,10 @@
-extends layout
+extends loggedinlayout
 
 block content
-	.container
+	.container.swag
 		.row
 			h1 Login
-			.panel.panel-default
+			.panel.panel-default.login
 				.panel-body
 					.col-sm-12
 						form(action='/login', method='post')
@@ -18,4 +18,4 @@ block content
 									.input-group
 									input.form-control(type='password', placeholder='Password', ng-model='userData.pass', name='pass', required)
 								.row.center-text
-									button.btn.btn-success.btn-block(type='submit') Sign In
+									button.btn.btn-blue.btn-block(type='submit') Sign In

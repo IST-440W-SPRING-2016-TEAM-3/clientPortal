@@ -1,0 +1,357 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  body.swag {
+    background: url("../images/header.png"); }
+
+.modal-backdrop.in {
+  opacity: 0.8; }
+
+.panel.panel-default {
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  .panel.panel-default.login {
+    background: #95A7AD;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  .panel.panel-default .cards {
+    height: 10em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none; }
+
+.panel-default > .panel-heading {
+  background-color: #35A3C5;
+  border-color: #35A3C5;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0; }
+
+.table thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #000000; }
+
+.table-striped > tbody > tr:nth-child(odd) > td {
+  background-color: rgba(53, 163, 197, 0.2); }
+
+.nav.nav-pills.nav-stacked {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+
+.nav-pills > li.active > a {
+  color: #ffffff;
+  background-color: #35A3C5; }
+  .nav-pills > li.active > a:hover {
+    color: #ffffff;
+    background-color: #35A3C5; }
+  .nav-pills > li.active > a:focus {
+    color: #ffffff;
+    background-color: #35A3C5; }
+
+.nav > li > a:hover {
+  color: white;
+  background-color: #A1B4BA; }
+
+.nav-pills > li > a {
+  color: #ffffff;
+  border-radius: 0; }
+
+.btn-440w {
+  color: white;
+  background-color: #35A3C5; }
+  .btn-440w:hover {
+    color: white;
+    background-color: #A1B4BA; }
+
+.btn-blue {
+  color: #ffffff;
+  background-color: #35A3C5;
+  border-color: #35A3C5; }
+
+.p-t {
+  padding-top: 3em; }
+
+.p-t-b-h {
+  padding-top: 1.8em; }
+
+/*text styles*/
+h1 {
+  margin: 1em 0;
+  font-size: 3.0em;
+  font-weight: 700; }
+
+h2 {
+  margin: 0 0 0.5em;
+  font-size: 2.8em;
+  font-weight: 700;
+  line-height: 1.1em; }
+
+h3 {
+  margin: 0 0 0.5em;
+  font-size: 2.8em;
+  font-weight: 700; }
+
+h4 {
+  margin: 0 0 1.5em;
+  font-size: 2.8em;
+  font-weight: 700; }
+
+p {
+  font-size: 16px; }
+
+/*index page style*/
+.mypage {
+  padding: 0; }
+
+.myNav {
+  background: black;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0;
+  /*make it sticky */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1; }
+  .myNav a {
+    color: white;
+    text-decoration: none;
+    padding: 0 1em; }
+  .myNav li {
+    margin: 10px;
+    list-style-type: none; }
+    .myNav li:first-child {
+      margin-right: auto; }
+    .myNav li::after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 0; }
+    .myNav li:hover:after {
+      width: 100%;
+      background: #00B7FF;
+      transition: width 0.4s ease-out; }
+    .myNav li:first-child:hover:after {
+      margin-right: auto;
+      background: none; }
+
+/* underline effect on the nav items */
+/* don't want to underline the logo with blue line*/
+.myWrapper {
+  margin: auto;
+  width: 70%;
+  height: 100%; }
+
+.headerDiv {
+  width: 100%;
+  height: 100vh;
+  min-height: 800px;
+  background: url("../images/Header.jpg") top center no-repeat;
+  background-size: cover;
+  padding: 0;
+  display: inline-block;
+  box-shadow: 0 1px 20px black;
+  text-shadow: 2px 2px 2px black; }
+  .headerDiv section {
+    width: 40%;
+    left: 55%;
+    top: 20%;
+    position: absolute;
+    color: white;
+    padding: 50px;
+    border-radius: 30px; }
+  .headerDiv p {
+    font-size: 2em; }
+  .headerDiv section a.btn {
+    color: white;
+    position: relative;
+    margin-top: 40px;
+    padding: 12px 40px;
+    border: 2px solid white;
+    font-size: 1.2em;
+    transition: 0.5s ease-in-out all; }
+    .headerDiv section a.btn:active {
+      top: 3px; }
+    .headerDiv section a.btn:hover {
+      color: white;
+      border: 2px solid #00B7FF;
+      transition: 0.5s ease-in-out all; }
+
+.mainInfo {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: auto;
+  margin-bottom: 50px;
+  margin-top: 50px; }
+  .mainInfo img {
+    width: 30%; }
+
+.mainContent {
+  flex-flow: row wrap;
+  width: 30%;
+  text-align: center;
+  transition: all 0.5s ease-out; }
+  .mainContent:hover {
+    transform: scale(1.1);
+    transition: all 0.2s ease-out; }
+
+.secondContent {
+  width: 100%;
+  height: auto;
+  background: linear-gradient(to bottom right, #02b2f7, #214654);
+  background-size: cover;
+  box-shadow: 0 -1px 20px grey, 0 1px 20px grey;
+  color: white;
+  text-shadow: 2px 2px 2px black; }
+  .secondContent .myWrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    width: 90%; }
+  .secondContent figure img {
+    max-width: 400px;
+    max-height: 200px;
+    width: 100%;
+    height: 100%; }
+
+.secondDiv {
+  width: 40%; }
+  .secondDiv p {
+    font-size: 1.2em; }
+
+.contactUS {
+  background: #333333;
+  width: 100%;
+  height: 35vh; }
+  .contactUS .myWrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    border-top: 9em; }
+
+.footer {
+  width: 100%;
+  height: 50vh;
+  background: #152442;
+  background-size: cover;
+  box-shadow: 0 -1px 20px black; }
+
+@media (max-width: 600px) {
+  .mainInfo,
+  .secondContent .myWrapper {
+    margin-top: 100px;
+    flex-flow: column;
+    -webkit-flex-flow: column;
+    justify-content: center;
+    align-items: center; }
+
+  .mainContent,
+  .secondDiv {
+    width: 100%; }
+
+  .headerDiv section {
+    width: 70%;
+    margin: auto;
+    position: relative;
+    left: 0;
+    top: 0;
+    text-align: center; } }
+section.profile {
+  position: relative;
+  width: 200px;
+  border: 1px solid #171a1f;
+  border-radius: 8px;
+  text-transform: uppercase; }
+  section.profile::after {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 3%;
+    z-index: -1;
+    width: 94%;
+    height: 1px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.9);
+    content: ''; }
+  section.profile ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #171a1f;
+    border-radius: 0 0 7px 7px;
+    list-style: none;
+    background: #2f363e; }
+    section.profile ul li {
+      display: flex;
+      flex: 0 1 50%;
+      justify-content: center;
+      align-items: center;
+      border-top: 1px solid #3e424d;
+      padding: 20px 10px;
+      color: #c54b30;
+      font-weight: 600;
+      font-size: 1.2em; }
+      section.profile ul li + li {
+        border-left: 1px solid #171a1f;
+        box-shadow: -1px 0 0 #3e424d; }
+    section.profile ul span {
+      display: inline-block;
+      margin-left: 0.4em;
+      color: #a9a9a9;
+      font-weight: 300;
+      font-size: 0.8em; }
+
+.profile-header {
+  height: 85px;
+  border-radius: 7px 7px 0 0;
+  overflow: hidden;
+  background: #00BBFF; }
+  .profile-header img {
+    object-fit: cover; }
+
+.profile-content {
+  padding: 0 30px 30px;
+  border-radius: 0 0 5px 5px;
+  color: #e7e0cf;
+  text-align: center;
+  background: #2f363e; }
+  .profile-content img {
+    margin-top: -75px;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%; }
+  .profile-content h1 {
+    margin: 25px 0 0;
+    font-size: 1.4em;
+    font-weight: 200;
+    letter-spacing: 0.05em; }
+  .profile-content p {
+    margin: 5px 0 0;
+    color: #b49e6b;
+    font-size: 0.8125em;
+    font-weight: 200; }
+  .profile-content button {
+    margin-top: 25px;
+    padding: 10px 20px;
+    min-width: 160px;
+    background: #c54b30;
+    border: 1px solid #171c22;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 0 #d16e59;
+    color: #e7e0cf;
+    font-family: inherit;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+    transition: background ease-out 0.15s; }
+    .profile-content button:hover, .profile-content button:focus {
+      background: #ac422a; }
+    .profile-content button:focus {
+      outline: none;
+      box-shadow: inset 0 1px 0 0 #d16e59, 0 0 0 3px #e7e0cf; }
+    .profile-content button:active {
+      background: #943824;
+      transition: none; }
+
+/*# sourceMappingURL=default.css.map */

@@ -26,16 +26,19 @@ block content
 							.col-sm-4
 								.panel.panel-default.cards
 									.panel-heading
-										h3.panel-title Email
+										panel-title
+											//- img(src="../images/icons/web.svg")
 											span.glyphicon.glyphicon-envelope(aria-hidden='true')
 									.panel-body
 										center
+											//- img(src="../images/icons/web.svg")
 											p= userdata.email
 							.col-sm-4
 								.panel.panel-default.cards
 									.panel-heading
-										h3.panel-title Address
-											span.glyphicon.glyphicon-home(aria-hidden='true')
+										panel-title
+											span.glyphicon.glyphicon-envelope(aria-hidden='true')
+											//- img(src="../images/icons/internet.svg")
 									.panel-body
 										center
 											p= userdata.address[0].streetaddress 
@@ -43,23 +46,12 @@ block content
 							.col-sm-4
 								.panel.panel-default.cards
 									.panel-heading
-										h3.panel-title Email
-											span.glyphicon.glyphicon-earphone(aria-hidden='true')
+										panel-title
+											span.glyphicon.glyphicon-envelope(aria-hidden='true')
+											//- img(src="../images/icons/phone.svg")
 									.panel-body
 										center
 											p= userdata.phone
-							//- .form-group
-							//- 	.input-group
-							//- 		span.input-group-addon Email:
-							//- 		input.form-control(type='text', value='#{userdata.email}', readonly)
-							//- .form-group
-							//- 	.input-group
-							//- 		span.input-group-addon Address:
-							//- 		input.form-control(type='text', value='#{userdata.address[0].streetaddress + " " + userdata.address[0].city + ", " + userdata.address[0].state+ " " + userdata.address[0].zip}', readonly)
-							//- .form-group
-							//- 	.input-group
-							//- 		span.input-group-addon Phone Number:
-							//- 		input.form-control(type='text', value='#{userdata.phone}', readonly)
 					#appointments.tab-pane.fade
 						.col-sm-12
 							.col-sm-9
