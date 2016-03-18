@@ -114,7 +114,7 @@ body {
 /* don't want to underline the logo with blue line*/
 .myWrapper {
   margin: auto;
-  width: 70%;
+  width: 75%;
   height: 100%; }
 
 .headerDiv {
@@ -136,7 +136,7 @@ body {
     padding: 50px;
     border-radius: 30px; }
   .headerDiv p {
-    font-size: 27px; }
+    font-size: 25px; }
   .headerDiv h1 {
     color: white;
     text-align: left; }
@@ -173,7 +173,7 @@ body {
       margin-bottom: 20px;
       border-bottom: 3px solid #00B7FF; }
   .welcomeContent p {
-    font-size: 27px; }
+    font-size: 25px; }
   .welcomeContent .myWrapper {
     display: flex;
     flex-flow: row wrap;
@@ -181,27 +181,26 @@ body {
     align-content: center;
     align-items: center; }
   .welcomeContent .welcomeInfo {
-    width: 35%;
+    width: 30%;
     height: auto; }
   .welcomeContent .welcomeImage {
-    width: 65%;
+    width: 70%;
     height: auto; }
     .welcomeContent .welcomeImage img {
       position: relative;
-      width: 100%;
-      height: 100%; }
+      width: 100%; }
 
 .firstContent {
   height: auto;
   min-height: 50vh;
   width: 100%;
-  margin-top: 50px;
-  margin-bottom: 50px; }
+  padding-top: 50px;
+  padding-bottom: 50px; }
   .firstContent .myWrapper h1 {
     text-align: center; }
   .firstContent .myWrapper p {
     color: #333333;
-    font-size: 27px;
+    font-size: 25px;
     text-shadow: none; }
   .firstContent .mainInfo {
     display: flex;
@@ -211,17 +210,18 @@ body {
     width: 100%;
     margin-top: 5%; }
     .firstContent .mainInfo img {
-      width: 20%; }
+      width: 15%; }
     .firstContent .mainInfo .mainContent {
       width: 30%;
+      margin-right: 1%;
       text-align: center;
       transition: all 0.5s ease-out; }
-      .firstContent .mainInfo .mainContent::after {
+      .firstContent .mainInfo .mainContent p:nth-of-type(1)::after {
         content: '';
         display: block;
         height: 3px;
-        width: 25%;
-        padding-top: 20px;
+        width: 7%;
+        padding: 20px 0px 0px 0px;
         margin: auto;
         border-bottom: 3px solid #00B7FF; }
       .firstContent .mainInfo .mainContent:hover {
@@ -245,17 +245,17 @@ body {
     justify-content: center;
     align-items: stretch;
     align-content: center; }
-    .contentTwo .myWrapper .divOne, .contentTwo .myWrapper .divTwo, .contentTwo .myWrapper .divThree, .contentTwo .myWrapper .divFour {
+    .contentTwo .myWrapper .divOne, .contentTwo .myWrapper .divTwo {
       flex-grow: 1;
       min-height: 200px;
       width: 50%;
       color: white; }
-      .contentTwo .myWrapper .divOne p, .contentTwo .myWrapper .divTwo p, .contentTwo .myWrapper .divThree p, .contentTwo .myWrapper .divFour p {
-        font-size: 27px; }
-      .contentTwo .myWrapper .divOne h1, .contentTwo .myWrapper .divTwo h1, .contentTwo .myWrapper .divThree h1, .contentTwo .myWrapper .divFour h1 {
+      .contentTwo .myWrapper .divOne p, .contentTwo .myWrapper .divTwo p {
+        font-size: 25px; }
+      .contentTwo .myWrapper .divOne h1, .contentTwo .myWrapper .divTwo h1 {
         text-align: left;
         color: white; }
-        .contentTwo .myWrapper .divOne h1::after, .contentTwo .myWrapper .divTwo h1::after, .contentTwo .myWrapper .divThree h1::after, .contentTwo .myWrapper .divFour h1::after {
+        .contentTwo .myWrapper .divOne h1::after, .contentTwo .myWrapper .divTwo h1::after {
           content: '';
           display: block;
           height: 3px;
@@ -281,15 +281,6 @@ body {
       .contentTwo .myWrapper .divTwo a:active {
         top: 3px; }
 
-.ourTeam .myWrapper {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center; }
-  .ourTeam .myWrapper .userCard {
-    flex-basis: 30%;
-    height: auto; }
 .ourTeam h4::after {
   content: '';
   display: block;
@@ -299,6 +290,15 @@ body {
   padding-top: 20px;
   margin-bottom: 20px;
   border-bottom: 3px solid #4a4a4a; }
+.ourTeam .myWrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center; }
+  .ourTeam .myWrapper .userCard {
+    flex-basis: 30%;
+    height: auto; }
 
 .contactUS {
   background: #333333;
@@ -452,10 +452,11 @@ body {
 /*text styles*/
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Condensed', Arial, sans-serif;
-  /*"Lucida Grande"*/ }
+  /*"Lucida Grande"*/
+  margin: 0px; }
 
 h1 {
-  margin: 20px 0px;
+  padding: 20px 0px;
   font-size: 3.5em;
   font-weight: 700;
   color: #4a4a4a;
@@ -482,5 +483,9 @@ h4 {
 
 p {
   font-weight: 400; }
+
+span {
+  font-size: 50px;
+  color: #4a4a4a; }
 
 /*# sourceMappingURL=default.css.map */
