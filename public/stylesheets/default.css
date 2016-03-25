@@ -215,7 +215,8 @@ body {
       width: 30%;
       margin-right: 1%;
       text-align: center;
-      transition: all 0.5s ease-out; }
+      transition: all 0.5s ease-out;
+      cursor: pointer; }
       .firstContent .mainInfo .mainContent p:nth-of-type(1)::after {
         content: '';
         display: block;
@@ -227,6 +228,9 @@ body {
       .firstContent .mainInfo .mainContent:hover {
         transform: scale(1.1);
         transition: all 0.2s ease-out; }
+        .firstContent .mainInfo .mainContent:hover span {
+          color: #00B7FF;
+          transition: all .5s ease-out; }
 
 .contentTwo {
   width: 100%;
@@ -298,7 +302,8 @@ body {
   align-content: center; }
   .ourTeam .myWrapper .userCard {
     flex-basis: 30%;
-    height: auto; }
+    height: auto;
+    margin-right: 10px; }
 
 .contactUS {
   background: #333333;
