@@ -1,29 +1,14 @@
-/*text styles*/
-h1 {
-	margin: 1em 0;
-	font-size: 3.0em;
-	font-weight: 700;
-}
-h2 {
-	margin: 0 0 0.5em;
-	font-size: 2.8em;
-	font-weight: 700;
-	line-height: 1.1em;
-}
-h3 {
-	margin: 0 0 0.5em;
-	font-size: 2.8em;
-	font-weight: 700;
-}
-h4 {
-	margin: 0 0 1.5em;
-	font-size: 2.8em;
-	font-weight: 700;
-}
-p {
-	font-size: 16px;
-}
 /*index page style*/
+$myparagraph: 25px;
+$myshadow: 1px 1px 1px black;
+$myboxshadow: 0 -1px 20px gray; //0 1px 20px gray; for bottom
+$mySpacing: 50px;
+
+$firstColor: #00B7FF; //light blue
+
+$thirdColor: #4a4a4a; //dark grey
+$fourthColor: #909090; //light grey
+
 .mypage {
 	padding: 0;
 }
@@ -66,18 +51,21 @@ p {
 		}
 	}
 }
+
 /* underline effect on the nav items */
 /* don't want to underline the logo with blue line*/
+
 .myWrapper {
 	margin: auto;
-	width: 70%;
+	width: 75%;
 	height: 100%;
 }
+//END myWrapper
 .headerDiv {
 	width: 100%;
 	height: 100vh;
 	min-height: 800px;
-	background: url("../images/Header.jpg") top center no-repeat;
+	background: url("../images/Header.jpg") top center;
 	background-size: cover;
 	padding: 0;
 	display: inline-block;
@@ -94,7 +82,11 @@ p {
 		border-radius: 30px;
 	}
 	p {
-		font-size: 2em;
+		font-size: $myparagraph;
+	}
+	h1{
+		color:white;
+		text-align: left;
 	}
 	section a.btn {
 		color: white;
@@ -114,55 +106,208 @@ p {
 		}
 	}
 }
-.mainInfo {
-	display: flex;
-	justify-content: space-around;
+//END HEADER
+.welcomeContent{
 	width: 100%;
+	background: #fff;
+	min-height: 40vh;
 	height: auto;
-	margin-bottom: 50px;
-	margin-top: 50px;
-	img {
-		width: 30%;
-	}
-}
-.mainContent {
-	flex-flow: row wrap;
-	width: 30%;
-	text-align: center;
-	transition: all 0.5s ease-out;
-	&:hover {
-		transform: scale(1.1);
-		transition: all 0.2s ease-out;
-	}
-}
-.secondContent {
-	width: 100%;
-	height: auto;
-	background: linear-gradient(to bottom right, rgb(2, 178, 247), rgb(33, 70, 84));
-	background-size: cover;
-	box-shadow: 0 -1px 20px grey, 0 1px 20px grey;
-	color: white;
-	text-shadow: 2px 2px 2px black;
-	.myWrapper {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
+	h1{
 		text-align: center;
-		width: 90%;
 	}
-	figure img {
-		max-width: 400px;
-		max-height: 200px;
-		width: 100%;
-		height: 100%;
+	h2{
+		margin: 0;
+		&::after {
+		content: '';
+		display: block;
+		height: 3px;
+		width: 10%;
+		padding-top: 20px;
+		margin-bottom: 20px;
+		border-bottom: 3px solid $firstColor;
+	}
+	}
+	p{
+		font-size: $myparagraph;
+	}
+	.myWrapper{
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		align-content: center;
+		align-items: center;
+		//width: 85%;
+	}
+	.welcomeInfo{
+		width: 30%;
+		height: auto;
+	}
+	.welcomeImage{
+		width: 70%;
+		height: auto;
+		img{
+			position: relative;
+			width:100%;
+		}
 	}
 }
-.secondDiv {
-	width: 40%;
-	p {
-		font-size: 1.2em;
+//END welcomeContent
+.firstContent{
+	height: auto;
+	min-height: 50vh;
+	width: 100%;
+	padding-top: $mySpacing; padding-bottom: $mySpacing;
+	.myWrapper{
+		h1{
+			text-align: center;
+		}
+		p{
+			color:#333333;
+			font-size: $myparagraph;
+			text-shadow: none;
+		}
+	}
+		.mainInfo {
+			display: flex;
+			justify-content: space-around;
+			align-items: flex-start;
+			flex-flow: row wrap;
+			width: 100%;
+			margin-top: 5%;
+			img {
+				width: 15%;
+			}
+				.mainContent {
+					width: 30%;
+					margin-right: 1%;
+					text-align: center;
+					transition: all 0.5s ease-out;
+					cursor: pointer;
+					p:nth-of-type(1){
+						&::after {
+							content: '';
+							display: block;
+							height: 3px;
+							width: 7%;
+							padding: 20px 0px 0px 0px;
+							margin: auto;
+							border-bottom: 3px solid $firstColor;
+						}
+					}
+					&:hover {
+						transform: scale(1.1);
+						transition: all 0.2s ease-out;
+						span{
+							color:$firstColor;
+							transition: all .5s ease-out;
+						}
+					}
+				}
+			}
+	}
+//END firstContent
+.contentTwo{
+	width: 100%;
+	height: auto;
+	min-height: 50vh;
+	display:flex;
+	align-content: center;
+	background-color:$firstColor;
+	padding-top: $mySpacing/2;
+	padding-bottom: $mySpacing/2;
+	box-shadow: 0 -1px 20px gray;
+	box-shadow: 0 -1px 20px gray;
+	.myWrapper{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: stretch;
+		align-content: center;
+		.divOne, .divTwo{
+			flex-grow: 1;
+			min-height: 200px;
+			width: 50%;
+			color:white;
+			p {
+			font-size: $myparagraph;
+			}
+			h1{
+				text-align: left;
+		 	color:white;
+				&::after {
+				content: '';
+				display: block;
+				height: 3px;
+				width: 10%;
+				padding-top: 20px;
+				border-bottom: 3px solid white;
+		}
+		}
+	}
+		.divOne{
+			// background: red;
+			figure {
+				background: url("../images/doc2.png");
+				width: 436px;
+				height: 572px;
+				position: relative;
+				margin: auto;
+				&:hover{
+					background: url("../images/doc2Hover.png");
+				}
+			}
+		}
+		.divTwo{
+			// background: yellow;
+			a{
+				color: white;
+				position: relative;
+				margin-top: 40px;
+				padding: 12px 40px;
+				border: 2px solid white;
+				font-size: 1.2em;
+				transition: 0.5s ease-in-out all;
+				&:active {
+					top: 3px;
+				}
+			}
+			}
+		.divThree{
+			// background: green;
+			}
+		.divFour{
+			// background: black;
+			}
+		}
+	}
+//END contentTwo
+.ourTeam{
+	h4{
+		&::after {
+		content: '';
+		display: block;
+		height: 3px;
+		width: 5%;
+		margin: auto;
+		padding-top: 20px;
+		margin-bottom: 20px;
+		border-bottom: 3px solid $thirdColor;
+		}
+	}
+	.myWrapper{
+	display:flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	.userCard{
+		flex-basis:30%;
+		height: auto;
+		margin-right: 10px;
+		}
 	}
 }
+//END ourTeam
 .contactUS {
 	background: #333333;
 	width: 100%;
@@ -176,25 +321,45 @@ p {
 		border-top:9em;
 	}
 }
+//END contactUS
 .footer {
 	width: 100%;
-	height: 50vh;
-	background: rgba(21, 36, 66, 1);
+	height: 20vh;
+	background: $thirdColor;
+	color: $fourthColor;
 	background-size: cover;
 	box-shadow: 0 -1px 20px black;
+	.myWrapper{
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	section{
+		position: relative;
+		text-align: left;
+		width: 25%;
+		font-size: 20px;
+	}
 }
+//END footer
+
+
 @media (max-width: 600px) {
-	.mainInfo,
-	.secondContent .myWrapper {
-		margin-top: 100px;
+	.firstContent .mainInfo,
+	.contentTwo .myWrapper {
 		flex-flow: column;
 		-webkit-flex-flow: column;
 		justify-content: center;
 		align-items: center;
+		width: 100%;
 	}
 	.mainContent,
+	.myWrapper,
 	.secondDiv {
 		width: 100%;
+	}
+	.mainContent{
+		padding-top: 20px;
 	}
 	.headerDiv section {
 		width: 70%;
@@ -203,5 +368,9 @@ p {
 		left: 0;
 		top: 0;
 		text-align: center;
+	}
+
+	.secondContent .myWrapper figure{
+		display: none;
 	}
 }

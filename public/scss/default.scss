@@ -1,3 +1,44 @@
 @import 'style';
 @import 'index';
 @import 'cards';
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
+
+/*text styles*/
+h1,h2,h3,h4,h5,h6{
+font-family: 'Roboto Condensed', Arial, sans-serif; /*"Lucida Grande"*/
+margin: 0px;
+}
+h1 {
+	padding: 20px 0px;
+	font-size: 3.5em;
+  font-weight: 700;
+  color: $thirdColor;
+	text-align: center;
+}
+h2 {
+	margin: 1em 1em;
+	font-size: 2.8em;
+	font-weight: 700;
+	line-height: 1.1em;
+  color: $thirdColor;
+}
+h3 {
+	margin: 0 0.5em 0.5em;
+	font-size: 2.8em;
+	font-weight: 700;
+}
+h4 {
+	margin: 0 0 2.5em;
+	font-size: 1.8em;
+	font-weight: 400;
+  color: $fourthColor;
+	text-align: center;
+}
+p{
+  font-weight: 400;
+}
+
+span{
+	font-size: 50px;
+	color:$thirdColor;
+}

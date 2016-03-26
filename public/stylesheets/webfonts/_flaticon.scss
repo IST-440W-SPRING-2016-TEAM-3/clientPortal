@@ -1,0 +1,65 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 25/03/2016 02:45
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-arrows:before { content: "\f100"; }
+.flaticon-dark:before { content: "\f101"; }
+.flaticon-day:before { content: "\f102"; }
+.flaticon-medical:before { content: "\f103"; }
+.flaticon-medical-1:before { content: "\f104"; }
+.flaticon-medical-2:before { content: "\f105"; }
+.flaticon-medical-3:before { content: "\f106"; }
+.flaticon-medical-4:before { content: "\f107"; }
+.flaticon-science:before { content: "\f108"; }
+.flaticon-security:before { content: "\f109"; }
+.flaticon-technology:before { content: "\f10a"; }
+.flaticon-technology-1:before { content: "\f10b"; }
+.flaticon-time:before { content: "\f10c"; }
+    
+    $font-Flaticon-arrows: "\f100";
+    $font-Flaticon-dark: "\f101";
+    $font-Flaticon-day: "\f102";
+    $font-Flaticon-medical: "\f103";
+    $font-Flaticon-medical-1: "\f104";
+    $font-Flaticon-medical-2: "\f105";
+    $font-Flaticon-medical-3: "\f106";
+    $font-Flaticon-medical-4: "\f107";
+    $font-Flaticon-science: "\f108";
+    $font-Flaticon-security: "\f109";
+    $font-Flaticon-technology: "\f10a";
+    $font-Flaticon-technology-1: "\f10b";
+    $font-Flaticon-time: "\f10c";
