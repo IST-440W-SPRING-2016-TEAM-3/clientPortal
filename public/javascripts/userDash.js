@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'),
     User = require('./userAuth'),
-    connStr = 'mongodb://localhost:27017/440w';
+    connStr = 'mongodb://127.0.0.1:27017/440w';
 
 //We want to check to see if the user already exists in the datebase
 this.checkUser = function(email, uuid, cb){
