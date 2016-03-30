@@ -18,20 +18,72 @@
 		'ui.bootstrap'
 	])
 
-	.controller("main", ['$scope', '$http', '$uibModal', function($scope, $http, $uibModal) {
+	/*
+	.displayCard
+		.displayContainer
+			.displayTop
+			.information
+				img.displayIcon(src="../images/userIcons/allergies/food.svg")
+				.name Allergy
+				.displayDescription Soy
+					p Some information about soy shit
+	*/
+
+	.directive("profileCards", [function() {
+		return {
+			restrict: "E",
+			link: function(scope, el, attrs) {
+				var displayCard = angular.element('<div class="displayCard"></div>'),
+					displayContainer = angular.element('<div class="displayContainer"></div>'),
+					displayTop = angular.element('<div class="displayTop"></div>'),
+					information = angular.element('<div class="information"></div>'),
+					img = angular.element('<img class="displayIcon" src="../images/icons/web.svg"></img>'),
+					name = angular.element('<div class="name">Allergy</div>'),
+					displayDescription = angular.element('<div class="displayDescription">Soy</div>'),
+					p = angular.element('<p>Some information about soy shit</p>');
+
+
+				displayDescription.append(p);
+				information.append(img);
+				information.append(name);
+				information.append(displayDescription);
+				displayContainer.append(displayTop);
+				displayContainer.append(information);
+				displayCard.append(displayContainer);
+
+				el.append(displayCard.html());
+			}
+		};
+	}])
+
+	.controller("main", ['$scope', '$http', function($scope, $http) {
+		$('.clockpicker').clockpicker({
+			default: 'now'
+		});
+
+		$('.datepicker').datepicker({
+		});
+
 		$scope.getLocation = function() {
 			return document.cookie;
 		};
 
-		$scope.modalOpen = function() {
-
-			var modalInstance = $uibModal.open({
-				animation: true,
-				backdrop: 'static',
-				templateUrl: "javascripts/template/appointment.modal.tpl.html",
-				controller: 'ModalController',
-				size: "lg"
-			});
+		$scope.reqAppt = function(event){
+			var reqApptData = $scope.apptReq;
+			event.preventDefault();
+			$http({
+					method: 'POST',
+					url: 'http://127.0.0.1:8000/api/requestAppointment',
+					data: reqApptData,
+					headers: {
+						'Content-Type': 'application/json'
+					}
+				})
+				.then(function successCallback(response) {
+					if(response.status === 200){
+						//We gon do crazy stuff hur
+					}
+				});
 		};
 
 		$http({
@@ -68,12 +120,6 @@
 					}
 				}
 			}, function errorCallback(response) {});
-	}])
-
-	.controller('ModalController',['$scope', '$uibModalInstance', function($scope, $uibModalInstance) {
-		$scope.modalCancel = function() {
-			$uibModalInstance.close();
-		};
 	}])
 	;
 })(angular);

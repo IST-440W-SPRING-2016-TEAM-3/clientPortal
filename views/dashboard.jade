@@ -28,85 +28,59 @@ block content
 					#overview.tab-pane.fade.in.active
 						.col-sm-12
 							.col-sm-4
-								.panel.panel-default.cards
-									.panel-heading
-										panel-title
-											//- img(src="../images/icons/web.svg")
-											span.glyphicon.glyphicon-envelope(aria-hidden='true')
-									.panel-body
-										center
-											//- img(src="../images/icons/web.svg")
-											p= userdata.email
+								profile-cards
 							.col-sm-4
-								.panel.panel-default.cards
-									.panel-heading
-										panel-title
-											span.glyphicon.glyphicon-envelope(aria-hidden='true')
-											//- img(src="../images/icons/internet.svg")
-									.panel-body
-										center
-											p= userdata.address[0].streetaddress 
-											p= userdata.address[0].city + ", " + userdata.address[0].state+ " " + userdata.address[0].zip
+								profile-cards
 							.col-sm-4
-								.panel.panel-default.cards
-									.panel-heading
-										panel-title
-											span.glyphicon.glyphicon-envelope(aria-hidden='true')
-											//- img(src="../images/icons/phone.svg")
-									.panel-body
-										center
-											p= userdata.phone
-					#profilepage.tab-pane.fade.in.active
-						.col-sm-12
-							.col-sm-4
-								.panel.panel-default.cards
-									.panel-heading
-										panel-title
-											//- img(src="../images/icons/web.svg")
-											span.glyphicon.glyphicon-envelope(aria-hidden='true')
-									.panel-body
-										center
-											//- img(src="../images/icons/web.svg")
-											p= userdata.email
-							.col-sm-4
-								.panel.panel-default.cards
-									.panel-heading
-										panel-title
-											span.glyphicon.glyphicon-envelope(aria-hidden='true')
-											//- img(src="../images/icons/internet.svg")
-									.panel-body
-										center
-											//p= userdata.address[0].streetaddress 
-											//p= userdata.address[0].city + ", " + userdata.address[0].state+ " " + userdata.address[0].zip
-							.col-sm-4
-								.panel.panel-default.cards
-									.panel-heading
-										panel-title
-											span.glyphicon.glyphicon-envelope(aria-hidden='true')
-											//- img(src="../images/icons/phone.svg")
-									.panel-body
-										center
-											p= userdata.phone
+								profile-cards
+					#profilepage.tab-pane.fade.in
 					#appointments.tab-pane.fade
 						.col-sm-12
-							.col-sm-9
-								h2 Appointments
-							.col-sm-3(class="p-t-b-h")
-								a(class="btn btn-440w", ng-click="modalOpen()") Request New Appointment
+							h2 Appointments
 						.col-sm-12
-						table(class="table table-striped")
-							thead
-								tr 
-									th Date
-									th Time
-									th Doctor
-									th Description
-							tbody
-								tr(ng-repeat='data in userAppointments')
-									td {{data.date}}
-									td {{data.time}}
-									td {{data.doctor}}
-									td {{data.description}}
+							table(class="table table-striped")
+								thead
+									tr 
+										th Date
+										th Time
+										th Doctor
+										th Description
+								tbody
+									tr(ng-repeat='data in userAppointments')
+										td {{data.date}}
+										td {{data.time}}
+										td {{data.doctor}}
+										td {{data.description}}
+						.col-sm-12
+							hr
+							form
+								.form-horizontal
+									.form-group
+										.col-sm-12.input-group
+											label.col-sm-3.control-label Date
+											.col-sm-9
+												input.form-control.datepicker(type='text', ng-model="apptReq.date")
+									.form-group
+										.col-sm-12.input-group
+											label.col-sm-3.control-label Time
+											.col-sm-9
+												.input-group.clockpicker(data-placement='top', data-align='top', data-autoclose='true')
+													input.form-control(type='text', ng-model="apptReq.time")
+													span.input-group-addon
+														span.glyphicon.glyphicon-time
+
+									.form-group
+										.col-sm-12.input-group
+											label.col-sm-3.control-label Doctor
+											.col-sm-9
+												input.form-control(type='text', ng-model="apptReq.doctor")
+									.form-group
+										.col-sm-12.input-group
+											label.col-sm-3.control-label Reason For Appointment
+											.col-sm-9
+												input.form-control(type='text', ng-model="apptReq.reasonForAppt")
+									button(class="btn btn-440w pull-right", ng-click="reqAppt($event)") Request New Appointment
+
 					#medicines.tab-pane.fade
 					#allergies.tab-pane.fade
 					#reports.tab-pane.fade

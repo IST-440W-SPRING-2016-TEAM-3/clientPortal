@@ -3,7 +3,9 @@ body {
   font-family: 'Roboto Condensed', Arial, sans-serif;
   /*"Lucida Grande"*/ }
   body.swag {
-    background: url("../images/header.png"); }
+    background: url("../images/header.png");
+    position: relative;
+    top: 3em; }
 
 .modal-backdrop.in {
   opacity: 0.8; }
@@ -57,7 +59,8 @@ body {
 
 .btn-440w {
   color: white;
-  background-color: #35A3C5; }
+  background-color: #35A3C5;
+  margin-right: 2.2em; }
   .btn-440w:hover {
     color: white;
     background-color: #A1B4BA; }
@@ -409,7 +412,6 @@ body {
 
 .displayContainer {
   margin: 0 auto;
-  width: 200px;
   height: 300px;
   background: white;
   border-radius: 6px;
@@ -455,20 +457,25 @@ body {
       font-size: 18px; }
 
 /*text styles*/
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Roboto Condensed', Arial, sans-serif;
   /*"Lucida Grande"*/
-  margin: 0px; }
+  margin: 0; }
 
 h1 {
-  padding: 20px 0px;
+  padding: 20px 0;
   font-size: 3.5em;
   font-weight: 700;
   color: #4a4a4a;
   text-align: center; }
 
 h2 {
-  margin: 1em 1em;
+  margin: 1em;
   font-size: 2.8em;
   font-weight: 700;
   line-height: 1.1em;
@@ -490,7 +497,9 @@ p {
   font-weight: 400; }
 
 span {
-  font-size: 50px;
   color: #4a4a4a; }
+
+.popover.clockpicker-popover {
+  top: 257.375px !important; }
 
 /*# sourceMappingURL=default.css.map */
