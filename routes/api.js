@@ -44,4 +44,9 @@ router.get('/appointments', function(req, res, next) {
     }
 });
 
+router.post('/requestAppointment', function(req, res, next) {
+    console.log(req.body);
+    res.end();
+});
+
 module.exports = router;
