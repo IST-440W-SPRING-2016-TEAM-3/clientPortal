@@ -18,40 +18,55 @@
 		'ui.bootstrap'
 	])
 
-	/*
-	.displayCard
-		.displayContainer
-			.displayTop
-			.information
-				img.displayIcon(src="../images/userIcons/allergies/food.svg")
-				.name Allergy
-				.displayDescription Soy
-					p Some information about soy shit
-	*/
-
-	.directive("profileCards", [function() {
+	.directive("profileCards", ["$http",function($http) {
 		return {
 			restrict: "E",
 			link: function(scope, el, attrs) {
-				var displayCard = angular.element('<div class="displayCard"></div>'),
-					displayContainer = angular.element('<div class="displayContainer"></div>'),
-					displayTop = angular.element('<div class="displayTop"></div>'),
-					information = angular.element('<div class="information"></div>'),
-					img = angular.element('<img class="displayIcon" src="../images/icons/web.svg"></img>'),
-					name = angular.element('<div class="name">Allergy</div>'),
-					displayDescription = angular.element('<div class="displayDescription">Soy</div>'),
-					p = angular.element('<p>Some information about soy shit</p>');
+				var route = attrs.route;
+				$http({
+					method: 'GET',
+					url: 'http://127.0.0.1:8000/api/userdata',
+					headers: {
+						'Content-Type': 'application/json'
+					}
+				})
+				.success(function successCallback(response){
+					// console.log(response);
+					var ignore = {
+						"_id": "_id",
+						"__v": "__v",
+						"uuid": "uuid",
+					};
 
+					for(var key in response){
+						if(!ignore[key]){
+							// console.log(key);
+							var outer = angular.element('<div></div>'),
+								colsize = angular.element('<div class="col-sm-3"></div>'),
+								displayCard = angular.element('<div class="displayCard"></div>'),
+								displayContainer = angular.element('<div class="displayContainer"></div>'),
+								displayTop = angular.element('<div class="displayTop"></div>'),
+								information = angular.element('<div class="information"></div>'),
+								img = angular.element('<img class="displayIcon" src="../images/icons/web.svg"></img>'),
+								name = angular.element('<div class="name">' + key + '</div>'),
+								displayDescription = angular.element('<div class="displayDescription"></div>'),
+								p = angular.element('<p>' + response[key] + '</p>');
 
-				displayDescription.append(p);
-				information.append(img);
-				information.append(name);
-				information.append(displayDescription);
-				displayContainer.append(displayTop);
-				displayContainer.append(information);
-				displayCard.append(displayContainer);
+							displayDescription.append(p);
+							information.append(img);
+							information.append(name);
+							information.append(displayDescription);
+							displayContainer.append(displayTop);
+							displayContainer.append(information);
+							displayCard.append(displayContainer);
+							colsize.append(displayCard);
+							outer.append(colsize);
 
-				el.append(displayCard.html());
+							el.append(outer.html());
+						}
+					}
+					return el;
+				});
 			}
 		};
 	}])
@@ -61,8 +76,7 @@
 			default: 'now'
 		});
 
-		$('.datepicker').datepicker({
-		});
+		$('.datepicker').datepicker({});
 
 		$scope.getLocation = function() {
 			return document.cookie;
@@ -72,18 +86,18 @@
 			var reqApptData = $scope.apptReq;
 			event.preventDefault();
 			$http({
-					method: 'POST',
-					url: 'http://127.0.0.1:8000/api/requestAppointment',
-					data: reqApptData,
-					headers: {
-						'Content-Type': 'application/json'
-					}
-				})
-				.then(function successCallback(response) {
-					if(response.status === 200){
-						//We gon do crazy stuff hur
-					}
-				});
+				method: 'POST',
+				url: 'http://127.0.0.1:8000/api/requestAppointment',
+				data: reqApptData,
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			})
+			.then(function successCallback(response) {
+				if(response.status === 200){
+					//We gon do crazy stuff hur
+				}
+			});
 		};
 
 		$http({

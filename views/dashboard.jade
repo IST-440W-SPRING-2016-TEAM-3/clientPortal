@@ -26,14 +26,8 @@ block content
 			.col-sm-10
 				.tab-content
 					#overview.tab-pane.fade.in.active
-						.col-sm-12
-							.col-sm-4
-								profile-cards
-							.col-sm-4
-								profile-cards
-							.col-sm-4
-								profile-cards
 					#profilepage.tab-pane.fade.in
+						profile-cards(route="Overview")
 					#appointments.tab-pane.fade
 						.col-sm-12
 							h2 Appointments
@@ -57,28 +51,23 @@ block content
 								.form-horizontal
 									.form-group
 										.col-sm-12.input-group
-											label.col-sm-3.control-label Date
-											.col-sm-9
-												input.form-control.datepicker(type='text', ng-model="apptReq.date")
+											label.control-label Date
+											input.form-control.datepicker(type='text', ng-model="apptReq.date")
 									.form-group
 										.col-sm-12.input-group
-											label.col-sm-3.control-label Time
-											.col-sm-9
-												.input-group.clockpicker(data-placement='top', data-align='top', data-autoclose='true')
-													input.form-control(type='text', ng-model="apptReq.time")
-													span.input-group-addon
-														span.glyphicon.glyphicon-time
-
+											label.control-label Time
+											.input-group.clockpicker(data-placement='top', data-align='top', data-autoclose='true')
+												input.form-control(type='text', ng-model="apptReq.time")
+												span.input-group-addon
+													span.glyphicon.glyphicon-time
 									.form-group
 										.col-sm-12.input-group
-											label.col-sm-3.control-label Doctor
-											.col-sm-9
-												input.form-control(type='text', ng-model="apptReq.doctor")
+											label.control-label Doctor
+											input.form-control(type='text', ng-model="apptReq.doctor")
 									.form-group
 										.col-sm-12.input-group
-											label.col-sm-3.control-label Reason For Appointment
-											.col-sm-9
-												input.form-control(type='text', ng-model="apptReq.reasonForAppt")
+											label.control-label Reason For Appointment
+											textarea.form-control(rows='3', ng-model="apptReq.reasonForAppt")
 									button(class="btn btn-440w pull-right", ng-click="reqAppt($event)") Request New Appointment
 
 					#medicines.tab-pane.fade

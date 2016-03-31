@@ -59,8 +59,7 @@ body {
 
 .btn-440w {
   color: white;
-  background-color: #35A3C5;
-  margin-right: 2.2em; }
+  background-color: #35A3C5; }
   .btn-440w:hover {
     color: white;
     background-color: #A1B4BA; }
@@ -117,8 +116,7 @@ body {
 /* don't want to underline the logo with blue line*/
 .myWrapper {
   margin: auto;
-  width: 75%;
-  height: 100%; }
+  width: 75%; }
 
 .headerDiv {
   width: 100%;
@@ -311,7 +309,14 @@ body {
 .contactUS {
   background: #333333;
   width: 100%;
-  height: 35vh; }
+  height: 55vh; }
+  .contactUS h4 {
+    margin: 0 0 0.5em; }
+  .contactUS .btn-440w {
+    margin-right: 0;
+    margin-top: 1em; }
+  .contactUS label {
+    color: #35A3C5; }
   .contactUS .myWrapper {
     display: flex;
     justify-content: space-around;
@@ -412,10 +417,13 @@ body {
 
 .displayContainer {
   margin: 0 auto;
-  height: 300px;
+  height: 18em;
   background: white;
   border-radius: 6px;
   position: relative; }
+  .displayContainer:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    top: -5px; }
   .displayContainer .displayTop {
     width: 100%;
     height: 100px;
@@ -500,6 +508,9 @@ span {
   color: #4a4a4a; }
 
 .popover.clockpicker-popover {
-  top: 257.375px !important; }
+  top: 21em !important; }
+
+.datepicker-dropdown {
+  top: 16.7em !important; }
 
 /*# sourceMappingURL=default.css.map */
