@@ -58,7 +58,7 @@ $fourthColor: #909090; //light grey
 .myWrapper {
 	margin: auto;
 	width: 75%;
-	height: 100%;
+	// height: 100%;
 }
 //END myWrapper
 .headerDiv {
@@ -311,7 +311,17 @@ $fourthColor: #909090; //light grey
 .contactUS {
 	background: #333333;
 	width: 100%;
-	height: 35vh;
+	height: 55vh;
+	h4 {
+		margin: 0 0 0.5em;
+	}
+	.btn-440w {
+		margin-right: 0;
+		margin-top: 1em;
+	}
+	label {
+		color: #35A3C5;
+	}
 	.myWrapper {
 		display: flex;
 		justify-content: space-around;
