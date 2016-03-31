@@ -29,15 +29,28 @@ body {
   border-top-left-radius: 0; }
 
 .table thead > tr > th {
-  vertical-align: bottom;
-  border-bottom: 2px solid #000000; }
+  vertical-align: bottom; }
 
 .table-striped > tbody > tr:nth-child(odd) > td {
   background-color: rgba(53, 163, 197, 0.2); }
 
 .nav.nav-pills.nav-stacked {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #ffffff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  .nav.nav-pills.nav-stacked > li + li {
+    margin: 0px; }
+  .nav.nav-pills.nav-stacked li:nth-of-type(2) {
+    border-left: 5px solid #7f23d2; }
+  .nav.nav-pills.nav-stacked li:nth-of-type(3) {
+    border-left: 5px solid #d6f92e; }
+  .nav.nav-pills.nav-stacked li:nth-of-type(4) {
+    border-left: 5px solid red; }
+  .nav.nav-pills.nav-stacked li:nth-of-type(5) {
+    border-left: 5px solid #00a4ba; }
+  .nav.nav-pills.nav-stacked li:nth-of-type(6) {
+    border-left: 5px solid #f79707; }
+  .nav.nav-pills.nav-stacked li:nth-of-type(7) {
+    border-left: 5px solid #27b534; }
 
 .nav-pills > li.active > a {
   color: #ffffff;
@@ -54,12 +67,13 @@ body {
   background-color: #A1B4BA; }
 
 .nav-pills > li > a {
-  color: #ffffff;
+  color: black;
   border-radius: 0; }
 
 .btn-440w {
   color: white;
-  background-color: #35A3C5; }
+  background-color: #35A3C5;
+  margin-right: 2.2em; }
   .btn-440w:hover {
     color: white;
     background-color: #A1B4BA; }
@@ -420,13 +434,17 @@ body {
   height: 18em;
   background: white;
   border-radius: 6px;
-  position: relative; }
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  top: 0px;
+  transition: top 0.2s ease; }
   .displayContainer:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-    top: -5px; }
+    top: -5px;
+    cursor: default; }
   .displayContainer .displayTop {
     width: 100%;
-    height: 100px;
+    height: 75px;
     background: red;
     border-radius: 6px 6px 0px 0px;
     text-align: center;
@@ -438,8 +456,8 @@ body {
     margin: -60px auto 15px;
     padding: 10px;
     display: block;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     border: solid 10px red;
     background-color: white; }
