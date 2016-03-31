@@ -44,9 +44,9 @@ body {
   .nav.nav-pills.nav-stacked li:nth-of-type(3) {
     border-left: 5px solid #d6f92e; }
   .nav.nav-pills.nav-stacked li:nth-of-type(4) {
-    border-left: 5px solid red; }
-  .nav.nav-pills.nav-stacked li:nth-of-type(5) {
     border-left: 5px solid #00a4ba; }
+  .nav.nav-pills.nav-stacked li:nth-of-type(5) {
+    border-left: 5px solid red; }
   .nav.nav-pills.nav-stacked li:nth-of-type(6) {
     border-left: 5px solid #f79707; }
   .nav.nav-pills.nav-stacked li:nth-of-type(7) {
