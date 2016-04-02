@@ -1,4 +1,103 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
+.userCard {
+  color: #303336;
+  padding: 40px 0; }
+
+.userContainer {
+  margin: 0 auto;
+  width: 300px;
+  height: 435px;
+  background: white;
+  border-radius: 6px;
+  position: relative; }
+  .userContainer .userTop {
+    width: 100%;
+    height: 150px;
+    background: #557cd2;
+    border-radius: 6px 6px 0px 0px; }
+  .userContainer .information {
+    text-align: center; }
+  .userContainer .avatar {
+    margin: 0 auto;
+    margin: -82px auto 15px;
+    display: block;
+    border-radius: 50%; }
+  .userContainer .name {
+    font-size: 25px; }
+    .userContainer .name::after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25%;
+      padding-top: 10px;
+      margin: auto;
+      border-bottom: 3px solid #557cd2; }
+  .userContainer .position {
+    font-size: 22px;
+    color: #69727e;
+    margin-bottom: 24px; }
+    .userContainer .position p {
+      padding-top: 10px;
+      text-align: center;
+      font-size: 18px; }
+
+.displayCard {
+  color: #303336;
+  padding: 40px 0; }
+
+.displayContainer {
+  margin: 0 auto;
+  height: 12em;
+  background: white;
+  border-radius: 6px;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  top: 0px;
+  transition: top 0.2s ease; }
+  .displayContainer:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    top: -5px;
+    cursor: default; }
+  .displayContainer .displayTop {
+    width: 100%;
+    height: 40px;
+    background: #fc3131;
+    border-radius: 6px 6px 0px 0px;
+    text-align: center;
+    color: white; }
+  .displayContainer .information {
+    text-align: center; }
+  .displayContainer .displayIcon {
+    margin: 0 auto;
+    margin: -60px auto 15px;
+    padding: 10px;
+    display: block;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: solid 10px #fc3131;
+    background-color: white; }
+    .displayContainer .displayIcon img {
+      background: #fc3131; }
+  .displayContainer .name {
+    font-size: 25px; }
+    .displayContainer .name::after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25%;
+      padding-top: 10px;
+      margin: auto;
+      border-bottom: 3px solid #fc3131; }
+  .displayContainer .displayDescription {
+    font-size: 22px;
+    color: #69727e;
+    margin-bottom: 24px; }
+    .displayContainer .displayDescription p {
+      padding-top: 10px;
+      text-align: center;
+      font-size: 18px; }
+
 body {
   font-family: 'Roboto Condensed', Arial, sans-serif;
   /*"Lucida Grande"*/ }
@@ -29,15 +128,28 @@ body {
   border-top-left-radius: 0; }
 
 .table thead > tr > th {
-  vertical-align: bottom;
-  border-bottom: 2px solid #000000; }
+  vertical-align: bottom; }
 
 .table-striped > tbody > tr:nth-child(odd) > td {
   background-color: rgba(53, 163, 197, 0.2); }
 
 .nav.nav-pills.nav-stacked {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #ffffff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  .nav.nav-pills.nav-stacked > li + li {
+    margin: 0px; }
+  .nav.nav-pills.nav-stacked li:nth-of-type(2) {
+    border-left: 5px solid #001a74; }
+  .nav.nav-pills.nav-stacked li:nth-of-type(3) {
+    border-left: 5px solid #eefe3a; }
+  .nav.nav-pills.nav-stacked li:nth-of-type(4) {
+    border-left: 5px solid #00B7FF; }
+  .nav.nav-pills.nav-stacked li:nth-of-type(5) {
+    border-left: 5px solid #fc3131; }
+  .nav.nav-pills.nav-stacked li:nth-of-type(6) {
+    border-left: 5px solid #f79707; }
+  .nav.nav-pills.nav-stacked li:nth-of-type(7) {
+    border-left: 5px solid #27b534; }
 
 .nav-pills > li.active > a {
   color: #ffffff;
@@ -54,12 +166,13 @@ body {
   background-color: #A1B4BA; }
 
 .nav-pills > li > a {
-  color: #ffffff;
+  color: black;
   border-radius: 0; }
 
 .btn-440w {
   color: white;
-  background-color: #35A3C5; }
+  background-color: #35A3C5;
+  margin-right: 2.2em; }
   .btn-440w:hover {
     color: white;
     background-color: #A1B4BA; }
@@ -417,17 +530,21 @@ body {
 
 .displayContainer {
   margin: 0 auto;
-  height: 18em;
+  height: 12em;
   background: white;
   border-radius: 6px;
-  position: relative; }
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  top: 0px;
+  transition: top 0.2s ease; }
   .displayContainer:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-    top: -5px; }
+    top: -5px;
+    cursor: default; }
   .displayContainer .displayTop {
     width: 100%;
-    height: 100px;
-    background: red;
+    height: 40px;
+    background: #fc3131;
     border-radius: 6px 6px 0px 0px;
     text-align: center;
     color: white; }
@@ -438,13 +555,13 @@ body {
     margin: -60px auto 15px;
     padding: 10px;
     display: block;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
-    border: solid 10px red;
+    border: solid 10px #fc3131;
     background-color: white; }
     .displayContainer .displayIcon img {
-      background: red; }
+      background: #fc3131; }
   .displayContainer .name {
     font-size: 25px; }
     .displayContainer .name::after {
@@ -454,7 +571,7 @@ body {
       width: 25%;
       padding-top: 10px;
       margin: auto;
-      border-bottom: 3px solid red; }
+      border-bottom: 3px solid #fc3131; }
   .displayContainer .displayDescription {
     font-size: 22px;
     color: #69727e;

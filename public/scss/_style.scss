@@ -1,3 +1,5 @@
+@import 'cards';
+
 body {
 font-family: 'Roboto Condensed', Arial, sans-serif; /*"Lucida Grande"*/
 	&.swag {
@@ -40,7 +42,7 @@ font-family: 'Roboto Condensed', Arial, sans-serif; /*"Lucida Grande"*/
 		> tr {
 			> th {
 				vertical-align: bottom;
-				border-bottom: 2px solid #000000;
+			//	border-bottom: 2px solid #000000;
 			}
 		}
 	}
@@ -57,9 +59,30 @@ font-family: 'Roboto Condensed', Arial, sans-serif; /*"Lucida Grande"*/
 .nav {
 	&.nav-pills {
 		&.nav-stacked {
-			background-color: rgba(255, 255, 255, 0.2);
+			background-color: #ffffff;
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-		}
+			> li + li{
+				margin: 0px;
+			}
+			li:nth-of-type(2){
+				border-left: 5px solid $darkblue;
+			}
+			li:nth-of-type(3){
+				border-left: 5px solid $yellow;
+			}
+			li:nth-of-type(4){
+				border-left: 5px solid $lightblue;
+			}
+			li:nth-of-type(5){
+				border-left: 5px solid $red;
+			}
+			li:nth-of-type(6){
+				border-left: 5px solid $orange;
+			}
+			li:nth-of-type(7){
+				border-left: 5px solid $green;
+			}
+	}
 	}
 }
 .nav-pills {
@@ -89,7 +112,7 @@ font-family: 'Roboto Condensed', Arial, sans-serif; /*"Lucida Grande"*/
 .nav-pills {
 	> li {
 		> a {
-			color: #ffffff;
+			color: black;
 			border-radius: 0;
 		}
 	}
@@ -97,6 +120,7 @@ font-family: 'Roboto Condensed', Arial, sans-serif; /*"Lucida Grande"*/
 .btn-440w {
 	color: white;
 	background-color: #35A3C5;
+	margin-right: 2.2em;
 	&:hover {
 		color: white;
 		background-color: #A1B4BA;
