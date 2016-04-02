@@ -1,3 +1,11 @@
+//CARDS COLORS
+$red: #fc3131;
+$orange: #f79707;
+$yellow: #eefe3a;
+$lightblue: #00B7FF;
+$darkblue: #001a74;
+$green: #27b534;
+
 
 .userCard {
   color: #303336;
@@ -56,7 +64,7 @@
 }
 .displayContainer {
   margin: 0 auto;
-  height: 18em;
+  height: 12em;
   background: white;
   border-radius: 6px;
   position: relative;
@@ -70,8 +78,8 @@
   }
   .displayTop{
     width: 100%;
-    height: 75px;
-    background: red;
+    height: 40px;
+    background: $red;
     border-radius: 6px 6px 0px 0px;
     text-align: center;
     color:white;
@@ -87,10 +95,10 @@
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    border: solid 10px red;
+    border: solid 10px $red;
     background-color: white;
     img{
-      background:red;
+      background:$red;
     }
 }
   .name {
@@ -102,7 +110,7 @@
       width: 25%;
       padding-top: 10px;
       margin: auto;
-      border-bottom: 3px solid red;
+      border-bottom: 3px solid $red;
     }
   }
   .displayDescription {
