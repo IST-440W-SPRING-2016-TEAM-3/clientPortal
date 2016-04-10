@@ -14,11 +14,10 @@
     width: 100%;
     height: 150px;
     background: #557cd2;
-    border-radius: 6px 6px 0px 0px; }
+    border-radius: 6px 6px 0 0; }
   .userContainer .information {
     text-align: center; }
   .userContainer .avatar {
-    margin: 0 auto;
     margin: -82px auto 15px;
     display: block;
     border-radius: 50%; }
@@ -52,7 +51,7 @@
   border-radius: 6px;
   position: relative;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  top: 0px;
+  top: 0;
   transition: top 0.2s ease; }
   .displayContainer:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
@@ -61,34 +60,95 @@
   .displayContainer .displayTop {
     width: 100%;
     height: 40px;
-    background: #fc3131;
-    border-radius: 6px 6px 0px 0px;
+    border-radius: 6px 6px 0 0;
     text-align: center;
     color: white; }
+    .displayContainer .displayTop.user-profile {
+      background: #001a74; }
+    .displayContainer .displayTop.test-results {
+      background: #eefe3a; }
+    .displayContainer .displayTop.allergies {
+      background: #00B7FF; }
+    .displayContainer .displayTop.medicines {
+      background: #fc3131; }
+    .displayContainer .displayTop.appointments {
+      background: #f79707; }
+    .displayContainer .displayTop.reports {
+      background: #27b534; }
   .displayContainer .information {
     text-align: center; }
   .displayContainer .displayIcon {
-    margin: 0 auto;
     margin: -60px auto 15px;
     padding: 10px;
     display: block;
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    border: solid 10px #fc3131;
     background-color: white; }
+    .displayContainer .displayIcon.user-profile {
+      border: solid 10px #001a74; }
+    .displayContainer .displayIcon.test-results {
+      border: solid 10px #eefe3a; }
+    .displayContainer .displayIcon.allergies {
+      border: solid 10px #00B7FF; }
+    .displayContainer .displayIcon.medicines {
+      border: solid 10px #fc3131; }
+    .displayContainer .displayIcon.appointments {
+      border: solid 10px #f79707; }
+    .displayContainer .displayIcon.reports {
+      border: solid 10px #27b534; }
     .displayContainer .displayIcon img {
-      background: #fc3131; }
+      border: solid 10px #fc3131; }
   .displayContainer .name {
     font-size: 25px; }
-    .displayContainer .name::after {
+    .displayContainer .name.user-profile::after {
+      border-bottom: 3px solid #001a74;
       content: '';
       display: block;
       height: 3px;
       width: 25%;
       padding-top: 10px;
-      margin: auto;
-      border-bottom: 3px solid #fc3131; }
+      margin: auto; }
+    .displayContainer .name.test-results::after {
+      border-bottom: 3px solid #eefe3a;
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25%;
+      padding-top: 10px;
+      margin: auto; }
+    .displayContainer .name.allergies::after {
+      border-bottom: 3px solid #00B7FF;
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25%;
+      padding-top: 10px;
+      margin: auto; }
+    .displayContainer .name.medicines::after {
+      border-bottom: 3px solid #fc3131;
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25%;
+      padding-top: 10px;
+      margin: auto; }
+    .displayContainer .name.appointments::after {
+      border-bottom: 3px solid #f79707;
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25%;
+      padding-top: 10px;
+      margin: auto; }
+    .displayContainer .name.reports::after {
+      border-bottom: 3px solid #27b534;
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25%;
+      padding-top: 10px;
+      margin: auto; }
   .displayContainer .displayDescription {
     font-size: 22px;
     color: #69727e;
@@ -497,11 +557,10 @@ body {
     width: 100%;
     height: 150px;
     background: #557cd2;
-    border-radius: 6px 6px 0px 0px; }
+    border-radius: 6px 6px 0 0; }
   .userContainer .information {
     text-align: center; }
   .userContainer .avatar {
-    margin: 0 auto;
     margin: -82px auto 15px;
     display: block;
     border-radius: 50%; }
@@ -535,7 +594,7 @@ body {
   border-radius: 6px;
   position: relative;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  top: 0px;
+  top: 0;
   transition: top 0.2s ease; }
   .displayContainer:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
@@ -544,34 +603,95 @@ body {
   .displayContainer .displayTop {
     width: 100%;
     height: 40px;
-    background: #fc3131;
-    border-radius: 6px 6px 0px 0px;
+    border-radius: 6px 6px 0 0;
     text-align: center;
     color: white; }
+    .displayContainer .displayTop.user-profile {
+      background: #001a74; }
+    .displayContainer .displayTop.test-results {
+      background: #eefe3a; }
+    .displayContainer .displayTop.allergies {
+      background: #00B7FF; }
+    .displayContainer .displayTop.medicines {
+      background: #fc3131; }
+    .displayContainer .displayTop.appointments {
+      background: #f79707; }
+    .displayContainer .displayTop.reports {
+      background: #27b534; }
   .displayContainer .information {
     text-align: center; }
   .displayContainer .displayIcon {
-    margin: 0 auto;
     margin: -60px auto 15px;
     padding: 10px;
     display: block;
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    border: solid 10px #fc3131;
     background-color: white; }
+    .displayContainer .displayIcon.user-profile {
+      border: solid 10px #001a74; }
+    .displayContainer .displayIcon.test-results {
+      border: solid 10px #eefe3a; }
+    .displayContainer .displayIcon.allergies {
+      border: solid 10px #00B7FF; }
+    .displayContainer .displayIcon.medicines {
+      border: solid 10px #fc3131; }
+    .displayContainer .displayIcon.appointments {
+      border: solid 10px #f79707; }
+    .displayContainer .displayIcon.reports {
+      border: solid 10px #27b534; }
     .displayContainer .displayIcon img {
-      background: #fc3131; }
+      border: solid 10px #fc3131; }
   .displayContainer .name {
     font-size: 25px; }
-    .displayContainer .name::after {
+    .displayContainer .name.user-profile::after {
+      border-bottom: 3px solid #001a74;
       content: '';
       display: block;
       height: 3px;
       width: 25%;
       padding-top: 10px;
-      margin: auto;
-      border-bottom: 3px solid #fc3131; }
+      margin: auto; }
+    .displayContainer .name.test-results::after {
+      border-bottom: 3px solid #eefe3a;
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25%;
+      padding-top: 10px;
+      margin: auto; }
+    .displayContainer .name.allergies::after {
+      border-bottom: 3px solid #00B7FF;
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25%;
+      padding-top: 10px;
+      margin: auto; }
+    .displayContainer .name.medicines::after {
+      border-bottom: 3px solid #fc3131;
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25%;
+      padding-top: 10px;
+      margin: auto; }
+    .displayContainer .name.appointments::after {
+      border-bottom: 3px solid #f79707;
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25%;
+      padding-top: 10px;
+      margin: auto; }
+    .displayContainer .name.reports::after {
+      border-bottom: 3px solid #27b534;
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25%;
+      padding-top: 10px;
+      margin: auto; }
   .displayContainer .displayDescription {
     font-size: 22px;
     color: #69727e;

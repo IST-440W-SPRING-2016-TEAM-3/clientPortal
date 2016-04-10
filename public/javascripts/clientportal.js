@@ -1,18 +1,18 @@
 (function(angular, undefined) {
 
-	function sortArrOfObjectsByParam(arrToSort, strObjParamToSortBy, sortAscending) {
-		if (sortAscending === undefined) sortAscending = true;
-
-		if (sortAscending) {
-			arrToSort.sort(function(a, b) {
-				return a[strObjParamToSortBy] > b[strObjParamToSortBy];
-			});
-		} else {
-			arrToSort.sort(function(a, b) {
-				return a[strObjParamToSortBy] < b[strObjParamToSortBy];
-			});
-		}
-	}
+	// function sortArrOfObjectsByParam(arrToSort, strObjParamToSortBy, sortAscending) {
+	// 	if (sortAscending === undefined) sortAscending = true;
+	//
+	// 	if (sortAscending) {
+	// 		arrToSort.sort(function(a, b) {
+	// 			return a[strObjParamToSortBy] > b[strObjParamToSortBy];
+	// 		});
+	// 	} else {
+	// 		arrToSort.sort(function(a, b) {
+	// 			return a[strObjParamToSortBy] < b[strObjParamToSortBy];
+	// 		});
+	// 	}
+	// }
 
 	angular.module("clientportal", [
 		'ui.bootstrap'
@@ -22,10 +22,28 @@
 		return {
 			restrict: "E",
 			link: function(scope, el, attrs) {
-				var route = attrs.route;
+				var route = attrs.route,
+					cardColor = {
+						"Overview": "user-profile",
+						"User Profile": "user-profile",
+						"Test Results": "test-results",
+						"Allergies": "allergies",
+						"Medicines": "medicines",
+						"Appointments": "appointments",
+						"Reports": "reports"
+					},
+					apiRoutes = {
+						"Overview": "userdata",
+						"User Profile": "userprofile",
+						"Test Results": "userresults",
+						"Allergies": "userallergies",
+						"Medicines": "usermedicines",
+						"Appointments": "userappointments",
+						"Reports": "userreports"
+					};
 				$http({
 					method: 'GET',
-					url: 'http://127.0.0.1:8000/api/userdata',
+					url: 'http://127.0.0.1:8000/api/' + apiRoutes[route],
 					headers: {
 						'Content-Type': 'application/json'
 					}
@@ -45,10 +63,10 @@
 								colsize = angular.element('<div class="col-sm-3"></div>'),
 								displayCard = angular.element('<div class="displayCard"></div>'),
 								displayContainer = angular.element('<div class="displayContainer"></div>'),
-								displayTop = angular.element('<div class="displayTop"></div>'),
+								displayTop = angular.element('<div class="displayTop ' + cardColor[route] + '"></div>'),
 								information = angular.element('<div class="information"></div>'),
-								img = angular.element('<img class="displayIcon" src="../images/icons/web.svg"></img>'),
-								name = angular.element('<div class="name">' + key + '</div>'),
+								img = angular.element('<img class="displayIcon ' + cardColor[route] + '" src="../images/icons/web.svg"></img>'),
+								name = angular.element('<div class="name ' + cardColor[route] + '">' + key + '</div>'),
 								displayDescription = angular.element('<div class="displayDescription"></div>'),
 								p = angular.element('<p>' + response[key] + '</p>');
 
@@ -118,13 +136,16 @@
 				var userAppointments = [];
 				userAppointments = response.data;
 
-				sortArrOfObjectsByParam(userAppointments, "date", false);
+				// console.log(userAppointments);
+
+				// sortArrOfObjectsByParam(userAppointments, "date", false);
 
 				$scope.userAppointments = [];
 
 				// Extracts user data from response of GET reuest and stores in userAppointments $scope variable.
 				// Also using our ignore object to make sure any data that is not supposed to be seen isn't shown
 				// on the scope.
+
 				for (var r = 0; r < response.data.length; r++) {
 					$scope.userAppointments[r] = {};
 					for (var keyss in userAppointments[r]) {
@@ -133,6 +154,8 @@
 						}
 					}
 				}
+
+				console.log($scope.userAppointments);
 			}, function errorCallback(response) {});
 	}])
 	;

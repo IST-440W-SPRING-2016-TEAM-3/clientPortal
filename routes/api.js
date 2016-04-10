@@ -52,6 +52,7 @@ router.get('/appointments', function(req, res, next) {
         };
         request("http://127.0.0.1:9000/userappointments/" + uuid, args, function (error, response, body) {
             if (!error && response.statusCode == 200) {
+                console.log(body);
                 res.send(body);
             }
         });
