@@ -60,7 +60,7 @@ $green: #27b534;
 }
 .displayContainer {
 	margin: 0 auto;
-	height: 12em;
+	height: 340px;
 	background: white;
 	border-radius: 6px;
 	position: relative;
@@ -99,6 +99,7 @@ $green: #27b534;
 	}
 	.information {
 		text-align: center;
+		margin-top: -20px;
 	}
 	.displayIcon {
 		margin: -60px auto 15px;
@@ -139,7 +140,7 @@ $green: #27b534;
 				display: block;
 				height: 3px;
 				width: 25%;
-				padding-top: 10px;
+				padding-top: 5px;
 				margin: auto;
 			}
 		}
@@ -150,7 +151,7 @@ $green: #27b534;
 				display: block;
 				height: 3px;
 				width: 25%;
-				padding-top: 10px;
+				padding-top: 5px;
 				margin: auto;
 			}
 		}
@@ -161,7 +162,7 @@ $green: #27b534;
 				display: block;
 				height: 3px;
 				width: 25%;
-				padding-top: 10px;
+				padding-top: 5px;
 				margin: auto;
 			}
 		}
@@ -172,7 +173,7 @@ $green: #27b534;
 				display: block;
 				height: 3px;
 				width: 25%;
-				padding-top: 10px;
+				padding-top: 5px;
 				margin: auto;
 			}
 		}
@@ -183,7 +184,7 @@ $green: #27b534;
 				display: block;
 				height: 3px;
 				width: 25%;
-				padding-top: 10px;
+				padding-top: 5px;
 				margin: auto;
 			}
 		}
@@ -194,19 +195,27 @@ $green: #27b534;
 				display: block;
 				height: 3px;
 				width: 25%;
-				padding-top: 10px;
+				padding-top: 5px;
 				margin: auto;
 			}
 		}
 	}
 	.displayDescription {
-		font-size: 22px;
-		color: #69727e;
-		margin-bottom: 24px;
-		p {
-			padding-top: 10px;
+		color: #909090;
+		h1 {
+			padding: 10px;
+			font-weight: 400;
 			text-align: center;
+			font-size: 23px;
+		}
+		h2 {
+			font-size: 20px;
+			margin: 10px 0 0;
+			font-weight: 400;
+		}
+		h2:last-of-type {
 			font-size: 18px;
+			padding: 0 10px;
 		}
 	}
 }

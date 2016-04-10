@@ -46,7 +46,7 @@
 
 .displayContainer {
   margin: 0 auto;
-  height: 12em;
+  height: 340px;
   background: white;
   border-radius: 6px;
   position: relative;
@@ -76,14 +76,20 @@
     .displayContainer .displayTop.reports {
       background: #27b534; }
   .displayContainer .information {
-    text-align: center; }
+    text-align: center;
+    margin-top: -20px; }
   .displayContainer .displayIcon {
     margin: -60px auto 15px;
     padding: 10px;
     display: block;
     width: 75px;
     height: 75px;
+<<<<<<< HEAD
     border-radius: 50%;
+=======
+    border-radius: 100%;
+    border: solid 10px #fc3131;
+>>>>>>> 5e0fa9ef615804fc132f276f8221b5558e7dd345
     background-color: white; }
     .displayContainer .displayIcon.user-profile {
       border: solid 10px #001a74; }
@@ -107,6 +113,7 @@
       display: block;
       height: 3px;
       width: 25%;
+<<<<<<< HEAD
       padding-top: 10px;
       margin: auto; }
     .displayContainer .name.test-results::after {
@@ -149,14 +156,26 @@
       width: 25%;
       padding-top: 10px;
       margin: auto; }
+=======
+      padding-top: 5px;
+      margin: auto;
+      border-bottom: 3px solid #fc3131; }
+>>>>>>> 5e0fa9ef615804fc132f276f8221b5558e7dd345
   .displayContainer .displayDescription {
-    font-size: 22px;
-    color: #69727e;
-    margin-bottom: 24px; }
-    .displayContainer .displayDescription p {
-      padding-top: 10px;
+    color: #909090; }
+    .displayContainer .displayDescription h1 {
+      padding: 10px;
+      font-weight: 400;
       text-align: center;
-      font-size: 18px; }
+      font-size: 23px; }
+    .displayContainer .displayDescription h2 {
+      font-size: 20px;
+      margin: 0px;
+      margin-top: 10px;
+      font-weight: 400; }
+    .displayContainer .displayDescription h2:last-of-type {
+      font-size: 18px;
+      padding: 0px 10px; }
 
 body {
   font-family: 'Roboto Condensed', Arial, sans-serif;
@@ -268,8 +287,10 @@ body {
     text-decoration: none;
     padding: 0 1em; }
   .myNav li {
-    margin: 10px;
-    list-style-type: none; }
+    margin: 10px 0 0 0;
+    list-style-type: none;
+    border-bottom: solid 3px transparent;
+    transition: all 0.4s ease-out; }
     .myNav li:first-child {
       margin-right: auto; }
     .myNav li::after {
@@ -277,13 +298,15 @@ body {
       display: block;
       height: 3px;
       width: 0; }
-    .myNav li:hover:after {
-      width: 100%;
-      background: #00B7FF;
-      transition: width 0.4s ease-out; }
-    .myNav li:first-child:hover:after {
+    .myNav li:hover {
+      border-bottom: 3px solid #00B7FF;
+      transition: all 0.4s ease-out; }
+    .myNav li:first-child:hover {
       margin-right: auto;
-      background: none; }
+      background: none;
+      border-bottom: none; }
+    .myNav li:last-child {
+      margin-right: 50px; }
 
 /* underline effect on the nav items */
 /* don't want to underline the logo with blue line*/
@@ -295,7 +318,7 @@ body {
   width: 100%;
   height: 100vh;
   min-height: 800px;
-  background: url("../images/Header.jpg") top center;
+  background: url("../images/Header.jpg") top center fixed;
   background-size: cover;
   padding: 0;
   display: inline-block;
@@ -589,7 +612,7 @@ body {
 
 .displayContainer {
   margin: 0 auto;
-  height: 12em;
+  height: 340px;
   background: white;
   border-radius: 6px;
   position: relative;
@@ -619,14 +642,20 @@ body {
     .displayContainer .displayTop.reports {
       background: #27b534; }
   .displayContainer .information {
-    text-align: center; }
+    text-align: center;
+    margin-top: -20px; }
   .displayContainer .displayIcon {
     margin: -60px auto 15px;
     padding: 10px;
     display: block;
     width: 75px;
     height: 75px;
+<<<<<<< HEAD
     border-radius: 50%;
+=======
+    border-radius: 100%;
+    border: solid 10px #fc3131;
+>>>>>>> 5e0fa9ef615804fc132f276f8221b5558e7dd345
     background-color: white; }
     .displayContainer .displayIcon.user-profile {
       border: solid 10px #001a74; }
@@ -650,6 +679,7 @@ body {
       display: block;
       height: 3px;
       width: 25%;
+<<<<<<< HEAD
       padding-top: 10px;
       margin: auto; }
     .displayContainer .name.test-results::after {
@@ -692,14 +722,26 @@ body {
       width: 25%;
       padding-top: 10px;
       margin: auto; }
+=======
+      padding-top: 5px;
+      margin: auto;
+      border-bottom: 3px solid #fc3131; }
+>>>>>>> 5e0fa9ef615804fc132f276f8221b5558e7dd345
   .displayContainer .displayDescription {
-    font-size: 22px;
-    color: #69727e;
-    margin-bottom: 24px; }
-    .displayContainer .displayDescription p {
-      padding-top: 10px;
+    color: #909090; }
+    .displayContainer .displayDescription h1 {
+      padding: 10px;
+      font-weight: 400;
       text-align: center;
-      font-size: 18px; }
+      font-size: 23px; }
+    .displayContainer .displayDescription h2 {
+      font-size: 20px;
+      margin: 0px;
+      margin-top: 10px;
+      font-weight: 400; }
+    .displayContainer .displayDescription h2:last-of-type {
+      font-size: 18px;
+      padding: 0px 10px; }
 
 /*text styles*/
 h1,
