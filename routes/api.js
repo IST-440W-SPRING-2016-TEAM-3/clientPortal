@@ -44,7 +44,7 @@ router.get('/userdata', function(req, res, next) {
     }
 });
 
-router.get('/appointments', function(req, res, next) {
+router.get('/userappointments', function(req, res, next) {
     var uuid = req.session.uuid;
     if(reqChecker !== 0){
         var args = {
@@ -61,8 +61,58 @@ router.get('/appointments', function(req, res, next) {
     }
 });
 
+router.get('/usertestresult', function(req, res, next) {
+    var uuid = req.session.uuid;
+    if(reqChecker !== 0){
+        var args = {
+            headers: { 'Content-Type': 'application/json' }
+        };
+        request("http://127.0.0.1:9000/usertestresult/" + uuid, args, function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                res.send(body);
+            }
+        });
+    }
+    else {
+        res.redirect('/');
+    }
+});
+
+router.get('/userallergies', function(req, res, next) {
+    var uuid = req.session.uuid;
+    if(reqChecker !== 0){
+        var args = {
+            headers: { 'Content-Type': 'application/json' }
+        };
+        request("http://127.0.0.1:9000/userallergies/" + uuid, args, function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                res.send(body);
+            }
+        });
+    }
+    else {
+        res.redirect('/');
+    }
+});
+
+router.get('/usermedicines', function(req, res, next) {
+    var uuid = req.session.uuid;
+    if(reqChecker !== 0){
+        var args = {
+            headers: { 'Content-Type': 'application/json' }
+        };
+        request("http://127.0.0.1:9000/usermedicines/" + uuid, args, function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                res.send(body);
+            }
+        });
+    }
+    else {
+        res.redirect('/');
+    }
+});
+
 router.post('/requestAppointment', function(req, res, next) {
-    console.log(req.body);
     res.end();
 });
 

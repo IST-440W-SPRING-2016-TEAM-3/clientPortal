@@ -5,132 +5,220 @@ $yellow: #eefe3a;
 $lightblue: #00B7FF;
 $darkblue: #001a74;
 $green: #27b534;
-
-
 .userCard {
-  color: #303336;
-  padding: 40px 0;
+	color: #303336;
+	padding: 40px 0;
 }
 .userContainer {
-  margin: 0 auto;
-  width: 300px;
-  height: 435px;
-  background: white;
-  border-radius: 6px;
-  position: relative;
-  .userTop{
-    width: 100%;
-    height: 150px;
-    background: #557cd2;
-    border-radius: 6px 6px 0px 0px;
-  }
-  .information {
-    text-align: center;
-  }
-  .avatar {
-    margin: 0 auto;
-    margin: -82px auto 15px;
-    display: block;
-    border-radius: 50%;
+	margin: 0 auto;
+	width: 300px;
+	height: 435px;
+	background: white;
+	border-radius: 6px;
+	position: relative;
+	.userTop {
+		width: 100%;
+		height: 150px;
+		background: #557cd2;
+		border-radius: 6px 6px 0 0;
+	}
+	.information {
+		text-align: center;
+	}
+	.avatar {
+		margin: -82px auto 15px;
+		display: block;
+		border-radius: 50%;
+	}
+	.name {
+		font-size: 25px;
+		&::after {
+			content: '';
+			display: block;
+			height: 3px;
+			width: 25%;
+			padding-top: 10px;
+			margin: auto;
+			border-bottom: 3px solid #557cd2;
+		}
+	}
+	.position {
+		font-size: 22px;
+		color: #69727e;
+		margin-bottom: 24px;
+		p {
+			padding-top: 10px;
+			text-align: center;
+			font-size: 18px;
+		}
+	}
 }
-  .name {
-    font-size: 25px;
-    &::after {
-      content: '';
-      display: block;
-      height: 3px;
-      width: 25%;
-      padding-top: 10px;
-      margin: auto;
-      border-bottom: 3px solid #557cd2;
-    }
-  }
-  .position {
-    font-size: 22px;
-    color: #69727e;
-    margin-bottom: 24px;
-    p{
-      padding-top: 10px;
-      text-align: center;
-      font-size: 18px;
-    }
-  }
-}
-
 //Display cards
 .displayCard {
-  color: #303336;
-  padding: 40px 0;
+	color: #303336;
+	padding: 40px 0;
 }
 .displayContainer {
-  margin: 0 auto;
-  height: 340px;
-  background: white;
-  border-radius: 6px;
-  position: relative;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  top:0px;
-  transition: top 0.2s ease;
-  &:hover {
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-      top: -5px;
-      cursor: default;
-  }
-  .displayTop{
-    width: 100%;
-    height: 40px;
-    background: $red;
-    border-radius: 6px 6px 0px 0px;
-    text-align: center;
-    color:white;
-  }
-  .information {
-    text-align: center;
-    margin-top: -20px;
-  }
-  .displayIcon {
-    margin: -60px auto 15px;
-    padding: 10px;
-    display: block;
-    width: 75px;
-    height: 75px;
-    border-radius: 100%;
-    border: solid 10px $red;
-    background-color: white;
-    img{
-      background:$red;
-    }
-}
-  .name {
-    font-size: 25px;
-    &::after {
-      content: '';
-      display: block;
-      height: 3px;
-      width: 25%;
-      padding-top: 5px;
-      margin: auto;
-      border-bottom: 3px solid $red;
-    }
-  }
-  .displayDescription {
-    color: #909090;
-    //margin-bottom: 24px;
-    h1{
-      padding:10px;
-      font-weight: 400;
-      text-align: center;
-      font-size: 23px;
-    }
-    h2{
-      font-size: 20px;
-      margin: 0px;
-      margin-top: 10px;
-      font-weight: 400;
-    }
-    h2:last-of-type{
-      font-size: 18px;
-      padding: 0px 10px;
-    }
-  }
+	margin: 0 auto;
+	height: 340px;
+	background: white;
+	border-radius: 6px;
+	position: relative;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	top: 0;
+	transition: top 0.2s ease;
+	&:hover {
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+		top: -5px;
+		cursor: default;
+	}
+	.displayTop {
+		width: 100%;
+		height: 40px;
+		border-radius: 6px 6px 0 0;
+		text-align: center;
+		color: white;
+		&.user-profile {
+			background: $darkblue;
+		}
+		&.test-results {
+			background: $yellow;
+		}
+		&.allergies {
+			background: $lightblue;
+		}
+		&.medicines {
+			background: $red;
+		}
+		&.appointments {
+			background: $orange;
+		}
+		&.reports {
+			background: $green;
+		}
+	}
+	.information {
+		text-align: center;
+		margin-top: -20px;
+	}
+	span{
+		font-size: 45px;
+		&.displayIcon {
+			margin: -60px auto 15px;
+			padding: 0px 0px 0px 4.5px;
+			display: block;
+			width: 75px;
+			height: 75px;
+			border-radius: 50%;
+			background-color: white;
+			&.user-profile {
+				border: solid 10px $darkblue;
+			}
+			&.test-results {
+				border: solid 10px $yellow;
+			}
+			&.allergies {
+				border: solid 10px $lightblue;
+			}
+			&.medicines {
+				border: solid 10px $red;
+			}
+			&.appointments {
+				border: solid 10px $orange;
+			}
+			&.reports {
+				border: solid 10px $green;
+			}
+			img {
+				border: solid 10px $red;
+			}
+		}
+	}
+	.name {
+		font-size: 25px;
+		&.user-profile {
+			&::after {
+				border-bottom: 3px solid $darkblue;
+				content: '';
+				display: block;
+				height: 3px;
+				width: 25%;
+				padding-top: 5px;
+				margin: auto;
+			}
+		}
+		&.test-results {
+			&::after {
+				border-bottom: 3px solid $yellow;
+				content: '';
+				display: block;
+				height: 3px;
+				width: 25%;
+				padding-top: 5px;
+				margin: auto;
+			}
+		}
+		&.allergies {
+			&::after {
+				border-bottom: 3px solid $lightblue;
+				content: '';
+				display: block;
+				height: 3px;
+				width: 25%;
+				padding-top: 5px;
+				margin: auto;
+			}
+		}
+		&.medicines {
+			&::after {
+				border-bottom: 3px solid $red;
+				content: '';
+				display: block;
+				height: 3px;
+				width: 25%;
+				padding-top: 5px;
+				margin: auto;
+			}
+		}
+		&.appointments {
+			&::after {
+				border-bottom: 3px solid $orange;
+				content: '';
+				display: block;
+				height: 3px;
+				width: 25%;
+				padding-top: 5px;
+				margin: auto;
+			}
+		}
+		&.reports {
+			&::after {
+				border-bottom: 3px solid $green;
+				content: '';
+				display: block;
+				height: 3px;
+				width: 25%;
+				padding-top: 5px;
+				margin: auto;
+			}
+		}
+	}
+	.displayDescription {
+		color: #909090;
+		h1 {
+			padding: 10px;
+			font-weight: 400;
+			text-align: center;
+			font-size: 23px;
+		}
+		h2 {
+			font-size: 20px;
+			margin: 10px 0 0;
+			font-weight: 400;
+		}
+		h2:last-of-type {
+			font-size: 18px;
+			padding: 0 10px;
+		}
+	}
 }
