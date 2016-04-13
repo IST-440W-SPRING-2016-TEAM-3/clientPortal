@@ -1,24 +1,66 @@
 (function(angular, undefined) {
 
-	// function sortArrOfObjectsByParam(arrToSort, strObjParamToSortBy, sortAscending) {
-	// 	if (sortAscending === undefined) sortAscending = true;
-	//
-	// 	if (sortAscending) {
-	// 		arrToSort.sort(function(a, b) {
-	// 			return a[strObjParamToSortBy] > b[strObjParamToSortBy];
-	// 		});
-	// 	} else {
-	// 		arrToSort.sort(function(a, b) {
-	// 			return a[strObjParamToSortBy] < b[strObjParamToSortBy];
-	// 		});
-	// 	}
-	// }
-
 	angular.module("clientportal", [
 		'ui.bootstrap'
 	])
 
-	.directive("profileCards", ["$http",function($http) {
+	.run(["$rootScope", "$http", function($rootScope, $http) {
+	}])
+
+	.directive("medicationCards", ["$http",function($http){
+		return {
+			restrict: "E",
+			link: function(scope, el, attrs){
+				$http({
+						method: 'GET',
+						url: 'http://127.0.0.1:8000/api/usermedicines',
+						headers: {
+							'Content-Type': 'application/json'
+						}
+					})
+					.success(function successCallback(response) {
+						for (var key in response) {
+								var outer = angular.element('<div></div>'),
+									colsize = angular.element('<div class="col-sm-3"></div>'),
+									displayCard = angular.element('<div class="displayCard"></div>'),
+									displayContainer = angular.element('<div class="displayContainer medicines"></div>'),
+									displayTop = angular.element('<div class="displayTop medicines"></div>'),
+									displayIcon = angular.element('<div class="displayIcon medicines"></div>'),
+									actualIcon = angular.element('<span class="flaticon-medical-1 displayIcon medicines"></span>'),
+									information = angular.element('<div class="information"></div>'),
+									name = angular.element('<div class="name medicines">Medication</div>'),
+									h1 = angular.element('<h1>' + response[key].name + '</h1>'),
+									h20 = angular.element('<h2>Dosage: ' + response[key].dosage + '</h2>'),
+									h21 = angular.element('<h2>Frequency: ' + response[key].frequency + '</h2>'),
+									h22 = angular.element('<h2>Date Start: ' + response[key].datestart + '</h2>'),
+									h23 = angular.element('<h2>Date End: ' + response[key].dateend + '</h2>'),
+									h24 = angular.element('<h2>Description: ' + response[key].description + '</h2>'),
+									displayDescription = angular.element('<div class="displayDescription"></div>');
+
+								displayDescription.append(h1);
+								displayDescription.append(h20);
+								displayDescription.append(h21);
+								displayDescription.append(h22);
+								displayDescription.append(h23);
+								displayDescription.append(h24);
+								information.append(name);
+								information.append(displayDescription);
+								displayContainer.append(displayTop);
+								displayContainer.append(actualIcon);
+								displayContainer.append(information);
+								displayCard.append(displayContainer);
+								colsize.append(displayCard);
+								outer.append(colsize);
+
+								el.append(outer.html());
+						}
+						return el;
+					});
+			}
+		};
+	}])
+
+	.directive("profileCards", ["$http", function($http) {
 		return {
 			restrict: "E",
 			link: function(scope, el, attrs) {
@@ -35,98 +77,93 @@
 					apiRoutes = {
 						"Overview": "userdata",
 						"User Profile": "userprofile",
-						"Test Results": "userresults",
+						"Test Results": "usertestresult",
 						"Allergies": "userallergies",
 						"Medicines": "usermedicines",
 						"Appointments": "userappointments",
 						"Reports": "userreports"
 					};
 				$http({
-					method: 'GET',
-					url: 'http://127.0.0.1:8000/api/' + apiRoutes[route],
-					headers: {
-						'Content-Type': 'application/json'
-					}
-				})
-				.success(function successCallback(response){
-					// console.log(response);
-					var ignore = {
-						"_id": "_id",
-						"__v": "__v",
-						"uuid": "uuid",
-					};
-
-					for(var key in response){
-						if(!ignore[key]){
-							// console.log(key);
-							var outer = angular.element('<div></div>'),
-								colsize = angular.element('<div class="col-sm-3"></div>'),
-								displayCard = angular.element('<div class="displayCard"></div>'),
-								displayContainer = angular.element('<div class="displayContainer"></div>'),
-								displayTop = angular.element('<div class="displayTop ' + cardColor[route] + '"></div>'),
-								information = angular.element('<div class="information"></div>'),
-								img = angular.element('<img class="displayIcon ' + cardColor[route] + '" src="../images/icons/web.svg"></img>'),
-								name = angular.element('<div class="name ' + cardColor[route] + '">' + key + '</div>'),
-								displayDescription = angular.element('<div class="displayDescription"></div>'),
-								p = angular.element('<p>' + response[key] + '</p>');
-
-							displayDescription.append(p);
-							information.append(img);
-							information.append(name);
-							information.append(displayDescription);
-							displayContainer.append(displayTop);
-							displayContainer.append(information);
-							displayCard.append(displayContainer);
-							colsize.append(displayCard);
-							outer.append(colsize);
-
-							el.append(outer.html());
+						method: 'GET',
+						url: 'http://127.0.0.1:8000/api/' + apiRoutes[route],
+						headers: {
+							'Content-Type': 'application/json'
 						}
-					}
-					return el;
-				});
+					})
+					.success(function successCallback(response) {
+						var ignore = {
+							"_id": "_id",
+							"__v": "__v",
+							"uuid": "uuid"
+						};
+
+						var userprofname = {
+							"firstname": "First Name",
+							"lastname": "Last Name",
+							"email": "Email Address",
+							"streetaddress": "Street Address",
+							"city": "City",
+							"state": "State",
+							"zip": "Zip Code",
+							"country": "Country",
+							"phone": "Phone #",
+							"dob": "Date Of Birth",
+							"gender": "Gender",
+							"height": "Height",
+							"weight": "Weight",
+							"primaryinsurance": "Primary Insurance",
+							"primarypharmacy": "Primary Pharmacy",
+							"comment": "Comments"
+						};
+
+						for (var key in response) {
+							if (!ignore[key]) {
+								var outer = angular.element('<div></div>'),
+									colsize = angular.element('<div class="col-sm-3"></div>'),
+									displayCard = angular.element('<div class="displayCard"></div>'),
+									displayContainer = angular.element('<div class="displayContainer"></div>'),
+									displayTop = angular.element('<div class="displayTop ' + cardColor[route] + '"></div>'),
+									information = angular.element('<div class="information"></div>'),
+									img = angular.element('<img class="displayIcon ' + cardColor[route] + '" src="../images/icons/web.svg"></img>'),
+									name = angular.element('<div class="name ' + cardColor[route] + '">' + userprofname[key] + '</div>'),
+									displayDescription = angular.element('<div class="displayDescription"></div>'),
+									p = angular.element('<p>' + response[key] + '</p>');
+
+								displayDescription.append(p);
+								information.append(img);
+								information.append(name);
+								information.append(displayDescription);
+								displayContainer.append(displayTop);
+								displayContainer.append(information);
+								displayCard.append(displayContainer);
+								colsize.append(displayCard);
+								outer.append(colsize);
+
+								el.append(outer.html());
+							}
+						}
+						return el;
+					});
 			}
 		};
 	}])
 
 	.controller("main", ['$scope', '$http', function($scope, $http) {
-		$('.clockpicker').clockpicker({
-			default: 'now'
-		});
-
-		$('.datepicker').datepicker({});
-
-		$scope.getLocation = function() {
-			return document.cookie;
+		var routes = {
+			"userdata" : {"url" : "http://127.0.0.1:8000/api/userdata","name": "userdata"},
+			"usertestresult" : {"url" : "http://127.0.0.1:8000/api/usertestresult","name": "usertestresult"},
+			"userallergies" : {"url" : "http://127.0.0.1:8000/api/userallergies","name": "userallergies"},
+			"usermedicines" : {"url" : "http://127.0.0.1:8000/api/usermedicines","name": "usermedicines"},
+			"userappointments": {"url":"http://127.0.0.1:8000/api/userappointments","name": "userappointments"
+			}
 		};
-
-		$scope.reqAppt = function(event){
-			var reqApptData = $scope.apptReq;
-			event.preventDefault();
-			$http({
-				method: 'POST',
-				url: 'http://127.0.0.1:8000/api/requestAppointment',
-				data: reqApptData,
-				headers: {
-					'Content-Type': 'application/json'
-				}
-			})
+		$http({ method: 'GET', url: routes.userdata.url}).then(function successCallback(response) { $scope[routes.userdata.name] = response.data;});
+		// $http({ method: 'GET', url: routes.usertestresult.url}).then(function successCallback(response) { $scope[routes.usertestresult.name] = response.data;});
+		// $http({ method: 'GET', url: routes.userallergies.url}).then(function successCallback(response) { $scope[routes.userallergies.name] = response.data;});
+		// $http({ method: 'GET', url: routes.usermedicines.url}).then(function successCallback(response) { $scope[routes.usermedicines.name] = response.data;});
+		$http({ method: 'GET', url: routes.userappointments.url})
 			.then(function successCallback(response) {
-				if(response.status === 200){
-					//We gon do crazy stuff hur
-				}
-			});
-		};
 
-		$http({
-				method: 'GET',
-				url: 'http://127.0.0.1:8000/api/appointments',
-				headers: {
-					'Content-Type': 'application/json'
-				}
-			})
-			.then(function successCallback(response) {
-				//Keys to ignore when generating HTML for grid
 				var ignore = {
 					"_id": "_id",
 					"__v": "__v",
@@ -135,10 +172,6 @@
 
 				var userAppointments = [];
 				userAppointments = response.data;
-
-				// console.log(userAppointments);
-
-				// sortArrOfObjectsByParam(userAppointments, "date", false);
 
 				$scope.userAppointments = [];
 
@@ -154,9 +187,34 @@
 						}
 					}
 				}
+			});
 
-				console.log($scope.userAppointments);
-			}, function errorCallback(response) {});
-	}])
-	;
+		$('.clockpicker').clockpicker({
+			default: 'now'
+		});
+
+		$('.datepicker').datepicker({});
+
+		$scope.getLocation = function() {
+			return document.cookie;
+		};
+
+		$scope.reqAppt = function(event) {
+			var reqApptData = $scope.apptReq;
+			event.preventDefault();
+			$http({
+					method: 'POST',
+					url: 'http://127.0.0.1:8000/api/requestAppointment',
+					data: reqApptData,
+					headers: {
+						'Content-Type': 'application/json'
+					}
+				})
+				.then(function successCallback(response) {
+					if (response.status === 200) {
+						//We gon do crazy stuff hur
+					}
+				});
+		};
+	}]);
 })(angular);

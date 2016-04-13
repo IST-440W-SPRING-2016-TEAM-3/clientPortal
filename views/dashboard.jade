@@ -22,8 +22,7 @@ block content
 					li(role='presentation')
 						a(data-toggle="tab", href='#appointments') Appointments
 					li(role='presentation')
-						a(data-toggle="tab", href='#reports') Reports
-
+						a(data-toggle="tab", href='#Immunizations') Immunizations
 			.col-sm-10
 				.tab-content
 					#overview.tab-pane.fade.in.active
@@ -31,20 +30,76 @@ block content
 							.col-sm-3
 								.displayCard
 									.displayContainer
-										.displayTop
-										.displayIcon
+										.displayTop.medicines
+										.displayIcon.medicines
 										.information
-											.name firstname
+											.name.medicines firstname
 											.displayDescription
 												h1 Name of meds
 												h2 Dosage
 												h2 Frequency
 												h2 DateStart DateEnd
-												h2 Description about some soy shit here mayne. Lets go Sushiiiing dawg we out 
-
-
+												h2 Description about some soy shit here mayne. Lets go Sushiiiing dawg we out
 					#profilepage.tab-pane.fade.in
-						profile-cards(route="Overview")
+						.col-sm-12
+							form
+								.form-horizontal
+									.form-group
+										.col-sm-6
+											label.control-label First Name
+											input.form-control(type='text', ng-model="userdata.firstname")
+										.col-sm-6
+											label.control-label Last Name
+											input.form-control(type='text', ng-model="userdata.lastname")
+									.form-group
+										.col-sm-6
+											label.control-label Email
+											input.form-control(type='text', ng-model="userdata.email")
+										.col-sm-6
+											label.control-label Street Address
+											input.form-control(type='text', ng-model="userdata.streetaddress")
+									.form-group
+										.col-sm-6
+											label.control-label City
+											input.form-control(type='text', ng-model="userdata.city")
+										.col-sm-6
+											label.control-label State
+											input.form-control(type='text', ng-model="userdata.state")
+									.form-group
+										.col-sm-6
+											label.control-label Zip
+											input.form-control(type='text', ng-model="userdata.country")
+										.col-sm-6
+											label.control-label Phone
+											input.form-control(type='text', ng-model="userdata.phone")
+									.form-group
+										.col-sm-6
+											label.control-label Date Of Birth
+											input.form-control(type='text', ng-model="userdata.dob")
+										.col-sm-6
+											label.control-label Gender
+											input.form-control(type='text', ng-model="userdata.gender")
+									.form-group
+										.col-sm-6
+											label.control-label Height
+											input.form-control(type='text', ng-model="userdata.height")
+										.col-sm-6
+											label.control-label Weight
+											input.form-control(type='text', ng-model="userdata.weight")
+									.form-group
+										.col-sm-6
+											label.control-label Primary Insurance
+											input.form-control(type='text', ng-model="userdata.primaryinsurance")
+										.col-sm-6
+											label.control-label Primary Pharmacy
+											input.form-control(type='text', ng-model="userdata.primarypharmacy")
+									.form-group
+										.col-sm-12
+											label.control-label Comments
+											textarea.form-control(rows="5", type='text', ng-model="userdata.comment")
+									button(class="btn btn-440w nm pull-right") Save
+					#results.tab-pane.fade.in
+						profile-cards(route="Test Results")
 					#appointments.tab-pane.fade
 						.col-sm-12
 							h2 Appointments
@@ -86,8 +141,8 @@ block content
 											label.control-label Reason For Appointment
 											textarea.form-control(rows='3', ng-model="apptReq.reasonForAppt")
 									button(class="btn btn-440w pull-right", ng-click="reqAppt($event)") Request New Appointment
-
 					#medicines.tab-pane.fade
+						medication-cards
 					#allergies.tab-pane.fade
 					#reports.tab-pane.fade
-					#results.tab-pane.fade
+					#Immunizations.tab-pane.fade

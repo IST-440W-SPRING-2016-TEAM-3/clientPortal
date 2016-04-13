@@ -101,35 +101,38 @@ $green: #27b534;
 		text-align: center;
 		margin-top: -20px;
 	}
-	.displayIcon {
-		margin: -60px auto 15px;
-		padding: 10px;
-		display: block;
-		width: 75px;
-		height: 75px;
-		border-radius: 50%;
-		background-color: white;
-		&.user-profile {
-			border: solid 10px $darkblue;
+	span{
+		font-size: 45px;
+		&.displayIcon {
+			margin: -60px auto 15px;
+			padding: 0px 0px 0px 4.5px;
+			display: block;
+			width: 75px;
+			height: 75px;
+			border-radius: 50%;
+			background-color: white;
+			&.user-profile {
+				border: solid 10px $darkblue;
+			}
+			&.test-results {
+				border: solid 10px $yellow;
+			}
+			&.allergies {
+				border: solid 10px $lightblue;
+			}
+			&.medicines {
+				border: solid 10px $red;
+			}
+			&.appointments {
+				border: solid 10px $orange;
+			}
+			&.reports {
+				border: solid 10px $green;
+			}
+			img {
+				border: solid 10px $red;
+			}
 		}
-		&.test-results {
-			border: solid 10px $yellow;
-		}
-		&.allergies {
-			border: solid 10px $lightblue;
-		}
-		&.medicines {
-			border: solid 10px $red;
-		}
-		&.appointments {
-			border: solid 10px $orange;
-		}
-		&.reports {
-			border: solid 10px $green;
-		}
-		img {
-			border: solid 10px $red;
-		};
 	}
 	.name {
 		font-size: 25px;
