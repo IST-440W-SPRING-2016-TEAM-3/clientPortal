@@ -53,10 +53,11 @@ $green: #27b534;
 		}
 	}
 }
+
 //Display cards
 .displayCard {
 	color: #303336;
-	padding: 40px 0;
+	padding: 20px 0;
 }
 .displayContainer {
 	margin: 0 auto;
@@ -101,37 +102,44 @@ $green: #27b534;
 		text-align: center;
 		margin-top: -20px;
 	}
-	span{
-		font-size: 45px;
-		&.displayIcon {
-			margin: -60px auto 15px;
-			padding: 0px 0px 0px 4.5px;
-			display: block;
-			width: 75px;
-			height: 75px;
-			border-radius: 50%;
-			background-color: white;
-			&.user-profile {
-				border: solid 10px $darkblue;
+	.displayIcon {
+		margin: -60px auto 15px;
+		padding: 0px 0px 0px 0px;
+		display: block;
+		width: 75px;
+		height: 75px;
+		border-radius: 50%;
+		border: solid 10px $red;
+		background-color: white;
+		p {
+			text-align: center;
+			margin: 0px;
+			span{
+				font-size: 38px;
+				text-align: center;
+				width: 100%;
 			}
-			&.test-results {
-				border: solid 10px $yellow;
-			}
-			&.allergies {
-				border: solid 10px $lightblue;
-			}
-			&.medicines {
-				border: solid 10px $red;
-			}
-			&.appointments {
-				border: solid 10px $orange;
-			}
-			&.reports {
-				border: solid 10px $green;
-			}
-			img {
-				border: solid 10px $red;
-			}
+		}
+		&.user-profile {
+			border: solid 10px $darkblue;
+		}
+		&.test-results {
+			border: solid 10px $yellow;
+		}
+		&.allergies {
+			border: solid 10px $lightblue;
+		}
+		&.medicines {
+			border: solid 10px $red;
+		}
+		&.appointments {
+			border: solid 10px $orange;
+		}
+		&.reports {
+			border: solid 10px $green;
+		}
+		img {
+			border: solid 10px $red;
 		}
 	}
 	.name {
