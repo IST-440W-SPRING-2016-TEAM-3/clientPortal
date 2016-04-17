@@ -199,6 +199,17 @@
 			return document.cookie;
 		};
 
+		$scope.nameArrayCounter = function(){
+			var nameArray = $scope.nameArray;
+
+			if($scope.nameArray[$scope.medicine.name]){
+
+			} else {
+				nameArray.push($scope.medicine.name);
+				$scope.nameArray = nameArray;
+			}
+		};
+
 		$scope.reqAppt = function(event) {
 			var reqApptData = $scope.apptReq;
 			event.preventDefault();
