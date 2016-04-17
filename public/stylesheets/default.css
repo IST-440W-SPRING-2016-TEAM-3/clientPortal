@@ -42,7 +42,7 @@
 
 .displayCard {
   color: #303336;
-  padding: 40px 0; }
+  padding: 20px 0; }
 
 .displayContainer {
   margin: 0 auto;
@@ -78,30 +78,36 @@
   .displayContainer .information {
     text-align: center;
     margin-top: -20px; }
-  .displayContainer span {
-    font-size: 45px; }
-    .displayContainer span.displayIcon {
-      margin: -60px auto 15px;
-      padding: 0px 0px 0px 4.5px;
-      display: block;
-      width: 75px;
-      height: 75px;
-      border-radius: 50%;
-      background-color: white; }
-      .displayContainer span.displayIcon.user-profile {
-        border: solid 10px #001a74; }
-      .displayContainer span.displayIcon.test-results {
-        border: solid 10px #eefe3a; }
-      .displayContainer span.displayIcon.allergies {
-        border: solid 10px #00B7FF; }
-      .displayContainer span.displayIcon.medicines {
-        border: solid 10px #fc3131; }
-      .displayContainer span.displayIcon.appointments {
-        border: solid 10px #f79707; }
-      .displayContainer span.displayIcon.reports {
-        border: solid 10px #27b534; }
-      .displayContainer span.displayIcon img {
-        border: solid 10px #fc3131; }
+  .displayContainer .displayIcon {
+    margin: -60px auto 15px;
+    padding: 0px 0px 0px 0px;
+    display: block;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: solid 10px #fc3131;
+    background-color: white; }
+    .displayContainer .displayIcon p {
+      text-align: center;
+      margin: 0px; }
+      .displayContainer .displayIcon p span {
+        font-size: 38px;
+        text-align: center;
+        width: 100%; }
+    .displayContainer .displayIcon.user-profile {
+      border: solid 10px #001a74; }
+    .displayContainer .displayIcon.test-results {
+      border: solid 10px #eefe3a; }
+    .displayContainer .displayIcon.allergies {
+      border: solid 10px #00B7FF; }
+    .displayContainer .displayIcon.medicines {
+      border: solid 10px #fc3131; }
+    .displayContainer .displayIcon.appointments {
+      border: solid 10px #f79707; }
+    .displayContainer .displayIcon.reports {
+      border: solid 10px #27b534; }
+    .displayContainer .displayIcon img {
+      border: solid 10px #fc3131; }
   .displayContainer .name {
     font-size: 25px; }
     .displayContainer .name.user-profile::after {
@@ -600,7 +606,7 @@ body {
 
 .displayCard {
   color: #303336;
-  padding: 40px 0; }
+  padding: 20px 0; }
 
 .displayContainer {
   margin: 0 auto;
@@ -636,30 +642,36 @@ body {
   .displayContainer .information {
     text-align: center;
     margin-top: -20px; }
-  .displayContainer span {
-    font-size: 45px; }
-    .displayContainer span.displayIcon {
-      margin: -60px auto 15px;
-      padding: 0px 0px 0px 4.5px;
-      display: block;
-      width: 75px;
-      height: 75px;
-      border-radius: 50%;
-      background-color: white; }
-      .displayContainer span.displayIcon.user-profile {
-        border: solid 10px #001a74; }
-      .displayContainer span.displayIcon.test-results {
-        border: solid 10px #eefe3a; }
-      .displayContainer span.displayIcon.allergies {
-        border: solid 10px #00B7FF; }
-      .displayContainer span.displayIcon.medicines {
-        border: solid 10px #fc3131; }
-      .displayContainer span.displayIcon.appointments {
-        border: solid 10px #f79707; }
-      .displayContainer span.displayIcon.reports {
-        border: solid 10px #27b534; }
-      .displayContainer span.displayIcon img {
-        border: solid 10px #fc3131; }
+  .displayContainer .displayIcon {
+    margin: -60px auto 15px;
+    padding: 0px 0px 0px 0px;
+    display: block;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: solid 10px #fc3131;
+    background-color: white; }
+    .displayContainer .displayIcon p {
+      text-align: center;
+      margin: 0px; }
+      .displayContainer .displayIcon p span {
+        font-size: 38px;
+        text-align: center;
+        width: 100%; }
+    .displayContainer .displayIcon.user-profile {
+      border: solid 10px #001a74; }
+    .displayContainer .displayIcon.test-results {
+      border: solid 10px #eefe3a; }
+    .displayContainer .displayIcon.allergies {
+      border: solid 10px #00B7FF; }
+    .displayContainer .displayIcon.medicines {
+      border: solid 10px #fc3131; }
+    .displayContainer .displayIcon.appointments {
+      border: solid 10px #f79707; }
+    .displayContainer .displayIcon.reports {
+      border: solid 10px #27b534; }
+    .displayContainer .displayIcon img {
+      border: solid 10px #fc3131; }
   .displayContainer .name {
     font-size: 25px; }
     .displayContainer .name.user-profile::after {
