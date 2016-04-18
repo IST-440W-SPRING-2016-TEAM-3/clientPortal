@@ -27,7 +27,7 @@ router.get('/users', function(req, res, next) {
     }
 });
 
-router.get('/userdata', function(req, res, next) {
+router.get('/userdata/:id', function(req, res, next) {
     if(reqChecker !== 0){
         var uuid = req.session.uuid;
         var args = {
@@ -102,6 +102,23 @@ router.get('/usermedicines', function(req, res, next) {
             headers: { 'Content-Type': 'application/json' }
         };
         request("http://127.0.0.1:9000/usermedicines/" + uuid, args, function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                res.send(body);
+            }
+        });
+    }
+    else {
+        res.redirect('/');
+    }
+});
+
+router.get('/userimmunization', function(req, res, next) {
+    var uuid = req.session.uuid;
+    if(reqChecker !== 0){
+        var args = {
+            headers: { 'Content-Type': 'application/json' }
+        };
+        request("http://127.0.0.1:9000/userimmunization/" + uuid, args, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 res.send(body);
             }

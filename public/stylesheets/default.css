@@ -73,7 +73,7 @@
       background: #fc3131; }
     .displayContainer .displayTop.appointments {
       background: #f79707; }
-    .displayContainer .displayTop.reports {
+    .displayContainer .displayTop.immunizations {
       background: #27b534; }
   .displayContainer .information {
     text-align: center;
@@ -104,7 +104,7 @@
       border: solid 10px #fc3131; }
     .displayContainer .displayIcon.appointments {
       border: solid 10px #f79707; }
-    .displayContainer .displayIcon.reports {
+    .displayContainer .displayIcon.immunizations {
       border: solid 10px #27b534; }
     .displayContainer .displayIcon img {
       border: solid 10px #fc3131; }
@@ -202,11 +202,13 @@ body {
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
+.table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+  border-top: 0px; }
 .table thead > tr > th {
   vertical-align: bottom; }
 
 .table-striped > tbody > tr:nth-child(odd) > td {
-  background-color: rgba(53, 163, 197, 0.2); }
+  background-color: rgba(249, 151, 5, 0.4); }
 
 .nav.nav-pills.nav-stacked {
   background-color: #ffffff;
@@ -637,7 +639,7 @@ body {
       background: #fc3131; }
     .displayContainer .displayTop.appointments {
       background: #f79707; }
-    .displayContainer .displayTop.reports {
+    .displayContainer .displayTop.immunizations {
       background: #27b534; }
   .displayContainer .information {
     text-align: center;
@@ -668,7 +670,7 @@ body {
       border: solid 10px #fc3131; }
     .displayContainer .displayIcon.appointments {
       border: solid 10px #f79707; }
-    .displayContainer .displayIcon.reports {
+    .displayContainer .displayIcon.immunizations {
       border: solid 10px #27b534; }
     .displayContainer .displayIcon img {
       border: solid 10px #fc3131; }
