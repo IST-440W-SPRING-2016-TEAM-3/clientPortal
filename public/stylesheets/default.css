@@ -66,7 +66,7 @@
     .displayContainer .displayTop.user-profile {
       background: #001a74; }
     .displayContainer .displayTop.test-results {
-      background: #eefe3a; }
+      background: #CA3491; }
     .displayContainer .displayTop.allergies {
       background: #00B7FF; }
     .displayContainer .displayTop.medicines {
@@ -97,7 +97,7 @@
     .displayContainer .displayIcon.user-profile {
       border: solid 10px #001a74; }
     .displayContainer .displayIcon.test-results {
-      border: solid 10px #eefe3a; }
+      border: solid 10px #CA3491; }
     .displayContainer .displayIcon.allergies {
       border: solid 10px #00B7FF; }
     .displayContainer .displayIcon.medicines {
@@ -119,7 +119,7 @@
       padding-top: 5px;
       margin: auto; }
     .displayContainer .name.test-results::after {
-      border-bottom: 3px solid #eefe3a;
+      border-bottom: 3px solid #CA3491;
       content: '';
       display: block;
       height: 3px;
@@ -150,7 +150,7 @@
       width: 25%;
       padding-top: 5px;
       margin: auto; }
-    .displayContainer .name.reports::after {
+    .displayContainer .name.immunizations::after {
       border-bottom: 3px solid #27b534;
       content: '';
       display: block;
@@ -177,8 +177,7 @@ body {
   font-family: 'Roboto Condensed', Arial, sans-serif;
   /*"Lucida Grande"*/ }
   body.swag {
-    background: url("../images/header.png");
-    position: relative;
+    background: radial-gradient(white, #466477);
     top: 3em; }
 
 .modal-backdrop.in {
@@ -218,7 +217,7 @@ body {
   .nav.nav-pills.nav-stacked li:nth-of-type(2) {
     border-left: 5px solid #001a74; }
   .nav.nav-pills.nav-stacked li:nth-of-type(3) {
-    border-left: 5px solid #eefe3a; }
+    border-left: 5px solid #CA3491; }
   .nav.nav-pills.nav-stacked li:nth-of-type(4) {
     border-left: 5px solid #00B7FF; }
   .nav.nav-pills.nav-stacked li:nth-of-type(5) {
@@ -268,6 +267,9 @@ body {
   padding-top: 1.8em; }
 
 /*index page style*/
+.nm {
+  margin: 0px !important; }
+
 .mypage {
   padding: 0; }
 
@@ -632,7 +634,7 @@ body {
     .displayContainer .displayTop.user-profile {
       background: #001a74; }
     .displayContainer .displayTop.test-results {
-      background: #eefe3a; }
+      background: #CA3491; }
     .displayContainer .displayTop.allergies {
       background: #00B7FF; }
     .displayContainer .displayTop.medicines {
@@ -663,7 +665,7 @@ body {
     .displayContainer .displayIcon.user-profile {
       border: solid 10px #001a74; }
     .displayContainer .displayIcon.test-results {
-      border: solid 10px #eefe3a; }
+      border: solid 10px #CA3491; }
     .displayContainer .displayIcon.allergies {
       border: solid 10px #00B7FF; }
     .displayContainer .displayIcon.medicines {
@@ -685,7 +687,7 @@ body {
       padding-top: 5px;
       margin: auto; }
     .displayContainer .name.test-results::after {
-      border-bottom: 3px solid #eefe3a;
+      border-bottom: 3px solid #CA3491;
       content: '';
       display: block;
       height: 3px;
@@ -716,7 +718,7 @@ body {
       width: 25%;
       padding-top: 5px;
       margin: auto; }
-    .displayContainer .name.reports::after {
+    .displayContainer .name.immunizations::after {
       border-bottom: 3px solid #27b534;
       content: '';
       display: block;
@@ -783,9 +785,9 @@ span {
   color: #4a4a4a; }
 
 .popover.clockpicker-popover {
-  top: 21em !important; }
+  top: 15em !important; }
 
 .datepicker-dropdown {
-  top: 16.7em !important; }
+  top: 10.7em !important; }
 
 /*# sourceMappingURL=default.css.map */

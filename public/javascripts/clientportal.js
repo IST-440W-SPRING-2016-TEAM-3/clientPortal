@@ -15,7 +15,7 @@
 	angular.module("clientportal", [
 			'ui.bootstrap'
 		])
-		.directive("medicationCards", ["$http", function($http) {
+		.directive("medicationCards", ["$http","$filter", function($http, $filter) {
 			return {
 				restrict: "E",
 				link: function(scope, el, attrs) {
@@ -42,8 +42,8 @@
 									h1 = angular.element('<h1>' + response[key].name + '</h1>'),
 									h20 = angular.element('<h2>Dosage: ' + response[key].dosage + '</h2>'),
 									h21 = angular.element('<h2>Frequency: ' + response[key].frequency + '</h2>'),
-									h22 = angular.element('<h2>Date Start: ' + response[key].datestart + '</h2>'),
-									h23 = angular.element('<h2>Date End: ' + response[key].dateend + '</h2>'),
+									h22 = angular.element('<h2>Date Start: ' + $filter('date')(response[key].datestart, "mediumDate") + '</h2>'),
+									h23 = angular.element('<h2>Date End: ' + $filter('date')(response[key].dateend, "mediumDate") + '</h2>'),
 									h24 = angular.element('<h2>Description: ' + response[key].description + '</h2>'),
 									displayDescription = angular.element('<div class="displayDescription"></div>');
 
@@ -59,7 +59,6 @@
 								displayIcon.append(p);
 								displayContainer.append(displayTop);
 								displayContainer.append(displayIcon);
-								// displayContainer.append(actualIcon);
 								displayContainer.append(information);
 								displayCard.append(displayContainer);
 								colsize.append(displayCard);
@@ -73,7 +72,7 @@
 			};
 		}])
 
-	.directive("immunizationCards", ["$http", function($http) {
+	.directive("immunizationCards", ["$http", "$filter", function($http, $filter) {
 		return {
 			restrict: "E",
 			link: function(scope, el, attrs) {
@@ -97,7 +96,7 @@
 								information = angular.element('<div class="information"></div>'),
 								name = angular.element('<div class="name immunizations">Immunization</div>'),
 								h1 = angular.element('<h1>' + response[key].name + '</h1>'),
-								h21 = angular.element('<h2>Date Immunized: ' + response[key].dateimmunized + '</h2>'),
+								h21 = angular.element('<h2>Date Immunized: ' + $filter('date')(response[key].dateimmunized, "mediumDate") + '</h2>'),
 								h22 = angular.element('<h2>Description: ' + response[key].description + '</h2>'),
 								displayDescription = angular.element('<div class="displayDescription"></div>');
 
@@ -123,7 +122,7 @@
 		};
 	}])
 
-	.directive("allergyCards", ["$http", function($http) {
+	.directive("allergyCards", ["$http", "$filter", function($http, $filter) {
 		return {
 			restrict: "E",
 			link: function(scope, el, attrs) {
@@ -143,13 +142,13 @@
 								displayTop = angular.element('<div class="displayTop allergies"></div>'),
 								displayIcon = angular.element('<div class="displayIcon allergies"></div>'),
 								p = angular.element('<p></p>'),
-								span = angular.element('<span class="flaticon-medical-1"></span>'),
+								span = angular.element('<span class="flaticon-medical-2"></span>'),
 								actualIcon = angular.element('<span class="flaticon-medical-2 displayIcon allergies"></span>'),
 								information = angular.element('<div class="information"></div>'),
 								name = angular.element('<div class="name allergies">Allergy</div>'),
 								h1 = angular.element('<h1>' + response[key].name + '</h1>'),
-								h20 = angular.element('<h2>Date Start: ' + response[key].startdate + '</h2>'),
-								h21 = angular.element('<h2>Date End: ' + response[key].enddate + '</h2>'),
+								h20 = angular.element('<h2>Date Start: ' + $filter('date')(response[key].startdate, "mediumDate") + '</h2>'),
+								h21 = angular.element('<h2>Date End: ' + $filter('date')(response[key].enddate, "mediumDate") + '</h2>'),
 								h22 = angular.element('<h2>Description: ' + response[key].description + '</h2>'),
 								displayDescription = angular.element('<div class="displayDescription"></div>');
 
@@ -176,7 +175,7 @@
 		};
 	}])
 
-	.directive("testResultCards", ["$http", function($http) {
+	.directive("testResultCards", ["$http", "$filter", function($http, $filter) {
 		return {
 			restrict: "E",
 			link: function(scope, el, attrs) {
@@ -202,7 +201,7 @@
 								h1 = angular.element('<h1>' + response[key].testtype + '</h1>'),
 								h20 = angular.element('<h2>Description: ' + response[key].testdescription + '</h2>'),
 								h21 = angular.element('<h2>Result: ' + response[key].result + '</h2>'),
-								h22 = angular.element('<h2>Test Date: ' + response[key].date + '</h2>'),
+								h22 = angular.element('<h2>Test Date: ' + $filter('date')(response[key].date, "mediumDate") + '</h2>'),
 								displayDescription = angular.element('<div class="displayDescription"></div>');
 
 							displayDescription.append(h1);
@@ -221,94 +220,6 @@
 							outer.append(colsize);
 
 							el.append(outer.html());
-						}
-						return el;
-					});
-			}
-		};
-	}])
-
-	.directive("profileCards", ["$http", function($http) {
-		return {
-			restrict: "E",
-			link: function(scope, el, attrs) {
-				var route = attrs.route,
-					cardColor = {
-						"Overview": "user-profile",
-						"User Profile": "user-profile",
-						"Test Results": "test-results",
-						"Allergies": "allergies",
-						"Medicines": "medicines",
-						"Appointments": "appointments",
-						"Reports": "reports"
-					},
-					apiRoutes = {
-						"Overview": "userdata",
-						"User Profile": "userprofile",
-						"Test Results": "usertestresult",
-						"Allergies": "userallergies",
-						"Medicines": "usermedicines",
-						"Appointments": "userappointments",
-						"Reports": "userreports"
-					};
-				$http({
-						method: 'GET',
-						url: 'http://127.0.0.1:8000/api/' + apiRoutes[route],
-						headers: {
-							'Content-Type': 'application/json'
-						}
-					})
-					.success(function successCallback(response) {
-						var ignore = {
-							"_id": "_id",
-							"__v": "__v",
-							"uuid": "uuid"
-						};
-
-						var userprofname = {
-							"firstname": "First Name",
-							"lastname": "Last Name",
-							"email": "Email Address",
-							"streetaddress": "Street Address",
-							"city": "City",
-							"state": "State",
-							"zip": "Zip Code",
-							"country": "Country",
-							"phone": "Phone #",
-							"dob": "Date Of Birth",
-							"gender": "Gender",
-							"height": "Height",
-							"weight": "Weight",
-							"primaryinsurance": "Primary Insurance",
-							"primarypharmacy": "Primary Pharmacy",
-							"comment": "Comments"
-						};
-
-						for (var key in response) {
-							if (!ignore[key]) {
-								var outer = angular.element('<div></div>'),
-									colsize = angular.element('<div class="col-sm-3"></div>'),
-									displayCard = angular.element('<div class="displayCard"></div>'),
-									displayContainer = angular.element('<div class="displayContainer"></div>'),
-									displayTop = angular.element('<div class="displayTop ' + cardColor[route] + '"></div>'),
-									information = angular.element('<div class="information"></div>'),
-									img = angular.element('<img class="displayIcon ' + cardColor[route] + '" src="../images/icons/web.svg"></img>'),
-									name = angular.element('<div class="name ' + cardColor[route] + '">' + userprofname[key] + '</div>'),
-									displayDescription = angular.element('<div class="displayDescription"></div>'),
-									p = angular.element('<p>' + response[key] + '</p>');
-
-								displayDescription.append(p);
-								information.append(img);
-								information.append(name);
-								information.append(displayDescription);
-								displayContainer.append(displayTop);
-								displayContainer.append(information);
-								displayCard.append(displayContainer);
-								colsize.append(displayCard);
-								outer.append(colsize);
-
-								el.append(outer.html());
-							}
 						}
 						return el;
 					});

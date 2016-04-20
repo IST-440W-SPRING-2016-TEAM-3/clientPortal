@@ -1,7 +1,7 @@
 //CARDS COLORS
 $red: #fc3131;
 $orange: #f79707;
-$yellow: #eefe3a;
+$yellow: #CA3491;
 $lightblue: #00B7FF;
 $darkblue: #001a74;
 $green: #27b534;
@@ -199,7 +199,7 @@ $green: #27b534;
 				margin: auto;
 			}
 		}
-		&.reports {
+		&.immunizations {
 			&::after {
 				border-bottom: 3px solid $green;
 				content: '';
