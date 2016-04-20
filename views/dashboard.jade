@@ -26,23 +26,10 @@ block content
 			.col-sm-10
 				.tab-content
 					#overview.tab-pane.fade.in.active
-						.col-sm-12
-							.col-sm-3
-								.displayCard
-									.displayContainer
-										.displayTop.medicines
-										.displayIcon.medicnes
-											p
-												span.flaticon-medical-3
-										.information
-											.name.medicines firstname
-											.displayDescription
-												h1 Name of meds
-												h2 Dosage
-												h2 Frequency
-												h2 DateStart DateEnd
-												h2 Description about some soy shit here mayne. Lets go Sushiiiing dawg we out
-
+						test-result-cards
+						medication-cards
+						allergy-cards
+						immunization-cards
 					#profilepage.tab-pane.fade.in
 						.col-sm-12
 							form
@@ -100,7 +87,7 @@ block content
 										.col-sm-12
 											label.control-label Comments
 											textarea.form-control(rows="5", type='text', ng-model="userdata.comment")
-									button(class="btn btn-440w nm pull-right") Save
+									button(class="btn btn-440w nm pull-right" ng-click="updateUserDate()") Save
 					#results.tab-pane.fade.in
 						test-result-cards
 					#appointments.tab-pane.fade

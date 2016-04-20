@@ -1,21 +1,33 @@
 (function(angular, undefined) {
 
+	function dynamicSort(property) {
+		var sortOrder = 1;
+		if (property[0] === "-") {
+			sortOrder = -1;
+			property = property.substr(1);
+		}
+		return function(a, b) {
+			var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+			return result * sortOrder;
+		};
+	}
+
 	angular.module("clientportal", [
-		'ui.bootstrap'
-	])
-	.directive("medicationCards", ["$http",function($http){
-		return {
-			restrict: "E",
-			link: function(scope, el, attrs){
-				$http({
-						method: 'GET',
-						url: 'http://127.0.0.1:8000/api/usermedicines',
-						headers: {
-							'Content-Type': 'application/json'
-						}
-					})
-					.success(function successCallback(response) {
-						for (var key in response) {
+			'ui.bootstrap'
+		])
+		.directive("medicationCards", ["$http", function($http) {
+			return {
+				restrict: "E",
+				link: function(scope, el, attrs) {
+					$http({
+							method: 'GET',
+							url: 'http://127.0.0.1:8000/api/usermedicines',
+							headers: {
+								'Content-Type': 'application/json'
+							}
+						})
+						.success(function successCallback(response) {
+							for (var key in response) {
 								var outer = angular.element('<div></div>'),
 									colsize = angular.element('<div class="col-sm-3"></div>'),
 									displayCard = angular.element('<div class="displayCard"></div>'),
@@ -54,17 +66,17 @@
 								outer.append(colsize);
 
 								el.append(outer.html());
-						}
-						return el;
-					});
-			}
-		};
-	}])
+							}
+							return el;
+						});
+				}
+			};
+		}])
 
-	.directive("immunizationCards", ["$http",function($http){
+	.directive("immunizationCards", ["$http", function($http) {
 		return {
 			restrict: "E",
-			link: function(scope, el, attrs){
+			link: function(scope, el, attrs) {
 				$http({
 						method: 'GET',
 						url: 'http://127.0.0.1:8000/api/userimmunization',
@@ -74,36 +86,36 @@
 					})
 					.success(function successCallback(response) {
 						for (var key in response) {
-								var outer = angular.element('<div></div>'),
-									colsize = angular.element('<div class="col-sm-3"></div>'),
-									displayCard = angular.element('<div class="displayCard"></div>'),
-									displayContainer = angular.element('<div class="displayContainer immunizations"></div>'),
-									displayTop = angular.element('<div class="displayTop immunizations"></div>'),
-									displayIcon = angular.element('<div class="displayIcon immunizations"></div>'),
-									p = angular.element('<p></p>'),
-									span = angular.element('<span class="flaticon-medical"></span>'),
-									information = angular.element('<div class="information"></div>'),
-									name = angular.element('<div class="name immunizations">Immunization</div>'),
-									h1 = angular.element('<h1>' + response[key].name + '</h1>'),
-									h21 = angular.element('<h2>Date Immunized: ' + response[key].dateimmunized + '</h2>'),
-									h22 = angular.element('<h2>Description: ' + response[key].description + '</h2>'),
-									displayDescription = angular.element('<div class="displayDescription"></div>');
+							var outer = angular.element('<div></div>'),
+								colsize = angular.element('<div class="col-sm-3"></div>'),
+								displayCard = angular.element('<div class="displayCard"></div>'),
+								displayContainer = angular.element('<div class="displayContainer immunizations"></div>'),
+								displayTop = angular.element('<div class="displayTop immunizations"></div>'),
+								displayIcon = angular.element('<div class="displayIcon immunizations"></div>'),
+								p = angular.element('<p></p>'),
+								span = angular.element('<span class="flaticon-medical"></span>'),
+								information = angular.element('<div class="information"></div>'),
+								name = angular.element('<div class="name immunizations">Immunization</div>'),
+								h1 = angular.element('<h1>' + response[key].name + '</h1>'),
+								h21 = angular.element('<h2>Date Immunized: ' + response[key].dateimmunized + '</h2>'),
+								h22 = angular.element('<h2>Description: ' + response[key].description + '</h2>'),
+								displayDescription = angular.element('<div class="displayDescription"></div>');
 
-								displayDescription.append(h1);
-								displayDescription.append(h21);
-								displayDescription.append(h22);
-								information.append(name);
-								information.append(displayDescription);
-								p.append(span);
-								displayIcon.append(p);
-								displayContainer.append(displayTop);
-								displayContainer.append(displayIcon);
-								displayContainer.append(information);
-								displayCard.append(displayContainer);
-								colsize.append(displayCard);
-								outer.append(colsize);
+							displayDescription.append(h1);
+							displayDescription.append(h21);
+							displayDescription.append(h22);
+							information.append(name);
+							information.append(displayDescription);
+							p.append(span);
+							displayIcon.append(p);
+							displayContainer.append(displayTop);
+							displayContainer.append(displayIcon);
+							displayContainer.append(information);
+							displayCard.append(displayContainer);
+							colsize.append(displayCard);
+							outer.append(colsize);
 
-								el.append(outer.html());
+							el.append(outer.html());
 						}
 						return el;
 					});
@@ -111,10 +123,10 @@
 		};
 	}])
 
-	.directive("allergyCards", ["$http",function($http){
+	.directive("allergyCards", ["$http", function($http) {
 		return {
 			restrict: "E",
-			link: function(scope, el, attrs){
+			link: function(scope, el, attrs) {
 				$http({
 						method: 'GET',
 						url: 'http://127.0.0.1:8000/api/userallergies',
@@ -124,39 +136,39 @@
 					})
 					.success(function successCallback(response) {
 						for (var key in response) {
-								var outer = angular.element('<div></div>'),
-									colsize = angular.element('<div class="col-sm-3"></div>'),
-									displayCard = angular.element('<div class="displayCard"></div>'),
-									displayContainer = angular.element('<div class="displayContainer allergies"></div>'),
-									displayTop = angular.element('<div class="displayTop allergies"></div>'),
-									displayIcon = angular.element('<div class="displayIcon allergies"></div>'),
-									p = angular.element('<p></p>'),
-									span = angular.element('<span class="flaticon-medical-1"></span>'),
-									actualIcon = angular.element('<span class="flaticon-medical-2 displayIcon allergies"></span>'),
-									information = angular.element('<div class="information"></div>'),
-									name = angular.element('<div class="name allergies">Allergy</div>'),
-									h1 = angular.element('<h1>' + response[key].name + '</h1>'),
-									h20 = angular.element('<h2>Date Start: ' + response[key].startdate + '</h2>'),
-									h21 = angular.element('<h2>Date End: ' + response[key].enddate + '</h2>'),
-									h22 = angular.element('<h2>Description: ' + response[key].description + '</h2>'),
-									displayDescription = angular.element('<div class="displayDescription"></div>');
+							var outer = angular.element('<div></div>'),
+								colsize = angular.element('<div class="col-sm-3"></div>'),
+								displayCard = angular.element('<div class="displayCard"></div>'),
+								displayContainer = angular.element('<div class="displayContainer allergies"></div>'),
+								displayTop = angular.element('<div class="displayTop allergies"></div>'),
+								displayIcon = angular.element('<div class="displayIcon allergies"></div>'),
+								p = angular.element('<p></p>'),
+								span = angular.element('<span class="flaticon-medical-1"></span>'),
+								actualIcon = angular.element('<span class="flaticon-medical-2 displayIcon allergies"></span>'),
+								information = angular.element('<div class="information"></div>'),
+								name = angular.element('<div class="name allergies">Allergy</div>'),
+								h1 = angular.element('<h1>' + response[key].name + '</h1>'),
+								h20 = angular.element('<h2>Date Start: ' + response[key].startdate + '</h2>'),
+								h21 = angular.element('<h2>Date End: ' + response[key].enddate + '</h2>'),
+								h22 = angular.element('<h2>Description: ' + response[key].description + '</h2>'),
+								displayDescription = angular.element('<div class="displayDescription"></div>');
 
-								displayDescription.append(h1);
-								displayDescription.append(h20);
-								displayDescription.append(h21);
-								displayDescription.append(h22);
-								information.append(name);
-								information.append(displayDescription);
-								p.append(span);
-								displayIcon.append(p);
-								displayContainer.append(displayTop);
-								displayContainer.append(displayIcon);
-								displayContainer.append(information);
-								displayCard.append(displayContainer);
-								colsize.append(displayCard);
-								outer.append(colsize);
+							displayDescription.append(h1);
+							displayDescription.append(h20);
+							displayDescription.append(h21);
+							displayDescription.append(h22);
+							information.append(name);
+							information.append(displayDescription);
+							p.append(span);
+							displayIcon.append(p);
+							displayContainer.append(displayTop);
+							displayContainer.append(displayIcon);
+							displayContainer.append(information);
+							displayCard.append(displayContainer);
+							colsize.append(displayCard);
+							outer.append(colsize);
 
-								el.append(outer.html());
+							el.append(outer.html());
 						}
 						return el;
 					});
@@ -164,10 +176,10 @@
 		};
 	}])
 
-	.directive("testResultCards", ["$http",function($http){
+	.directive("testResultCards", ["$http", function($http) {
 		return {
 			restrict: "E",
-			link: function(scope, el, attrs){
+			link: function(scope, el, attrs) {
 				$http({
 						method: 'GET',
 						url: 'http://127.0.0.1:8000/api/usertestresult',
@@ -177,38 +189,38 @@
 					})
 					.success(function successCallback(response) {
 						for (var key in response) {
-								var outer = angular.element('<div></div>'),
-									colsize = angular.element('<div class="col-sm-3"></div>'),
-									displayCard = angular.element('<div class="displayCard"></div>'),
-									displayContainer = angular.element('<div class="displayContainer test-results"></div>'),
-									displayTop = angular.element('<div class="displayTop test-results"></div>'),
-									displayIcon = angular.element('<div class="displayIcon test-results"></div>'),
-									p = angular.element('<p></p>'),
-									span = angular.element('<span class="flaticon-medical-4"></span>'),
-									information = angular.element('<div class="information"></div>'),
-									name = angular.element('<div class="name test-results">Test Result</div>'),
-									h1 = angular.element('<h1>' + response[key].testtype + '</h1>'),
-									h20 = angular.element('<h2>Description: ' + response[key].testdescription + '</h2>'),
-									h21 = angular.element('<h2>Result: ' + response[key].result + '</h2>'),
-									h22 = angular.element('<h2>Test Date: ' + response[key].date + '</h2>'),
-									displayDescription = angular.element('<div class="displayDescription"></div>');
+							var outer = angular.element('<div></div>'),
+								colsize = angular.element('<div class="col-sm-3"></div>'),
+								displayCard = angular.element('<div class="displayCard"></div>'),
+								displayContainer = angular.element('<div class="displayContainer test-results"></div>'),
+								displayTop = angular.element('<div class="displayTop test-results"></div>'),
+								displayIcon = angular.element('<div class="displayIcon test-results"></div>'),
+								p = angular.element('<p></p>'),
+								span = angular.element('<span class="flaticon-medical-4"></span>'),
+								information = angular.element('<div class="information"></div>'),
+								name = angular.element('<div class="name test-results">Test Result</div>'),
+								h1 = angular.element('<h1>' + response[key].testtype + '</h1>'),
+								h20 = angular.element('<h2>Description: ' + response[key].testdescription + '</h2>'),
+								h21 = angular.element('<h2>Result: ' + response[key].result + '</h2>'),
+								h22 = angular.element('<h2>Test Date: ' + response[key].date + '</h2>'),
+								displayDescription = angular.element('<div class="displayDescription"></div>');
 
-								displayDescription.append(h1);
-								displayDescription.append(h20);
-								displayDescription.append(h21);
-								displayDescription.append(h22);
-								information.append(name);
-								information.append(displayDescription);
-								p.append(span);
-								displayIcon.append(p);
-								displayContainer.append(displayTop);
-								displayContainer.append(displayIcon);
-								displayContainer.append(information);
-								displayCard.append(displayContainer);
-								colsize.append(displayCard);
-								outer.append(colsize);
+							displayDescription.append(h1);
+							displayDescription.append(h20);
+							displayDescription.append(h21);
+							displayDescription.append(h22);
+							information.append(name);
+							information.append(displayDescription);
+							p.append(span);
+							displayIcon.append(p);
+							displayContainer.append(displayTop);
+							displayContainer.append(displayIcon);
+							displayContainer.append(information);
+							displayCard.append(displayContainer);
+							colsize.append(displayCard);
+							outer.append(colsize);
 
-								el.append(outer.html());
+							el.append(outer.html());
 						}
 						return el;
 					});
@@ -306,18 +318,40 @@
 
 	.controller("main", ['$scope', '$http', function($scope, $http) {
 		var routes = {
-			"userdata" : {"url" : "http://127.0.0.1:8000/api/userdata","name": "userdata"},
-			"usertestresult" : {"url" : "http://127.0.0.1:8000/api/usertestresult","name": "usertestresult"},
-			"userallergies" : {"url" : "http://127.0.0.1:8000/api/userallergies","name": "userallergies"},
-			"usermedicines" : {"url" : "http://127.0.0.1:8000/api/usermedicines","name": "usermedicines"},
-			"userappointments": {"url":"http://127.0.0.1:8000/api/userappointments","name": "userappointments"
+			"userdata": {
+				"url": "http://127.0.0.1:8000/api/userdata",
+				"name": "userdata"
+			},
+			"usertestresult": {
+				"url": "http://127.0.0.1:8000/api/usertestresult",
+				"name": "usertestresult"
+			},
+			"userallergies": {
+				"url": "http://127.0.0.1:8000/api/userallergies",
+				"name": "userallergies"
+			},
+			"usermedicines": {
+				"url": "http://127.0.0.1:8000/api/usermedicines",
+				"name": "usermedicines"
+			},
+			"userappointments": {
+				"url": "http://127.0.0.1:8000/api/userappointments",
+				"name": "userappointments"
 			}
 		};
-		$http({ method: 'GET', url: routes.userdata.url}).then(function successCallback(response) { $scope[routes.userdata.name] = response.data;});
+		$http({
+			method: 'GET',
+			url: routes.userdata.url
+		}).then(function successCallback(response) {
+			$scope[routes.userdata.name] = response.data;
+		});
 		// $http({ method: 'GET', url: routes.usertestresult.url}).then(function successCallback(response) { $scope[routes.usertestresult.name] = response.data;});
 		// $http({ method: 'GET', url: routes.userallergies.url}).then(function successCallback(response) { $scope[routes.userallergies.name] = response.data;});
 		// $http({ method: 'GET', url: routes.usermedicines.url}).then(function successCallback(response) { $scope[routes.usermedicines.name] = response.data;});
-		$http({ method: 'GET', url: routes.userappointments.url})
+		$http({
+				method: 'GET',
+				url: routes.userappointments.url
+			})
 			.then(function successCallback(response) {
 
 				var ignore = {
@@ -335,6 +369,7 @@
 				// Also using our ignore object to make sure any data that is not supposed to be seen isn't shown
 				// on the scope.
 
+
 				for (var r = 0; r < response.data.length; r++) {
 					$scope.userAppointments[r] = {};
 					for (var keyss in userAppointments[r]) {
@@ -343,6 +378,8 @@
 						}
 					}
 				}
+
+				userAppointments = userAppointments.sort(dynamicSort("date"));
 			});
 
 		$('.clockpicker').clockpicker({
@@ -355,15 +392,33 @@
 			return document.cookie;
 		};
 
-		$scope.nameArrayCounter = function(){
+		$scope.nameArrayCounter = function() {
 			var nameArray = $scope.nameArray;
 
-			if($scope.nameArray[$scope.medicine.name]){
+			if ($scope.nameArray[$scope.medicine.name]) {
 
 			} else {
 				nameArray.push($scope.medicine.name);
 				$scope.nameArray = nameArray;
 			}
+		};
+
+		$scope.updateUserDate = function() {
+			var updatedUserData = $scope.userdata;
+			$http({
+					method: 'PUT',
+					url: 'http://127.0.0.1:8000/api/userdata',
+					data: updatedUserData,
+					headers: {
+						'Content-Type': 'application/json'
+					}
+				})
+				.then(function successCallback(response) {
+					if (response.status === 200) {
+						alert("Your data has been saved!");
+						location.href = "/";
+					}
+				});
 		};
 
 		$scope.reqAppt = function(event) {
