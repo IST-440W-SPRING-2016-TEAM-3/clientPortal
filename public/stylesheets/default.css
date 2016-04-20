@@ -285,7 +285,11 @@ body {
   .myNav a {
     color: white;
     text-decoration: none;
-    padding: 0 1em; }
+    padding: 0 1em;
+    border-bottom: solid 3px transparent; }
+    .myNav a img.myLogo {
+      width: 100px;
+      height: 100px; }
   .myNav li {
     margin: 10px 0 0 0;
     list-style-type: none;
@@ -304,7 +308,7 @@ body {
     .myNav li:first-child:hover {
       margin-right: auto;
       background: none;
-      border-bottom: none; }
+      border-bottom: solid 3px transparent; }
     .myNav li:last-child {
       margin-right: 50px; }
 
@@ -318,7 +322,7 @@ body {
   width: 100%;
   height: 100vh;
   min-height: 800px;
-  background: url("../images/Header.jpg") top center fixed;
+  background: linear-gradient(to bottom right, rgba(0, 47, 75, 0.4), rgba(221, 66, 36, 0.3)), url("../images/Header.jpg") top center fixed;
   background-size: cover;
   padding: 0;
   display: inline-block;
@@ -356,7 +360,9 @@ body {
   width: 100%;
   background: #fff;
   min-height: 40vh;
-  height: auto; }
+  height: auto;
+  margin: 3% 0px 5% 0px;
+  text-shadow: 1px 1px 1px #DEDEDE; }
   .welcomeContent h1 {
     text-align: center; }
   .welcomeContent h2 {
@@ -388,17 +394,28 @@ body {
       width: 100%; }
 
 .firstContent {
+  background: linear-gradient(to bottom right, rgba(54, 9, 1, 0.8), rgba(0, 47, 75, 0.8)), url("../images/second-min.jpg") top center fixed;
+  background-size: cover;
+  color: white;
   height: auto;
   min-height: 50vh;
   width: 100%;
   padding-top: 50px;
-  padding-bottom: 50px; }
+  padding-bottom: 50px;
+  box-shadow: 0 -1px 20px black, 0 1px 20px black;
+  margin-bottom: 15px; }
   .firstContent .myWrapper h1 {
-    text-align: center; }
+    text-align: center;
+    color: white; }
+  .firstContent .myWrapper h4 {
+    color: white; }
   .firstContent .myWrapper p {
-    color: #333333;
+    color: white;
     font-size: 25px;
     text-shadow: none; }
+    .firstContent .myWrapper p span {
+      color: white;
+      font-size: 35px; }
   .firstContent .mainInfo {
     display: flex;
     justify-content: space-around;
@@ -423,11 +440,10 @@ body {
         margin: auto;
         border-bottom: 3px solid #00B7FF; }
       .firstContent .mainInfo .mainContent:hover {
-        transform: scale(1.1);
         transition: all 0.2s ease-out; }
         .firstContent .mainInfo .mainContent:hover span {
           color: #00B7FF;
-          transition: all .5s ease-out; }
+          transition: all .3s ease-out; }
 
 .contentTwo {
   width: 100%;
@@ -435,11 +451,10 @@ body {
   min-height: 50vh;
   display: flex;
   align-content: center;
-  background-color: #00B7FF;
+  background-color: #fff;
+  color: black;
   padding-top: 25px;
-  padding-bottom: 25px;
-  box-shadow: 0 -1px 20px gray;
-  box-shadow: 0 -1px 20px gray; }
+  padding-bottom: 25px; }
   .contentTwo .myWrapper {
     display: flex;
     flex-wrap: wrap;
@@ -452,17 +467,18 @@ body {
       width: 50%;
       color: white; }
       .contentTwo .myWrapper .divOne p, .contentTwo .myWrapper .divTwo p {
-        font-size: 25px; }
+        font-size: 25px;
+        color: black; }
       .contentTwo .myWrapper .divOne h1, .contentTwo .myWrapper .divTwo h1 {
         text-align: left;
-        color: white; }
+        color: black; }
         .contentTwo .myWrapper .divOne h1::after, .contentTwo .myWrapper .divTwo h1::after {
           content: '';
           display: block;
           height: 3px;
           width: 10%;
           padding-top: 20px;
-          border-bottom: 3px solid white; }
+          border-bottom: 3px solid #00B7FF; }
     .contentTwo .myWrapper .divOne figure {
       background: url("../images/doc2.png");
       width: 436px;
@@ -482,30 +498,28 @@ body {
       .contentTwo .myWrapper .divTwo a:active {
         top: 3px; }
 
-.ourTeam h4::after {
-  content: '';
-  display: block;
-  height: 3px;
-  width: 5%;
-  margin: auto;
-  padding-top: 20px;
-  margin-bottom: 20px;
-  border-bottom: 3px solid #4a4a4a; }
-.ourTeam .myWrapper {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center; }
-  .ourTeam .myWrapper .userCard {
-    flex-basis: 30%;
-    height: auto;
-    margin-right: 10px; }
+.ourTeam {
+  background: linear-gradient(to bottom right, rgba(0, 47, 75, 0.8), rgba(54, 9, 1, 0.8)), url("../images/third-min.jpg") center fixed;
+  background-size: cover;
+  color: white;
+  height: auto;
+  min-height: 50vh;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  box-shadow: 0 -1px 20px black, 0 1px 20px black;
+  margin-bottom: 15px; }
+  .ourTeam h1, .ourTeam h4 {
+    color: white; }
+  .ourTeam .myWrapper {
+    min-height: 50vh; }
 
 .contactUS {
-  background: #333333;
+  background: #fff;
   width: 100%;
   height: 55vh; }
+  .contactUS h1 {
+    color: black; }
   .contactUS h4 {
     margin: 0 0 0.5em; }
   .contactUS .btn-440w {
@@ -787,5 +801,26 @@ span {
 
 .datepicker-dropdown {
   top: 16.7em !important; }
+
+.myRow {
+  margin: 30px auto 10px;
+  width: 75%;
+  text-align: center; }
+  .myRow button.MYBTN {
+    width: 20%;
+    color: white;
+    position: relative;
+    background: transparent;
+    padding: 12px 40px;
+    border: 2px solid white;
+    font-size: 1.2em;
+    transition: 0.5s ease-in-out all; }
+    .myRow button.MYBTN:active {
+      top: 3px; }
+    .myRow button.MYBTN:hover {
+      border: 2px solid #00B7FF;
+      transition: 0.5s ease-in-out all;
+      text-decoration: none;
+      cursor: pointer; }
 
 /*# sourceMappingURL=default.css.map */

@@ -27,6 +27,12 @@ $fourthColor: #909090; //light grey
 		color: white;
 		text-decoration: none;
 		padding: 0 1em;
+		border-bottom: solid 3px transparent;
+		img.myLogo{
+			width: 100px;
+			height: 100px;
+			//border-radius: 100%;
+		}
 	}
 	li {
 		margin: 10px 0 0 0;
@@ -49,7 +55,8 @@ $fourthColor: #909090; //light grey
 		&:first-child:hover {
 			margin-right: auto;
 			background: none;
-			border-bottom: none;
+			//border-bottom: none;
+			border-bottom: solid 3px transparent;
 		}
 		&:last-child{
 			margin-right: 50px;
@@ -70,7 +77,11 @@ $fourthColor: #909090; //light grey
 	width: 100%;
 	height: 100vh;
 	min-height: 800px;
-	background: url("../images/Header.jpg") top center fixed;
+	background:
+	linear-gradient(to bottom right,
+	rgba(0, 47, 75, 0.4),
+	rgba(#dd4224, 0.3)),
+	url("../images/Header.jpg") top center fixed;
 	background-size: cover;
 	padding: 0;
 	display: inline-block;
@@ -117,6 +128,8 @@ $fourthColor: #909090; //light grey
 	background: #fff;
 	min-height: 40vh;
 	height: auto;
+	margin: 3% 0px 5% 0px;
+	text-shadow: 1px 1px 1px #DEDEDE;
 	h1{
 		text-align: center;
 	}
@@ -158,18 +171,36 @@ $fourthColor: #909090; //light grey
 }
 //END welcomeContent
 .firstContent{
+	background:
+	linear-gradient(to bottom right,
+	rgba(#360901, 0.8),
+	rgba(0, 47, 75, 0.8)),
+	url("../images/second-min.jpg") top center fixed;
+	background-size: cover;
+	color:white;
 	height: auto;
 	min-height: 50vh;
 	width: 100%;
 	padding-top: $mySpacing; padding-bottom: $mySpacing;
+	box-shadow: 0 -1px 20px black, 0 1px 20px black;
+	margin-bottom:15px;
+	//text-shadow: 1px 1px 1px #DEDEDE;
 	.myWrapper{
 		h1{
 			text-align: center;
+			color:white;
+		}
+		h4{
+			color: white;
 		}
 		p{
-			color:#333333;
+			color:white;
 			font-size: $myparagraph;
 			text-shadow: none;
+			span{
+				color:white;
+				font-size:35px;
+			}
 		}
 	}
 		.mainInfo {
@@ -200,11 +231,11 @@ $fourthColor: #909090; //light grey
 						}
 					}
 					&:hover {
-						transform: scale(1.1);
+						//transform: scale(1.05);
 						transition: all 0.2s ease-out;
 						span{
 							color:$firstColor;
-							transition: all .5s ease-out;
+							transition: all .3s ease-out;
 						}
 					}
 				}
@@ -217,11 +248,10 @@ $fourthColor: #909090; //light grey
 	min-height: 50vh;
 	display:flex;
 	align-content: center;
-	background-color:$firstColor;
+	background-color:#fff;
+	color:black;
 	padding-top: $mySpacing/2;
 	padding-bottom: $mySpacing/2;
-	box-shadow: 0 -1px 20px gray;
-	box-shadow: 0 -1px 20px gray;
 	.myWrapper{
 		display: flex;
 		flex-wrap: wrap;
@@ -235,17 +265,19 @@ $fourthColor: #909090; //light grey
 			color:white;
 			p {
 			font-size: $myparagraph;
+			color:black;
 			}
 			h1{
 				text-align: left;
-		 	color:white;
+		 		//color:white;
+				color:black;
 				&::after {
 				content: '';
 				display: block;
 				height: 3px;
 				width: 10%;
 				padding-top: 20px;
-				border-bottom: 3px solid white;
+				border-bottom: 3px solid $firstColor;
 		}
 		}
 	}
@@ -287,36 +319,34 @@ $fourthColor: #909090; //light grey
 	}
 //END contentTwo
 .ourTeam{
-	h4{
-		&::after {
-		content: '';
-		display: block;
-		height: 3px;
-		width: 5%;
-		margin: auto;
-		padding-top: 20px;
-		margin-bottom: 20px;
-		border-bottom: 3px solid $thirdColor;
-		}
+	background:
+	linear-gradient(to bottom right,
+	rgba(0, 47, 75, 0.8),
+	rgba(#360901, 0.8)),
+	url("../images/third-min.jpg") center fixed;
+	background-size: cover;
+	color:white;
+	height: auto;
+	min-height: 50vh;
+	width: 100%;
+	padding-top: $mySpacing; padding-bottom: $mySpacing;
+	box-shadow: 0 -1px 20px black, 0 1px 20px black;
+	margin-bottom:15px;
+	h1, h4{
+		color:white;
 	}
 	.myWrapper{
-	display:flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-	.userCard{
-		flex-basis:30%;
-		height: auto;
-		margin-right: 10px;
-		}
+		min-height: 50vh;
 	}
 }
 //END ourTeam
 .contactUS {
-	background: #333333;
+	background: #fff;
 	width: 100%;
 	height: 55vh;
+	h1{
+		color:black;
+	}
 	h4 {
 		margin: 0 0 0.5em;
 	}
