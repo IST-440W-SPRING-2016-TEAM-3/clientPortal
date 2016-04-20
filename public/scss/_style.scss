@@ -3,8 +3,7 @@
 body {
 font-family: 'Roboto Condensed', Arial, sans-serif; /*"Lucida Grande"*/
 	&.swag {
-		background: url("../images/header.png");
-		position: relative;
+		background: radial-gradient(white, #466477);
 		top: 3em;
 	}
 }
