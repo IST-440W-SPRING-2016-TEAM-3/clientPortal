@@ -318,7 +318,7 @@ body {
   width: 100%;
   height: 100vh;
   min-height: 800px;
-  background: url("../images/Header.jpg") top center fixed;
+  background: linear-gradient(to bottom right, rgba(0, 47, 75, 0.4), rgba(221, 66, 36, 0.3)), url("../images/Header.jpg") top center fixed;
   background-size: cover;
   padding: 0;
   display: inline-block;
@@ -356,7 +356,9 @@ body {
   width: 100%;
   background: #fff;
   min-height: 40vh;
-  height: auto; }
+  height: auto;
+  margin: 3% 0px 5% 0px;
+  text-shadow: 1px 1px 1px #DEDEDE; }
   .welcomeContent h1 {
     text-align: center; }
   .welcomeContent h2 {
@@ -388,17 +390,27 @@ body {
       width: 100%; }
 
 .firstContent {
+  background: linear-gradient(to bottom right, rgba(54, 9, 1, 0.71), rgba(0, 47, 75, 0.4)), url("../images/Header.jpg") top center fixed;
+  background-size: cover;
+  color: white;
   height: auto;
   min-height: 50vh;
   width: 100%;
   padding-top: 50px;
-  padding-bottom: 50px; }
+  padding-bottom: 50px;
+  box-shadow: 0 -1px 20px black;
+  text-shadow: 1px 1px 1px #DEDEDE; }
   .firstContent .myWrapper h1 {
-    text-align: center; }
+    text-align: center;
+    color: white; }
+  .firstContent .myWrapper h4 {
+    color: white; }
   .firstContent .myWrapper p {
-    color: #333333;
+    color: white;
     font-size: 25px;
     text-shadow: none; }
+    .firstContent .myWrapper p span {
+      color: white; }
   .firstContent .mainInfo {
     display: flex;
     justify-content: space-around;
@@ -423,7 +435,6 @@ body {
         margin: auto;
         border-bottom: 3px solid #00B7FF; }
       .firstContent .mainInfo .mainContent:hover {
-        transform: scale(1.1);
         transition: all 0.2s ease-out; }
         .firstContent .mainInfo .mainContent:hover span {
           color: #00B7FF;

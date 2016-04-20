@@ -70,7 +70,11 @@ $fourthColor: #909090; //light grey
 	width: 100%;
 	height: 100vh;
 	min-height: 800px;
-	background: url("../images/Header.jpg") top center fixed;
+	background:
+	linear-gradient(to bottom right,
+	rgba(0, 47, 75, 0.4),
+	rgba(#dd4224, 0.3)),
+	url("../images/Header.jpg") top center fixed;
 	background-size: cover;
 	padding: 0;
 	display: inline-block;
@@ -117,6 +121,8 @@ $fourthColor: #909090; //light grey
 	background: #fff;
 	min-height: 40vh;
 	height: auto;
+	margin: 3% 0px 5% 0px;
+	text-shadow: 1px 1px 1px #DEDEDE;
 	h1{
 		text-align: center;
 	}
@@ -158,18 +164,34 @@ $fourthColor: #909090; //light grey
 }
 //END welcomeContent
 .firstContent{
+	background:
+	linear-gradient(to bottom right,
+	rgba(#360901, 0.71),
+	rgba(0, 47, 75, 0.4)),
+	url("../images/Header.jpg") top center fixed;
+	background-size: cover;
+	color:white;
 	height: auto;
 	min-height: 50vh;
 	width: 100%;
 	padding-top: $mySpacing; padding-bottom: $mySpacing;
+	box-shadow: 0 -1px 20px black;
+	text-shadow: 1px 1px 1px #DEDEDE;
 	.myWrapper{
 		h1{
 			text-align: center;
+			color:white;
+		}
+		h4{
+			color: white;
 		}
 		p{
-			color:#333333;
+			color:white;
 			font-size: $myparagraph;
 			text-shadow: none;
+			span{
+				color:white;
+			}
 		}
 	}
 		.mainInfo {
@@ -200,7 +222,7 @@ $fourthColor: #909090; //light grey
 						}
 					}
 					&:hover {
-						transform: scale(1.1);
+						//transform: scale(1.05);
 						transition: all 0.2s ease-out;
 						span{
 							color:$firstColor;

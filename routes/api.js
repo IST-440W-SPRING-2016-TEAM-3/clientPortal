@@ -27,7 +27,7 @@ router.get('/users', function(req, res, next) {
     }
 });
 
-router.get('/userdata/:id', function(req, res, next) {
+router.get('/userdata', function(req, res, next) {
     if(reqChecker !== 0){
         var uuid = req.session.uuid;
         var args = {
