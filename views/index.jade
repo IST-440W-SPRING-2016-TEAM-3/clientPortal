@@ -2,7 +2,7 @@ extends layout
 
 block content
 	.headerDiv
-		section
+		section#myHeader.animated
 			h1 Your Health Matters...
 			p Know everything about your health from the comfort of your own home
 			a.btn Find out how
@@ -11,13 +11,13 @@ block content
 		h1 Welcome to the ClientPortal
 			h4 here's everything you need to know
 		.myWrapper
-			.welcomeInfo
+			#welcomeLeft.welcomeInfo.animated
 				h2 Single place for all your medical information
 				p
 					| All of your medical information in one place.
 					| No wait. No travel. No Hassle.
 
-			.welcomeImage
+			#welcomeRight.welcomeImage.animated
 				img(src="../images/showcase.png")
 
 
@@ -25,7 +25,7 @@ block content
 		.myWrapper
 			h1 ClientPortal provides endless possibilities
 				h4 some of the features include
-				.mainInfo
+				#mainInfoUp.mainInfo.animated
 					.mainContent
 						p
 							span.flaticon-day

@@ -65,6 +65,8 @@ font-family: 'Roboto Condensed', Arial, sans-serif; /*"Lucida Grande"*/
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			> li + li{
 				margin: 0px;
+				position: relative;
+				z-index: 2;
 			}
 			li:nth-of-type(2){
 				border-left: 5px solid $darkblue;
@@ -84,6 +86,24 @@ font-family: 'Roboto Condensed', Arial, sans-serif; /*"Lucida Grande"*/
 			li:nth-of-type(7){
 				border-left: 5px solid $green;
 			}
+			a:after {
+		  content: "";
+		  height: 100%;
+		  left: 0;
+		  top: 0;
+		  width: 0px;
+		  position: absolute;
+		  transition: all 0.2s ease 0s;
+		  -webkit-transition: all 0.2s ease 0s;
+		  z-index: -1;
+		}
+		 a:hover:after{ width: 100%; }
+		 li:nth-child(2) a:after {background: $darkblue;}
+		 li:nth-child(3) a:after {background: $yellow;}
+		 li:nth-child(4) a:after {background: $lightblue;}
+		 li:nth-child(5) a:after {background: $red;}
+		 li:nth-child(6) a:after {background: $orange;}
+		 li:nth-child(7) a:after {background: $green;}
 	}
 	}
 }
@@ -92,24 +112,31 @@ font-family: 'Roboto Condensed', Arial, sans-serif; /*"Lucida Grande"*/
 		> a {
 			color: #ffffff;
 			background-color: #35A3C5;
-			&:hover{
-				color: #ffffff;
-				background-color: #35A3C5;
-			}
-			&:focus {
-				color: #ffffff;
-				background-color: #35A3C5;
-			}
+			// &:hover{
+			// 	color: #ffffff;
+			// 	background-color: #35A3C5;
+			// }
+			// &:focus {
+			// 	color: #ffffff;
+			// 	background-color: #35A3C5;
+			// }
 		}
 	}
 }
-.nav {
-	> li {
-		> a:hover {
-			color: white;
-			background-color: #A1B4BA;
-		}
-	}
+// .nav {
+// 	> li {
+// 		> a:hover {
+// 			color: white;
+// 			background-color: #A1B4BA;
+// 		}
+// 	}
+// }
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+		color:white;
+    background-color: transparent;
+		transition: all 0.2s ease 0s;
+		-webkit-transition: all 0.2s ease 0s;
 }
 .nav-pills {
 	> li {

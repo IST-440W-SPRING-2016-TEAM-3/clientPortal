@@ -75,6 +75,9 @@ $fourthColor: #909090; //light grey
 	// height: 100%;
 }
 //END myWrapper
+#myHeader{
+	opacity: 0;
+}
 .headerDiv {
 	width: 100%;
 	height: 100vh;
@@ -299,12 +302,13 @@ $fourthColor: #909090; //light grey
 		.divTwo{
 			// background: yellow;
 			a{
-				color: white;
+				color: black;
 				position: relative;
 				margin-top: 40px;
 				padding: 12px 40px;
-				border: 2px solid white;
+				border: 2px solid black;
 				font-size: 1.2em;
+				font-weight: bold;
 				transition: 0.5s ease-in-out all;
 				&:active {
 					top: 3px;
