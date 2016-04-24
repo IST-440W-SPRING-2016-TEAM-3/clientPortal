@@ -581,7 +581,22 @@ body {
     width: 25%;
     font-size: 20px; }
 
-@media (max-width: 600px) {
+@media (max-width: 425px) {
+  nav .myNav {
+    padding: 0px;
+    margin: 0px; }
+    nav .myNav li:last-child {
+      margin-right: 0px; }
+    nav .myNav a {
+      padding-left: 4px; }
+
+  .headerDiv {
+    min-height: 100vh;
+    background-position: left top; }
+    .headerDiv #myHeader {
+      padding: 25px;
+      margin-top: 40%; } }
+@media (max-width: 768px) {
   .firstContent .mainInfo,
   .contentTwo .myWrapper {
     flex-flow: column;
@@ -599,15 +614,45 @@ body {
     padding-top: 20px; }
 
   .headerDiv section {
-    width: 70%;
+    width: 96%;
     margin: auto;
     position: relative;
     left: 0;
     top: 0;
     text-align: center; }
+    .headerDiv section h1 {
+      font-size: 35px;
+      text-align: center; }
 
-  .secondContent .myWrapper figure {
-    display: none; } }
+  .welcomeContent .myWrapper {
+    width: 95%; }
+    .welcomeContent .myWrapper .welcomeInfo {
+      width: 75%;
+      margin: auto; }
+    .welcomeContent .myWrapper .welcomeImage {
+      margin: auto; }
+
+  .firstContent .mainInfo .mainContent {
+    width: 60%; }
+
+  .contentTwo .myWrapper .divOne {
+    display: none; }
+  .contentTwo .myWrapper .divTwo {
+    width: 75%; }
+    .contentTwo .myWrapper .divTwo a.btn {
+      text-align: center; } }
+@media print {
+  .myNav {
+    display: none; }
+
+  ul.nav.nav-pills.nav-stacked {
+    display: none; }
+
+  .col-sm-10 {
+    width: 100%; }
+
+  .col-sm-3 {
+    width: 20%; } }
 .userCard {
   color: #303336;
   padding: 40px 0; }

@@ -392,10 +392,32 @@ $fourthColor: #909090; //light grey
 		font-size: 20px;
 	}
 }
-//END footer
+//END footer 320
+@media (max-width: 425px) {
+	nav{
+ .myNav{
+	 padding: 0px;
+	 margin: 0px;
+	 li:last-child {
+    margin-right: 0px;
+	}
+	 a{
+		 padding-left: 4px;
+	 }
+ }
+}
+.headerDiv{
+	min-height: 100vh;
+	background-position: left top;
+	#myHeader{
+	padding:25px;
+	margin-top: 40%;
+	}
+}
+}
 
+@media (max-width: 768px) {
 
-@media (max-width: 600px) {
 	.firstContent .mainInfo,
 	.contentTwo .myWrapper {
 		flex-flow: column;
@@ -413,15 +435,65 @@ $fourthColor: #909090; //light grey
 		padding-top: 20px;
 	}
 	.headerDiv section {
-		width: 70%;
+		width: 96%;
 		margin: auto;
 		position: relative;
 		left: 0;
 		top: 0;
 		text-align: center;
+		h1{
+			font-size: 35px;
+			text-align: center;
+		}
+	}
+	.welcomeContent{
+		.myWrapper{
+			width: 95%;
+			.welcomeInfo{
+				width:75%;
+				margin:auto;
+			}
+			.welcomeImage{
+				margin: auto;
+			}
+		}
+	}
+	.firstContent{
+		.mainInfo{
+		.mainContent{
+			width: 60%;
+		}
+	}
+	}
+	.contentTwo{
+		.myWrapper{
+		.divOne{
+			display:none;
+		}
+		.divTwo{
+			width: 75%;
+			a.btn{
+				text-align: center;
+			}
+		}
 	}
 
-	.secondContent .myWrapper figure{
-		display: none;
+	}
+
+}
+
+
+@media print {
+	.myNav{
+		display:none;
+	}
+	ul.nav.nav-pills.nav-stacked{
+		display:none;
+	}
+	.col-sm-10{
+		width: 100%;
+	}
+	.col-sm-3{
+		width:20%;
 	}
 }
