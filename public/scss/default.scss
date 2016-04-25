@@ -54,7 +54,7 @@ span {
     top: 10.7em !important;
 }
 .myRow{
-	margin: 30px auto 10px;
+	margin: 20px auto 0px;
 	width: 75%;
 	text-align: center;
 	button.MYBTN {
@@ -64,6 +64,7 @@ span {
 	background: transparent;
 	padding: 12px 40px;
 	border: 2px solid white;
+	border-radius: 4px;
 	font-size: 1.2em;
 	transition: 0.5s ease-in-out all;
 	&:active {

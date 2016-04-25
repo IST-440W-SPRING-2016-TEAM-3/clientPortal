@@ -213,7 +213,9 @@ body {
   background-color: #ffffff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
   .nav.nav-pills.nav-stacked > li + li {
-    margin: 0px; }
+    margin: 0px;
+    position: relative;
+    z-index: 2; }
   .nav.nav-pills.nav-stacked li:nth-of-type(2) {
     border-left: 5px solid #001a74; }
   .nav.nav-pills.nav-stacked li:nth-of-type(3) {
@@ -226,20 +228,41 @@ body {
     border-left: 5px solid #f79707; }
   .nav.nav-pills.nav-stacked li:nth-of-type(7) {
     border-left: 5px solid #27b534; }
+  .nav.nav-pills.nav-stacked a:after {
+    content: "";
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 0px;
+    position: absolute;
+    transition: all 0.2s ease 0s;
+    -webkit-transition: all 0.2s ease 0s;
+    z-index: -1; }
+  .nav.nav-pills.nav-stacked a:hover:after {
+    width: 100%; }
+  .nav.nav-pills.nav-stacked li:nth-child(2) a:after {
+    background: #001a74; }
+  .nav.nav-pills.nav-stacked li:nth-child(3) a:after {
+    background: #CA3491; }
+  .nav.nav-pills.nav-stacked li:nth-child(4) a:after {
+    background: #00B7FF; }
+  .nav.nav-pills.nav-stacked li:nth-child(5) a:after {
+    background: #fc3131; }
+  .nav.nav-pills.nav-stacked li:nth-child(6) a:after {
+    background: #f79707; }
+  .nav.nav-pills.nav-stacked li:nth-child(7) a:after {
+    background: #27b534; }
 
 .nav-pills > li.active > a {
   color: #ffffff;
   background-color: #35A3C5; }
-  .nav-pills > li.active > a:hover {
-    color: #ffffff;
-    background-color: #35A3C5; }
-  .nav-pills > li.active > a:focus {
-    color: #ffffff;
-    background-color: #35A3C5; }
 
-.nav > li > a:hover {
+.nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
   color: white;
-  background-color: #A1B4BA; }
+  background-color: transparent;
+  transition: all 0.2s ease 0s;
+  -webkit-transition: all 0.2s ease 0s; }
 
 .nav-pills > li > a {
   color: black;
@@ -319,6 +342,9 @@ body {
 .myWrapper {
   margin: auto;
   width: 75%; }
+
+#myHeader {
+  opacity: 0; }
 
 .headerDiv {
   width: 100%;
@@ -490,12 +516,13 @@ body {
       .contentTwo .myWrapper .divOne figure:hover {
         background: url("../images/doc2Hover.png"); }
     .contentTwo .myWrapper .divTwo a {
-      color: white;
+      color: black;
       position: relative;
       margin-top: 40px;
       padding: 12px 40px;
-      border: 2px solid white;
+      border: 2px solid black;
       font-size: 1.2em;
+      font-weight: bold;
       transition: 0.5s ease-in-out all; }
       .contentTwo .myWrapper .divTwo a:active {
         top: 3px; }
@@ -554,7 +581,22 @@ body {
     width: 25%;
     font-size: 20px; }
 
-@media (max-width: 600px) {
+@media (max-width: 425px) {
+  nav .myNav {
+    padding: 0px;
+    margin: 0px; }
+    nav .myNav li:last-child {
+      margin-right: 0px; }
+    nav .myNav a {
+      padding-left: 4px; }
+
+  .headerDiv {
+    min-height: 100vh;
+    background-position: left top; }
+    .headerDiv #myHeader {
+      padding: 25px;
+      margin-top: 40%; } }
+@media (max-width: 768px) {
   .firstContent .mainInfo,
   .contentTwo .myWrapper {
     flex-flow: column;
@@ -572,15 +614,45 @@ body {
     padding-top: 20px; }
 
   .headerDiv section {
-    width: 70%;
+    width: 96%;
     margin: auto;
     position: relative;
     left: 0;
     top: 0;
     text-align: center; }
+    .headerDiv section h1 {
+      font-size: 35px;
+      text-align: center; }
 
-  .secondContent .myWrapper figure {
-    display: none; } }
+  .welcomeContent .myWrapper {
+    width: 95%; }
+    .welcomeContent .myWrapper .welcomeInfo {
+      width: 75%;
+      margin: auto; }
+    .welcomeContent .myWrapper .welcomeImage {
+      margin: auto; }
+
+  .firstContent .mainInfo .mainContent {
+    width: 60%; }
+
+  .contentTwo .myWrapper .divOne {
+    display: none; }
+  .contentTwo .myWrapper .divTwo {
+    width: 75%; }
+    .contentTwo .myWrapper .divTwo a.btn {
+      text-align: center; } }
+@media print {
+  .myNav {
+    display: none; }
+
+  ul.nav.nav-pills.nav-stacked {
+    display: none; }
+
+  .col-sm-10 {
+    width: 100%; }
+
+  .col-sm-3 {
+    width: 20%; } }
 .userCard {
   color: #303336;
   padding: 40px 0; }
@@ -805,7 +877,7 @@ span {
   top: 10.7em !important; }
 
 .myRow {
-  margin: 30px auto 10px;
+  margin: 20px auto 0px;
   width: 75%;
   text-align: center; }
   .myRow button.MYBTN {
@@ -815,6 +887,7 @@ span {
     background: transparent;
     padding: 12px 40px;
     border: 2px solid white;
+    border-radius: 4px;
     font-size: 1.2em;
     transition: 0.5s ease-in-out all; }
     .myRow button.MYBTN:active {

@@ -2,7 +2,7 @@ extends layout
 
 block content
 	.headerDiv
-		section
+		section#myHeader.animated
 			h1 Your Health Matters...
 			p Know everything about your health from the comfort of your own home
 			a.btn Find out how
@@ -11,13 +11,14 @@ block content
 		h1 Welcome to the ClientPortal
 			h4 here's everything you need to know
 		.myWrapper
-			.welcomeInfo
+			#welcomeLeft.welcomeInfo.animated
 				h2 Single place for all your medical information
 				p
 					| All of your medical information in one place.
-					| No wait. No travel. No Hassle.
+					| Access your account from any location, with any device.
+					| No wait. No travel. No hassle.
 
-			.welcomeImage
+			#welcomeRight.welcomeImage.animated
 				img(src="../images/showcase.png")
 
 
@@ -25,7 +26,7 @@ block content
 		.myWrapper
 			h1 ClientPortal provides endless possibilities
 				h4 some of the features include
-				.mainInfo
+				#mainInfoUp.mainInfo.animated
 					.mainContent
 						p
 							span.flaticon-day
@@ -60,39 +61,39 @@ block content
 		h1 Still normal doctor visit
 			h4 made simpler...
 		.myWrapper
-			
 
-	.contactUS
-		h1 Contact Us
-			h4 Your input is important to us
-		.myWrapper
-			.col-sm-6
-				form
-					.form-horizontal
-						.form-group
-							label.col-sm-2(for='First Name') First Name:
-							.col-sm-10
-								input#firstname.form-control(type='first name', placeholder='Enter First Name')
-						.form-group
-							label.col-sm-2(for='last name') Last Name:
-							.col-sm-10
-								input#lastname.form-control(type='last name', placeholder='Enter Last Name')
-						.form-group
-							label.col-sm-2(for='email') Email:
-							.col-sm-10
-								input#email.form-control(type='email', placeholder='Enter email')
-						.form-group
-							label.col-sm-2(for='Subject') Subject:
-							.col-sm-10
-								textarea#Subject.form-control(rows='1', placeholder='Enter Subject')
-						.form-group
-							label.col-sm-2(for='comment') Comment:
-							.col-sm-10
-								textarea#comment.form-control(rows='5')
-						button.btn.btn-440w.pull-right(type='submit') Submit
-			.col-sm-6
-				iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3051.202158741081!2d-75.11247668409956!3d40.11549808182749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6b055aa880c67%3A0xdddc30c9cdaf01d7!2sPenn+State+Abington!5e0!3m2!1sen!2sus!4v1458774557448', width='600', height='450', frameborder='0', style='border:0', allowfullscreen='')
 
+	//- .contactUS
+	//- 	h1 Contact Us
+	//- 		h4 Your input is important to us
+	//- 	.myWrapper
+	//- 		.col-sm-6
+	//- 			form
+	//- 				.form-horizontal
+	//- 					.form-group
+	//- 						label.col-sm-2(for='First Name') First Name:
+	//- 						.col-sm-10
+	//- 							input#firstname.form-control(type='first name', placeholder='Enter First Name')
+	//- 					.form-group
+	//- 						label.col-sm-2(for='last name') Last Name:
+	//- 						.col-sm-10
+	//- 							input#lastname.form-control(type='last name', placeholder='Enter Last Name')
+	//- 					.form-group
+	//- 						label.col-sm-2(for='email') Email:
+	//- 						.col-sm-10
+	//- 							input#email.form-control(type='email', placeholder='Enter email')
+	//- 					.form-group
+	//- 						label.col-sm-2(for='Subject') Subject:
+	//- 						.col-sm-10
+	//- 							textarea#Subject.form-control(rows='1', placeholder='Enter Subject')
+	//- 					.form-group
+	//- 						label.col-sm-2(for='comment') Comment:
+	//- 						.col-sm-10
+	//- 							textarea#comment.form-control(rows='5')
+	//- 					button.btn.btn-440w.pull-right(type='submit') Submit
+	//- 		.col-sm-6
+	//- 			iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3051.202158741081!2d-75.11247668409956!3d40.11549808182749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6b055aa880c67%3A0xdddc30c9cdaf01d7!2sPenn+State+Abington!5e0!3m2!1sen!2sus!4v1458774557448', width='600', height='450', frameborder='0', style='border:0', allowfullscreen='')
+	//- 
 
 
 	.footer
