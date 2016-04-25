@@ -314,6 +314,12 @@
 					}
 				}
 
+				for(var users in userAppointments){
+					if(userAppointments[users].date === "5/6/2016"){
+						console.log("yay");
+					}
+				}
+
 				userAppointments = userAppointments.sort(dynamicSort("date"));
 			});
 
