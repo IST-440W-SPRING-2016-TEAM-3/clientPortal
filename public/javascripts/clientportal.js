@@ -15,7 +15,7 @@
 	angular.module("clientportal", [
 			'ui.bootstrap'
 		])
-		.directive("medicationCards", ["$http","$filter", function($http, $filter) {
+		.directive("medicationCards", ["$http", "$filter", function($http, $filter) {
 			return {
 				restrict: "E",
 				link: function(scope, el, attrs) {
@@ -198,16 +198,40 @@
 								span = angular.element('<span class="flaticon-medical-4"></span>'),
 								information = angular.element('<div class="information"></div>'),
 								name = angular.element('<div class="name test-results">Test Result</div>'),
-								h1 = angular.element('<h1>' + response[key].testtype + '</h1>'),
-								h20 = angular.element('<h2>Description: ' + response[key].testdescription + '</h2>'),
-								h21 = angular.element('<h2>Result: ' + response[key].result + '</h2>'),
-								h22 = angular.element('<h2>Test Date: ' + $filter('date')(response[key].date, "mediumDate") + '</h2>'),
+								h1 = angular.element('<h1>' + response[key].testtype + '</h1>');
+
+								if(response[key].testtype === "urine"){
+									h20 = angular.element('<h2>ph Level: ' + response[key].phlevel + '</h2>');
+									h21 = angular.element('<h2>Glucose: ' + response[key].glucoseurine + '</h2>');
+									h22 = angular.element('<h2>Ketones: ' + response[key].ketones + '</h2>');
+									h23 = angular.element('<h2>Gravity: ' + response[key].gravity + '</h2>');
+									h24 = angular.element('<h2>Test Date: ' + $filter('date')(response[key].date, "mediumDate") + '</h2>');
+								} else if(response[key].testtype === "blood"){
+									h20 = angular.element('<h2>Cholesterol: ' + response[key].cholesterol + '</h2>');
+									h21 = angular.element('<h2>Blood Type: ' + response[key].bloodtype + '</h2>');
+									h22 = angular.element('<h2>Glucose: ' + response[key].glucoseblood + '</h2>');
+									h23 = angular.element('<h2>CPR: ' + response[key].cpr + '</h2>');
+									h24 = angular.element('<h2>Test Date: ' + $filter('date')(response[key].date, "mediumDate") + '</h2>');
+								} else {
+									h20 = angular.element('<h2>Diastolic: ' + response[key].blooddiastolic + '</h2>');
+									h21 = angular.element('<h2>Systolix: ' + response[key].bloodsystolic + '</h2>');
+									h22 = angular.element('<h2>Respiratory Rate: ' + response[key].respiratoryrate + '</h2>');
+									h23 = angular.element('<h2>Heart Rate: ' + response[key].heartrate + '</h2>');
+									h24 = angular.element('<h2>Blood Temp: ' + response[key].bodytemperature + '</h2>');
+									h25 = angular.element('<h2>Test Date: ' + $filter('date')(response[key].date, "mediumDate") + '</h2>');
+								}
+
 								displayDescription = angular.element('<div class="displayDescription"></div>');
 
 							displayDescription.append(h1);
 							displayDescription.append(h20);
 							displayDescription.append(h21);
 							displayDescription.append(h22);
+							displayDescription.append(h23);
+							displayDescription.append(h24);
+							if(response[key].testtype === "vital"){
+								displayDescription.append(h25);
+							}
 							information.append(name);
 							information.append(displayDescription);
 							p.append(span);
