@@ -146,6 +146,14 @@ font-family: 'Roboto Condensed', Arial, sans-serif; /*"Lucida Grande"*/
 		}
 	}
 }
+.nav-pills{
+	#overviewtab:hover{
+		color:black;
+	}
+	#overviewtab:focus{
+		color:white;
+	}
+}
 .btn-440w {
 	color: white;
 	background-color: #35A3C5;
