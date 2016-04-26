@@ -5,7 +5,7 @@ $myboxshadow: 0 -1px 20px gray; //0 1px 20px gray; for bottom
 $mySpacing: 50px;
 
 $firstColor: #00B7FF; //light blue
-
+$secondColor: #4D4D4D; //medium grey
 $thirdColor: #4a4a4a; //dark grey
 $fourthColor: #909090; //light grey
 .nm {
@@ -24,7 +24,7 @@ $fourthColor: #909090; //light grey
 	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: 1;
+	z-index: 3;
 	a {
 		color: white;
 		text-decoration: none;
@@ -75,13 +75,13 @@ $fourthColor: #909090; //light grey
 	// height: 100%;
 }
 //END myWrapper
-#myHeader{
+#myHeader, #contentTwoLeft, #contentTwoRight, #doctorLeft, #doctorRight, #contactLeft, #contactRight{
 	opacity: 0;
 }
 .headerDiv {
 	width: 100%;
-	height: 100vh;
-	min-height: 800px;
+	min-height: 100vh;
+	height: auto;
 	background:
 	linear-gradient(to bottom right,
 	rgba(0, 47, 75, 0.4),
@@ -135,9 +135,6 @@ $fourthColor: #909090; //light grey
 	height: auto;
 	margin: 3% 0px 5% 0px;
 	text-shadow: 1px 1px 1px #DEDEDE;
-	h1{
-		text-align: center;
-	}
 	h2{
 		margin: 0;
 		&::after {
@@ -156,7 +153,7 @@ $fourthColor: #909090; //light grey
 	.myWrapper{
 		display: flex;
 		flex-flow: row wrap;
-		justify-content: flex-start;
+		justify-content: space-between;
 		align-content: center;
 		align-items: center;
 		//width: 85%;
@@ -270,12 +267,11 @@ $fourthColor: #909090; //light grey
 			color:white;
 			p {
 			font-size: $myparagraph;
-			color:black;
+			color:#333333;
 			}
 			h1{
 				text-align: left;
-		 		//color:white;
-				color:black;
+				color: #4a4a4a;
 				&::after {
 				content: '';
 				display: block;
@@ -287,7 +283,6 @@ $fourthColor: #909090; //light grey
 		}
 	}
 		.divOne{
-			// background: red;
 			figure {
 				background: url("../images/doc2.png");
 				width: 436px;
@@ -300,13 +295,12 @@ $fourthColor: #909090; //light grey
 			}
 		}
 		.divTwo{
-			// background: yellow;
 			a{
-				color: black;
+				color: #4D4D4D;
 				position: relative;
 				margin-top: 40px;
 				padding: 12px 40px;
-				border: 2px solid black;
+				border: 2px solid #4D4D4D;
 				font-size: 1.2em;
 				font-weight: bold;
 				transition: 0.5s ease-in-out all;
@@ -337,21 +331,50 @@ $fourthColor: #909090; //light grey
 	width: 100%;
 	padding-top: $mySpacing; padding-bottom: $mySpacing;
 	box-shadow: 0 -1px 20px black, 0 1px 20px black;
-	margin-bottom:15px;
+	//text-shadow: 1px 1px 1px rgba(#000000, 0.6);
+	margin: 3% 0px 5% 0px;
 	h1, h4{
 		color:white;
 	}
 	.myWrapper{
-		min-height: 50vh;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		// align-content: center;
+		// align-items: center;
+		h2{
+			margin: 0;
+			color:white;
+			&::after {
+			content: '';
+			display: block;
+			height: 3px;
+			width: 10%;
+			padding-top: 20px;
+			margin-bottom: 20px;
+			border-bottom: 3px solid $firstColor;
+		}
+		}
+		p{
+			font-size: $myparagraph;
+		}
+		.divOne{
+			width:40%;
+		}
+		.divTwo{
+			width:40%;
+		}
 	}
 }
 //END ourTeam
 .contactUS {
 	background: #fff;
 	width: 100%;
-	height: 55vh;
+	min-height: 55vh;
+	height: auto;
+	margin: 3% 0px 5% 0px;
 	h1{
-		color:black;
+		color:$thirdColor;
 	}
 	h4 {
 		margin: 0 0 0.5em;
@@ -361,15 +384,21 @@ $fourthColor: #909090; //light grey
 		margin-top: 1em;
 	}
 	label {
-		color: #35A3C5;
+		color: #4D4D4D;
 	}
 	.myWrapper {
 		display: flex;
-		justify-content: space-around;
-		align-items: center;
+		justify-content: space-between;
+		//align-items: center;
 		text-align: center;
-		width: 90%;
+		width: 80%;
 		border-top:9em;
+		.divOne{
+			width:50%;
+		}
+		.divTwo{
+			width:50%;
+		}
 	}
 }
 //END contactUS
@@ -414,8 +443,74 @@ $fourthColor: #909090; //light grey
 	margin-top: 40%;
 	}
 }
+.welcomeContent{
+	.myWrapper{
+		.welcomeInfo{
+			h2{
+				text-align: center;
+				&::after {
+					margin: auto;
+			}
+			}
+			p{
+				text-align: center;
+			}
 }
-
+}
+}
+.contentTwo{
+	.myWrapper{
+		.divTwo{
+			h1{
+				text-align: center;
+				&::after {
+					margin: auto;
+			}
+			a.btn{
+				text-align: center;
+			}
+			}
+		}
+	}
+}
+.ourTeam{
+	flex-flow: column;
+	.myWrapper{
+		width: 95%;
+		.divOne{
+			width:85%;
+			margin:auto;
+		}
+		.divTwo{
+			width:85%;
+			margin: auto;
+		}
+		.divOne, .divTwo{
+			h2{
+				text-align: center;
+				&::after {
+					margin: auto;
+			}
+		}
+		}
+	}
+}
+.contactUS{
+		.myWrapper{
+			width:95%;
+			.divOne{
+				display: block;
+				width:85%;
+				margin:auto;
+			}
+			.divTwo{
+				display:none;
+				width:85%;
+				margin: auto;
+			}
+		}
+	}
+}
 @media (max-width: 768px) {
 
 	.firstContent .mainInfo,
