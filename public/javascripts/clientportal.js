@@ -303,20 +303,12 @@
 				// Extracts user data from response of GET reuest and stores in userAppointments $scope variable.
 				// Also using our ignore object to make sure any data that is not supposed to be seen isn't shown
 				// on the scope.
-
-
 				for (var r = 0; r < response.data.length; r++) {
 					$scope.userAppointments[r] = {};
 					for (var keyss in userAppointments[r]) {
 						if (!ignore[keyss]) {
 							$scope.userAppointments[r][keyss] = userAppointments[r][keyss];
 						}
-					}
-				}
-
-				for(var users in userAppointments){
-					if(userAppointments[users].date === "5/6/2016"){
-						console.log("yay");
 					}
 				}
 
