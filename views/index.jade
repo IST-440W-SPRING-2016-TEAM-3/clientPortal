@@ -13,8 +13,8 @@ block content
 		.myWrapper
 			#welcomeLeft.welcomeInfo.animated
 				h2 Single place for all your medical information
-				p
-					| All of your medical information in one place.
+				p 
+					| View all of your medical information online.
 					| Access your account from any location, with any device.
 					| No wait. No travel. No hassle.
 
@@ -46,10 +46,10 @@ block content
 	.contentTwo
 		.myWrapper
 
-			.divOne
+			#contentTwoLeft.divOne.animated
 				figure
 
-			.divTwo
+			#contentTwoRight.divTwo.animated
 				h1 We take your health seriously
 				p
 					|This patient portal allows you to view and manage lab orders, test results and upcoming appointments from any internet enabled device.
@@ -61,39 +61,52 @@ block content
 		h1 Still normal doctor visit
 			h4 made simpler...
 		.myWrapper
+			#doctorLeft.divOne.animated
+				h2 Visit your doctor like you usually do
+				p 
+					| Complete your normal medical routines.
+					| Perform check-ups and vital tests. 
+					| But get results faster.
+
+			#doctorRight.divTwo.animated
+				h2 View personal results at home
+				p 
+					| Now there is no need to travel back to receive your results.
+					| Ability to schedule additional appointments. 
+					| View all medical information over periods of time.
 
 
-	//- .contactUS
-	//- 	h1 Contact Us
-	//- 		h4 Your input is important to us
-	//- 	.myWrapper
-	//- 		.col-sm-6
-	//- 			form
-	//- 				.form-horizontal
-	//- 					.form-group
-	//- 						label.col-sm-2(for='First Name') First Name:
-	//- 						.col-sm-10
-	//- 							input#firstname.form-control(type='first name', placeholder='Enter First Name')
-	//- 					.form-group
-	//- 						label.col-sm-2(for='last name') Last Name:
-	//- 						.col-sm-10
-	//- 							input#lastname.form-control(type='last name', placeholder='Enter Last Name')
-	//- 					.form-group
-	//- 						label.col-sm-2(for='email') Email:
-	//- 						.col-sm-10
-	//- 							input#email.form-control(type='email', placeholder='Enter email')
-	//- 					.form-group
-	//- 						label.col-sm-2(for='Subject') Subject:
-	//- 						.col-sm-10
-	//- 							textarea#Subject.form-control(rows='1', placeholder='Enter Subject')
-	//- 					.form-group
-	//- 						label.col-sm-2(for='comment') Comment:
-	//- 						.col-sm-10
-	//- 							textarea#comment.form-control(rows='5')
-	//- 					button.btn.btn-440w.pull-right(type='submit') Submit
-	//- 		.col-sm-6
-	//- 			iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3051.202158741081!2d-75.11247668409956!3d40.11549808182749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6b055aa880c67%3A0xdddc30c9cdaf01d7!2sPenn+State+Abington!5e0!3m2!1sen!2sus!4v1458774557448', width='600', height='450', frameborder='0', style='border:0', allowfullscreen='')
-	//- 
+	.contactUS
+		h1 Contact Us
+			h4 Your input is important to us
+		.myWrapper
+			#contactLeft.divOne.animated
+				form
+					.form-horizontal
+						.form-group
+							label.col-sm-2(for='First Name') First Name:
+							.col-sm-10
+								input#firstname.form-control(type='first name', placeholder='Enter First Name')
+						.form-group
+							label.col-sm-2(for='last name') Last Name:
+							.col-sm-10
+								input#lastname.form-control(type='last name', placeholder='Enter Last Name')
+						.form-group
+							label.col-sm-2(for='email') Email:
+							.col-sm-10
+								input#email.form-control(type='email', placeholder='Enter email')
+						.form-group
+							label.col-sm-2(for='Subject') Subject:
+							.col-sm-10
+								textarea#Subject.form-control(rows='1', placeholder='Enter Subject')
+						.form-group
+							label.col-sm-2(for='comment') Comment:
+							.col-sm-10
+								textarea#comment.form-control(rows='5')
+						button.btn.btn-440w.pull-right(type='submit') Submit
+			#contactRight.divTwo.animated
+				iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3051.202158741081!2d-75.11247668409956!3d40.11549808182749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6b055aa880c67%3A0xdddc30c9cdaf01d7!2sPenn+State+Abington!5e0!3m2!1sen!2sus!4v1458774557448', width='500', height='350', frameborder='0', style='border:0', allowfullscreen='')
+	
 
 
 	.footer
