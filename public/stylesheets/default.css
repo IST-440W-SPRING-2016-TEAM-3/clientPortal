@@ -297,7 +297,7 @@ body {
 
 /*index page style*/
 .nm {
-  margin: 0px !important; }
+  margin: 0 !important; }
 
 .mypage {
   padding: 0; }
@@ -322,7 +322,7 @@ body {
       width: 100px;
       height: 100px; }
   .myNav li {
-    margin: 10px 0 0 0;
+    margin: 10px 0 0;
     list-style-type: none;
     border-bottom: solid 3px transparent;
     transition: all 0.4s ease-out; }
@@ -349,7 +349,13 @@ body {
   margin: auto;
   width: 75%; }
 
-#myHeader, #contentTwoLeft, #contentTwoRight, #doctorLeft, #doctorRight, #contactLeft, #contactRight {
+#contactLeft,
+#contactRight,
+#contentTwoLeft,
+#contentTwoRight,
+#doctorLeft,
+#doctorRight,
+#myHeader {
   opacity: 0; }
 
 .headerDiv {
@@ -395,7 +401,7 @@ body {
   background: #fff;
   min-height: 40vh;
   height: auto;
-  margin: 3% 0px 5% 0px;
+  margin: 3% 0 5%;
   text-shadow: 1px 1px 1px #DEDEDE; }
   .welcomeContent h2 {
     margin: 0; }
@@ -468,14 +474,14 @@ body {
         display: block;
         height: 3px;
         width: 7%;
-        padding: 20px 0px 0px 0px;
+        padding: 20px 0 0;
         margin: auto;
         border-bottom: 3px solid #00B7FF; }
       .firstContent .mainInfo .mainContent:hover {
         transition: all 0.2s ease-out; }
         .firstContent .mainInfo .mainContent:hover span {
           color: #00B7FF;
-          transition: all .3s ease-out; }
+          transition: all 0.3s ease-out; }
 
 .contentTwo {
   width: 100%;
@@ -493,18 +499,22 @@ body {
     justify-content: center;
     align-items: stretch;
     align-content: center; }
-    .contentTwo .myWrapper .divOne, .contentTwo .myWrapper .divTwo {
+    .contentTwo .myWrapper .divOne,
+    .contentTwo .myWrapper .divTwo {
       flex-grow: 1;
       min-height: 200px;
       width: 50%;
       color: white; }
-      .contentTwo .myWrapper .divOne p, .contentTwo .myWrapper .divTwo p {
+      .contentTwo .myWrapper .divOne p,
+      .contentTwo .myWrapper .divTwo p {
         font-size: 25px;
         color: #333333; }
-      .contentTwo .myWrapper .divOne h1, .contentTwo .myWrapper .divTwo h1 {
+      .contentTwo .myWrapper .divOne h1,
+      .contentTwo .myWrapper .divTwo h1 {
         text-align: left;
         color: #4a4a4a; }
-        .contentTwo .myWrapper .divOne h1::after, .contentTwo .myWrapper .divTwo h1::after {
+        .contentTwo .myWrapper .divOne h1::after,
+        .contentTwo .myWrapper .divTwo h1::after {
           content: '';
           display: block;
           height: 3px;
@@ -541,8 +551,9 @@ body {
   padding-top: 50px;
   padding-bottom: 50px;
   box-shadow: 0 -1px 20px black, 0 1px 20px black;
-  margin: 3% 0px 5% 0px; }
-  .ourTeam h1, .ourTeam h4 {
+  margin: 3% 0 5%; }
+  .ourTeam h1,
+  .ourTeam h4 {
     color: white; }
   .ourTeam .myWrapper {
     display: flex;
@@ -571,13 +582,13 @@ body {
   width: 100%;
   min-height: 55vh;
   height: auto;
-  margin: 3% 0px 5% 0px; }
+  margin: 3% 0 5%; }
   .contactUS h1 {
     color: #4a4a4a; }
   .contactUS h4 {
     margin: 0 0 0.5em; }
   .contactUS .btn-440w {
-    margin-right: 0px;
+    margin-right: 0;
     margin-top: 1em; }
   .contactUS label {
     color: #4D4D4D; }
@@ -618,8 +629,8 @@ body {
     padding-right: 7px;
     padding-left: 7px; }
 
-  .firstContent .mainInfo,
-  .contentTwo .myWrapper {
+  .contentTwo .myWrapper,
+  .firstContent .mainInfo {
     flex-flow: column;
     -webkit-flex-flow: column;
     justify-content: center;
@@ -667,8 +678,9 @@ body {
 
   .ourTeam .myWrapper {
     width: 95%; }
-    .ourTeam .myWrapper .divOne, .ourTeam .myWrapper .divTwo {
-      margin: 3% 0% 3% 0%; }
+    .ourTeam .myWrapper .divOne,
+    .ourTeam .myWrapper .divTwo {
+      margin: 3% 0; }
 
   .contactUS .myWrapper {
     width: 95%;
@@ -684,6 +696,9 @@ body {
 
   .displayCard .displayContainer {
     height: 365px; } }
+@media (max-width: 1024px) {
+  .displayCard .displayContainer {
+    min-height: 385px; } }
 @media (max-width: 425px) {
   .col-sm-3 {
     width: 100%; }
@@ -692,10 +707,10 @@ body {
     text-align: center; }
 
   nav .myNav {
-    padding: 0px;
-    margin: 0px; }
+    padding: 0;
+    margin: 0; }
     nav .myNav li:last-child {
-      margin-right: 0px; }
+      margin-right: 0; }
     nav .myNav a {
       padding-left: 4px; }
 
@@ -728,11 +743,14 @@ body {
         width: 85%; }
       .ourTeam .myWrapper .divTwo {
         width: 85%; }
-      .ourTeam .myWrapper .divOne, .ourTeam .myWrapper .divTwo {
+      .ourTeam .myWrapper .divOne,
+      .ourTeam .myWrapper .divTwo {
         margin: auto !important; }
-        .ourTeam .myWrapper .divOne h2, .ourTeam .myWrapper .divTwo h2 {
+        .ourTeam .myWrapper .divOne h2,
+        .ourTeam .myWrapper .divTwo h2 {
           text-align: center; }
-          .ourTeam .myWrapper .divOne h2::after, .ourTeam .myWrapper .divTwo h2::after {
+          .ourTeam .myWrapper .divOne h2::after,
+          .ourTeam .myWrapper .divTwo h2::after {
             margin: auto; }
 
   .contactUS .myWrapper #contactLeft {
@@ -981,7 +999,7 @@ span {
   width: 75%;
   text-align: center; }
   .myRow button.MYBTN {
-    width: 20%;
+    width: 35%;
     color: white;
     position: relative;
     background: transparent;
